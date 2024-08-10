@@ -43,7 +43,7 @@
       "sizes": "16x16"
     }
   ],
-  "start_url": "./livros/javascript/",
+  "start_url": "https://booklines.vercel.app/livros/javascript/",
   "display": "fullscreen",
   "theme_color": "#559fd4",
   "background_color": "#559fd4"
