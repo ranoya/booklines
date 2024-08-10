@@ -59,7 +59,7 @@
         go = $_GET["go"];
       }
 
-      let u = "";
+      let u = "./livros/docs/?go=";
 
       if ($_GET["titulo"] == "observable") {
         u = "./livros/observable/?go=" + go;
@@ -76,13 +76,12 @@
       if ($_GET["titulo"] == "artegerativa") {
         u = "https://artegerativabrasileira.vercel.app/?go=" + go;
       }
-   
-      if (u != "") {
-          window.location = u;
-      }
+
+
+      window.location = u;
+      
   </script>
 
   <body>
-    <h1>Booklines</h1>
   </body>
 </html>
