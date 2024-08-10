@@ -7,3 +7,13 @@ O modo *timelineh* do [SlidelineSAAS](https://slidelines.vercel.app) foi criado 
 O Booklines permite a incorporação de quaisquer páginas e documentos web como capítulo ou parte do livro, e possui templates já disponíveis para a incorporação e formatação de documentos da plataforma de programação letrada [Observable](https://www.observablehq.com), e documentos *markdown*.
 
 Ela produz um livro interativo em forma de website e progressive web application (PWA), permitindo que o produto possa ser instalado em tablets e celulares como um aplicativo web.
+
+Além de um framework, o Booklines está sendo utilizando como a própria plataforma de publicação, disponibilizando já alguns livros interativos:
+
+[Programando em Javascript com Observable](https://booklines.vercel.app/?titulo=observable)
+
+[Programação Javascript para Designers](https://booklines.vercel.app/?titulo=javascript)
+
+[Reflexões sobre o Design de Interfaces](https://booklines.vercel.app/?titulo=interfaces)
+
+Arte Gerativa Brasileira (em desenvolvimento)
