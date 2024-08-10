@@ -33,9 +33,9 @@
       "sizes": "48x48"
     },
     {
-      "src": "/assets/obsfav32.png",
+      "src": "/assets/obsfav36.png",
       "type": "image/svg+xml",
-      "sizes": "32x32"
+      "sizes": "36x36"
     },
     {
       "src": "/assets/obsfav16.png",
