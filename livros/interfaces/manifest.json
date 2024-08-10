@@ -45,6 +45,6 @@
   ],
   "start_url": "https://booklines.vercel.app/livros/interfaces/",
   "display": "fullscreen",
-  "theme_color": "#559fd4",
-  "background_color": "#559fd4"
+  "theme_color": "#000000",
+  "background_color": "#000000"
 }
