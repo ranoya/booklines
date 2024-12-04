@@ -2,16 +2,17 @@
 
 <html>
   <head>
-    <title>Booklines</title>
+    <title>Memorial</title>
     <meta
       name="description"
-      content="Plataforma de livros interativos do prof. Guilherme Ranoya"
+      content="Relatórios completos dos projetos e atividades acadêmicas desenvolvidas"
     />
     <meta
       property="og:description"
-      content="Plataforma de livros interativos do prof. Guilherme Ranoya"
+      content="Relatórios completos dos projetos e atividades acadêmicas desenvolvidas"
     />
-    <link rel="icon" type="image/png" href="livrosicon.png" />
+    <link rel="icon" type="image/png" href="/assets/jsfav16.png" />
+    <link rel="manifest" href="/livros/javascript/manifest.json" />
 
     <style>
       * {
@@ -56,36 +57,20 @@
         $_GET["go"] != "" &&
         $_GET["go"] != null
       ) {
-        go = $_GET["go"];
+        go = "&s=" + $_GET["go"];
       }
 
-      let u = "./livros/docs/?go=";
-
-      if ($_GET["titulo"] == "observable") {
-        u = "./livros/observable/?go=" + go;
-      }
-
-      if ($_GET["titulo"] == "interfaces") {
-         u = "./livros/interfaces/?go=" + go;
-      }
-
-      if ($_GET["titulo"] == "javascript") {
-        u = "./livros/javascript/?go=" + go;
-      }
-
-      if ($_GET["titulo"] == "memorial") {
-        u = "./livros/memorial/?go=" + go;
-      }
-
-      if ($_GET["titulo"] == "artegerativa") {
-        u = "https://artegerativabrasileira.vercel.app/?go=" + go;
-      }
-
-
-      window.location = u;
-      
-  </script>
+      let u =
+        "https://slidelines.vercel.app/timelineh/?pattern=true&allblocks=true&followbg=true&timeheight=130&file=https://docs.google.com/spreadsheets/d/1SxGT3E57CSn6r19a8BeVDWpT9dce0gi7jkAYltREeu4/edit?gid=68860501#gid=68860501&theme=https://slidelines.vercel.app/styles/observabletexts.css" +
+        go;
+    </script>
+  </head>
 
   <body>
+    <iframe id="conteudo"></iframe>
   </body>
+
+  <script>
+    document.getElementById("conteudo").src = u;
+  </script>
 </html>
