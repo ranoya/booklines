@@ -19,7 +19,7 @@
 
   import(
     "https://api.observablehq.com/@ranoya/experimentos-com-d3.js?v=4"
-  ).then(() => {
+  ).then((define) => {
     new Runtime().module(define, Inspector.into("#conteudo"));
   });
 </script>
