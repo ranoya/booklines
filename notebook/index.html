@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <body>
+    <div id="conteudo"></div>
+  </body>
+</html>
+
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css"
+/>
+
+<script type="module">
+  import {
+    Runtime,
+    Inspector,
+  } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
+
+  import(
+    "https://api.observablehq.com/@ranoya/experimentos-com-d3.js?v=4"
+  ).then(() => {
+    new Runtime().module(define, Inspector.into("#conteudo"));
+  });
+</script>
