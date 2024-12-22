@@ -1,0 +1,50 @@
+{
+  "short_name": "Memorial",
+  "name": "Memorial Circunstanciado: Guilherme Ranoya",
+  "icons": [
+    {
+      "src": "/assets/memorial1024.png",
+      "type": "image/svg+xml",
+      "sizes": "1024x1024"
+    },
+    {
+      "src": "/assets/memorial512.png",
+      "type": "image/svg+xml",
+      "sizes": "512x512"
+    },
+    {
+      "src": "/assets/memorial256.png",
+      "type": "image/svg+xml",
+      "sizes": "256x256"
+    },
+    {
+      "src": "/assets/memorial144.png",
+      "type": "image/svg+xml",
+      "sizes": "144x144"
+    },
+    {
+      "src": "/assets/memorial128.png",
+      "type": "image/svg+xml",
+      "sizes": "128x128"
+    },
+    {
+      "src": "/assets/memorial48.png",
+      "type": "image/svg+xml",
+      "sizes": "48x48"
+    },
+    {
+      "src": "/assets/memorial32.png",
+      "type": "image/svg+xml",
+      "sizes": "32x32"
+    },
+    {
+      "src": "/assets/memorial16.png",
+      "type": "image/svg+xml",
+      "sizes": "16x16"
+    }
+  ],
+  "start_url": "https://booklines.vercel.app/livros/memorial/",
+  "display": "fullscreen",
+  "theme_color": "#38ffcf",
+  "background_color": "#38ffcf"
+}
