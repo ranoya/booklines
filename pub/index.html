@@ -36,12 +36,6 @@
     <link rel='icon' type='image/png' href='cover image16.png' />
     <link rel='shortcut icon' href='cover image57.png' />
 
-    <!-- METAINFORMAÇÃO DO DOCUMENTO -->
-
-    <title>Funções</title>
-    <meta property='og:title' content='Funções' />
-    <meta name='description' content='Funções - Guliherme Ranoya' />
-    <meta property='og:description' content='Funções - Guliherme Ranoya' />
 </head>
 
 <body>
@@ -69,9 +63,19 @@
         }
     } 
   })();
+
+  let descrit = "";
+  let textotitulo = "";
   
   if (typeof $_GET['blink'] != 'undefined' && $_GET['blink'] != null && $_GET['blink'] != '') {
     document.getElementById("spaceblock").innerHTML = decodeURI($_GET['blink']);
+
+    descrit = decodeURI($_GET['blink']);
+  }
+
+  if (typeof $_GET['titulo'] != 'undefined' && $_GET['titulo'] != null && $_GET['titulo'] != '') {
+    
+    descrit = decodeURI($_GET['titulo']);
   }
 
   let badScroll = (window.navigator.platform.toString().indexOf("Win") >= 0 || window.navigator.platform.toString().indexOf("Linux") >= 0);
@@ -121,7 +125,7 @@
     Runtime,
     Inspector,
   } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
-  import define from "https://api.observablehq.com/@ranoya/livrojavascript-8.js?v=4";
+  import define from "https://api.observablehq.com/` + $_GET['url'] + `.js?v=4";
   new Runtime().module(define, Inspector.into("#notebook"));
     
     
@@ -129,6 +133,36 @@
     `);
     autopub.appendChild(elautopub);
     document.getElementsByTagName("body")[0].appendChild(autopub);
+
+
+    // Meta-informações
+    const metainfo1 = document.createElement('meta');
+    const metainfo2 = document.createElement('meta');
+    metainfo1.setAttribute("name", "description");
+    metainfo2.setAttribute("property", "og:description");
+    metainfo1.setAttribute("content", descrit);
+    metainfo2.setAttribute("content", descrit);
+    const metatitle1 = document.createElement('title');
+    const metatitle2 = document.createElement('meta');
+    metatitle2.setAttribute("property", "og:title");
+    metatitle2.setAttribute("content", titulo);
+
+    const conteudotitulo = document.createTextNode(textotitulo);
+
+    metatitle1.appendChild(conteudotitulo);
+
+    document.getElementsByTagName("head")[0].appendChild(metainfo1);
+    document.getElementsByTagName("head")[0].appendChild(metainfo2);
+    document.getElementsByTagName("head")[0].appendChild(metatitle1);
+    document.getElementsByTagName("head")[0].appendChild(metatitle2);
+
+
+
+
+    
+
+
+
 </script>
 
 
