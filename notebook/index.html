@@ -319,6 +319,14 @@
       if (history.length > 2) {
         document.getElementById("botback").style.display = "block";
       }
+
+      if (
+        typeof $_GET["full"] != "undefined" &&
+        $_GET["full"] != null &&
+        $_GET["full"] != ""
+      ) {
+        btclick("botesq");
+      }
     </script>
   </body>
 </html>
