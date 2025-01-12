@@ -125,7 +125,7 @@
     Runtime,
     Inspector,
   } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
-  import define from "https://api.observablehq.com/` + $_GET['url'] + `.js?v=4";
+  import define from "https://api.observablehq.com/` + $_GET['notebook'] + `.js?v=4";
   new Runtime().module(define, Inspector.into("#notebook"));
     
     
@@ -145,7 +145,7 @@
     const metatitle1 = document.createElement('title');
     const metatitle2 = document.createElement('meta');
     metatitle2.setAttribute("property", "og:title");
-    metatitle2.setAttribute("content", titulo);
+    metatitle2.setAttribute("content", textotitulo);
 
     const conteudotitulo = document.createTextNode(textotitulo);
 
