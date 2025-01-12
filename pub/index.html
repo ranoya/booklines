@@ -26,15 +26,7 @@
 
     <!-- METAINFORMAÇÃO PARA COMPARTILHAMENTO -->
 
-    <meta property='og:url' content='https://url' />
-    <meta property='og:image:width' content='600' />
-    <meta property='og:image:height' content='600' />
-    <meta property='og:image:type' content='image/jpeg' />
-    <meta property='og:image' content='cover image600.jpg' />
-    <meta property='og:image:secure_url' content='cover image600.jpg' />
-    <link rel='image_src' type='image/jpg' href='cover image600.jpg' />
-    <link rel='icon' type='image/png' href='cover image16.png' />
-    <link rel='shortcut icon' href='cover image57.png' />
+    <link rel="icon" type="image/png" href="../icon.png" />
 
 </head>
 
@@ -84,6 +76,11 @@
     document.getElementsByTagName("head")[0].innerHTML += `
     <style>
 
+        :root {
+        --timeline-text-color: #e6edf5;
+        --timeline-text-over: #77cfe3;
+        }
+
         ::-webkit-scrollbar {
         width: 30px;
         height: 8px;
@@ -92,6 +89,8 @@
 
         ::-webkit-scrollbar-track {
         background: var(--base-background, #ffffff);
+        border-right: 1px dashed var(--timeline-text-color, #dfd4b7);
+        
         }
 
         ::-webkit-scrollbar:hover {
@@ -100,18 +99,17 @@
 
         ::-webkit-scrollbar-thumb {
         background: var(--base-background, #ffffff);
-        border-right: 8px solid var(--timeline-text-color, #d0d9df);
+        border-right: 8px solid var(--timeline-text-color, #dfd4b7);
         }
 
         ::-webkit-scrollbar-thumb:hover {
         /* background: var(--timeline-text-over, #aed5d5); */
         background: var(--base-background, #ffffff);
-        border-right: 8px solid var(--timeline-text-over, #a8c4d9);
+        border-right: 8px solid var(--timeline-text-over, #ba890a);
 
         }
 
     </style>
-
     `;
   }
 </script>
