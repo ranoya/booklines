@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>ART/NDC/ODE</title>
+    <meta
+      name="description"
+      content="Coleção de obras de arte generativa e arte computacional"
+    />
+    <meta
+      property="og:description"
+      content="Coleção de obras de arte generativa e arte computacional"
+    />
+    <link rel="icon" type="image/png" href="/assets/memorial16.png" />
+    <link rel="manifest" href="/livros/memorial/manifest.json" />
+
+    <style>
+      * {
+        margin: 0;
+        border: 0;
+        padding: 0;
+      }
+
+      body,
+      html {
+        overflow: hidden;
+        width: 100vw;
+        height: 100dvh;
+      }
+
+      iframe {
+        width: 100vw;
+        height: 100dvh;
+      }
+    </style>
+
+    <script>
+      $_GET = [];
+      (function () {
+        corte = window.location.href.toString().indexOf("?");
+        if (corte > 0) {
+          argumento = window.location.href.toString().substring(corte + 1);
+          argumentos = argumento.split("&");
+          for (arg in argumentos) {
+            let argCorte = argumentos[arg].indexOf("=");
+            $_GET[argumentos[arg].substring(0, argCorte)] = argumentos[
+              arg
+            ].substring(argCorte + 1);
+          }
+        }
+      })();
+
+      let go = "";
+
+      if (
+        typeof $_GET["go"] != "undefined" &&
+        $_GET["go"] != "" &&
+        $_GET["go"] != null
+      ) {
+        go = "&s=" + $_GET["go"];
+      }
+
+      let u =
+        "https://slidelines.vercel.app/timelineh/?pattern=true&allblocks=true&followbg=true&timeheight=130&file=https://docs.google.com/spreadsheets/d/1SxGT3E57CSn6r19a8BeVDWpT9dce0gi7jkAYltREeu4/edit?gid=325270169#gid=325270169&theme=https://slidelines.vercel.app/styles/memorial.css" +
+        go;
+    </script>
+  </head>
+
+  <body>
+    <iframe id="conteudo"></iframe>
+  </body>
+
+  <script>
+    document.getElementById("conteudo").src = u;
+  </script>
+</html>
