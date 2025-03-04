@@ -48,9 +48,10 @@
         z-index: 10;
         width: 60vw;
         height: 60vh;
-        top: 25vh;
-        left: 30vw;
+        top: 47dvh;
+        right: 85px;
         z-index: 5000;
+        text-align: right;
       }
 
       #logo {
@@ -58,17 +59,22 @@
         z-index: 10;
         width: 60vw;
         height: 60vh;
-        top: 25vh;
-        left: 30vw;
+        top: 50dvh;
+        right: 85px;
         z-index: 5000;
+        text-align: right;
       }
 
       #logo svg path {
-        fill: #095170;
+        animation-name: cicloA;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
       }
 
       #nome svg path {
-        fill: #095170;
+        animation-name: cicloA;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
       }
 
       #init {
@@ -82,6 +88,48 @@
         background-repeat: no-repeat;
         background-position: right bottom;
         background-size: contain;
+      }
+
+      @keyframes cicloA {
+        0% {
+          fill: #095170;
+        }
+        10% {
+          fill: #1d404f;
+        }
+        20% {
+          fill: #0d1f27;
+        }
+        28% {
+          fill: #2d4c58;
+        }
+        36% {
+          fill: #5a7581;
+        }
+        42% {
+          fill: #b6c8cf;
+        }
+        50% {
+          fill: #e2eff4;
+        }
+        58% {
+          fill: #a2dbf3;
+        }
+        64% {
+          fill: #5fc0ea;
+        }
+        72% {
+          fill: #259fd3;
+        }
+        80% {
+          fill: #0875a4;
+        }
+        90% {
+          fill: #0d4f6b;
+        }
+        100% {
+          fill: #095170;
+        }
       }
     </style>
 
@@ -104,7 +152,7 @@
     <div id="titulo"></div>
     <div id="nome">
       <svg
-        style="width: 7vw"
+        style="width: max(15vw, 150px)"
         viewBox="0 0 242 50"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -117,7 +165,7 @@
     </div>
     <div id="logo">
       <svg
-        style="width: 15vw"
+        style="width: max(35vw, 320px)"
         viewBox="0 0 483 92"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
