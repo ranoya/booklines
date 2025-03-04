@@ -26,6 +26,7 @@
     <style>
       :root {
         --cor-texto: #ffffff;
+        --rebase-color: #ffffff;
       }
 
       * {
@@ -75,7 +76,7 @@
         animation-duration: 3s;
         animation-iteration-count: infinite;
         */
-        fill: var(--cor-texto);
+        fill: var(--rebase-color);
       }
 
       #nome svg path {
@@ -238,16 +239,26 @@
       };
 
       let h = 0;
+      let h2 = h + 180;
 
       setInterval(function () {
         document
           .querySelector(":root")
           .style.setProperty("--cor-texto", hsl2hex(h, 46, 87));
 
+        document
+          .querySelector(":root")
+          .style.setProperty("--rebase-color", hsl2hex(h2, 46, 87));
+
         h++;
+        h2 += 5;
 
         if (h > 360) {
           h = 0;
+        }
+
+        if (h2 > 360) {
+          h2 = 0;
         }
       }, 10);
     </script>
