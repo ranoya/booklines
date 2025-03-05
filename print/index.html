@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<head>
+    <meta charset='utf-8' />
+    <meta name ='pinterest' content ='nopin' />
+    <meta name='pinterest' content='nohover' />
+    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1' />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' />
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css"
+/>
+    <link rel='stylesheet' type='text/css' href='https://booklines.vercel.app/livros/javascript/fancyobservable.css' />
+    <meta property='og:type' content='article' />
+    <meta name='author' content='Guilherme Ranoya'>
+    <meta property='og:locale' content='pt_BR' />
+    <meta property='og:site_name' content='booklines' />
+    <meta name='application-name' content='booklines' />
+    <meta name='generator' content='Observable' />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    
+
+
+    <!-- METAINFORMAÇÃO PARA COMPARTILHAMENTO -->
+
+    <link rel="icon" type="image/png" href="../icon.png" />
+
+</head>
+
+<body>
+  
+<div id="wrap">
+  <div></div>
+  <div id="notebook"></div>
+  <div></div>
+</div>
+
+
+<script>
+  hljs.highlightAll();
+
+  $_GET = [];
+  (function(){
+    corte = window.location.href.toString().indexOf('?');
+    if (corte > 0) {
+        argumento = window.location.href.toString().substring(corte + 1);
+        argumentos = argumento.split('&');
+        for (arg in argumentos){
+            let argCorte = argumentos[arg].indexOf('=');
+            $_GET[argumentos[arg].substring(0,argCorte)] = argumentos[arg].substring(argCorte + 1);
+        }
+    } 
+  })();
+
+  let descrit = "";
+  let textotitulo = "";
+  
+  if (typeof $_GET['titulo'] != 'undefined' && $_GET['titulo'] != null && $_GET['titulo'] != '') {
+    
+    textotitulo = decodeURI($_GET['titulo']);
+  }
+
+  let badScroll = (window.navigator.platform.toString().indexOf("Win") >= 0 || window.navigator.platform.toString().indexOf("Linux") >= 0);
+
+  if (badScroll) {
+    document.getElementsByTagName("head")[0].innerHTML += `
+    <style>
+
+        :root {
+        --timeline-text-color: #e6edf5;
+        --timeline-text-over: #77cfe3;
+        }
+
+        ::-webkit-scrollbar {
+        width: 30px;
+        height: 8px;
+        background-color: var(--base-background, #ffffff);
+        }
+
+        ::-webkit-scrollbar-track {
+        background: var(--base-background, #ffffff);
+        border-right: 1px dashed var(--timeline-text-color, #dfd4b7);
+        
+        }
+
+        ::-webkit-scrollbar:hover {
+        background-color: var(--timeline-text-over, #ffffff);
+        }
+
+        ::-webkit-scrollbar-thumb {
+        background: var(--base-background, #ffffff);
+        border-right: 8px solid var(--timeline-text-color, #dfd4b7);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+        /* background: var(--timeline-text-over, #aed5d5); */
+        background: var(--base-background, #ffffff);
+        border-right: 8px solid var(--timeline-text-over, #ba890a);
+
+        }
+
+    </style>
+    `;
+  }
+</script>
+
+<script>
+    const autopub = document.createElement("script");
+    autopub.setAttribute("type", "module");
+    const elautopub = document.createTextNode(`
+    
+    import {
+    Runtime,
+    Inspector,
+  } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
+  import define from "https://api.observablehq.com/` + $_GET['notebook'] + `.js?v=4";
+  new Runtime().module(define, Inspector.into("#notebook"));
+    
+    
+    
+    `);
+    autopub.appendChild(elautopub);
+    document.getElementsByTagName("body")[0].appendChild(autopub);
+
+
+    // Meta-informações
+    const metainfo1 = document.createElement('meta');
+    const metainfo2 = document.createElement('meta');
+    metainfo1.setAttribute("name", "description");
+    metainfo2.setAttribute("property", "og:description");
+    metainfo1.setAttribute("content", descrit);
+    metainfo2.setAttribute("content", descrit);
+    const metatitle1 = document.createElement('title');
+    const metatitle2 = document.createElement('meta');
+    metatitle2.setAttribute("property", "og:title");
+    metatitle2.setAttribute("content", textotitulo);
+
+    const conteudotitulo = document.createTextNode(textotitulo);
+
+    metatitle1.appendChild(conteudotitulo);
+
+    document.getElementsByTagName("head")[0].appendChild(metainfo1);
+    document.getElementsByTagName("head")[0].appendChild(metainfo2);
+    document.getElementsByTagName("head")[0].appendChild(metatitle1);
+    document.getElementsByTagName("head")[0].appendChild(metatitle2);
+
+
+
+
+    
+
+
+
+</script>
+
+
+    </body>
+</html>
