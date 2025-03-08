@@ -32,9 +32,55 @@
         width: 100vw;
         height: 100dvh;
       }
+
+      #fullscbutton {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        background-color: var(--valor-tempo, white);
+        opacity: 0.5;
+        z-index: 1000;
+      }
+
+      #fullscbutton {
+        opacity: 1;
+      }
     </style>
 
     <script>
+      let toggleFullscreen = function (event) {
+        var element = document.body;
+
+        if (event instanceof HTMLElement) {
+          element = event;
+        }
+
+        var isFullscreen =
+          document.webkitIsFullScreen || document.mozFullScreen || false;
+
+        element.requestFullScreen =
+          element.requestFullScreen ||
+          element.webkitRequestFullScreen ||
+          element.mozRequestFullScreen ||
+          function () {
+            return false;
+          };
+        document.cancelFullScreen =
+          document.cancelFullScreen ||
+          document.webkitCancelFullScreen ||
+          document.mozCancelFullScreen ||
+          function () {
+            return false;
+          };
+
+        isFullscreen
+          ? document.cancelFullScreen()
+          : element.requestFullScreen();
+      };
+
       $_GET = [];
       (function () {
         corte = window.location.href.toString().indexOf("?");
@@ -67,6 +113,7 @@
   </head>
 
   <body>
+    <div onclick="toggleFullscreen()" id="fullscbutton"></div>
     <iframe id="conteudo"></iframe>
   </body>
 
