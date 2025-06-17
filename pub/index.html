@@ -159,6 +159,7 @@
 
 <script>
   let scan = "";
+  let str = "";
     let refaz = setInterval(() => {
 
       console.log("ta indo...");
@@ -171,7 +172,11 @@
           scan = document.getElementsByTagName(t[k]);
 
           for (let i=0; i<scan.length; i++) {
-            scan[i].innerHTML.replace(/\[\^.*\]/g, "<sup>$&</sup>");
+            if (scan[i].innerHTML.match(/\[\^.*\]/g)) {
+              str = scan[i].innerHTML.replace(/\[\^.*\]/g, "<sup>$1</sup>");
+              // scan[i].innerHTML.replace(/\[\^.*\]/g, "<sup>$1</sup>");
+              scan[i].innerHTML = str;
+            }
           }
         }
       } 
