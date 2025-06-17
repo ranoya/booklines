@@ -154,10 +154,14 @@
     document.getElementsByTagName("head")[0].appendChild(metatitle1);
     document.getElementsByTagName("head")[0].appendChild(metatitle2);
 
+</script>
 
-    
-    let scan = "";
+
+<script>
+  let scan = "";
     let refaz = setInterval(() => {
+
+      console.log("ta indo...");
 
       if (document.getElementById("notebook").innerHTML != "") {
         clearInterval(refaz);
@@ -172,9 +176,6 @@
         }
       } 
     }, 100);
-
-    
-    
 </script>
 
 
