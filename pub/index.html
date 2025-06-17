@@ -173,7 +173,7 @@
 
           for (let i=0; i<scan.length; i++) {
             if (scan[i].innerHTML.match(/\[\^.*\]/g)) {
-              str = scan[i].innerHTML.replace(/\[\^.*\]/g, "<sup>$1</sup>");
+              str = scan[i].innerHTML.replace(/\[\^(.*)\]/g, `<sup>$1</sup>`);
               // scan[i].innerHTML.replace(/\[\^.*\]/g, "<sup>$1</sup>");
               scan[i].innerHTML = str;
             }
