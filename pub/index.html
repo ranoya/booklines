@@ -156,17 +156,6 @@
 
 
     
-    if (typeof _GET[''] != 'undefined' && _GET[''] != null && _GET[''] != '') {
-    let muda = setInterval(() => {
-    let inpt = document.getElementsByTagName('input')[];
-    if (inpt.value != decodeURIComponent(_GET[''])) {
-    inpt.value = decodeURIComponent(_GET['']);
-    inpt.dispatchEvent(new Event('input', { bubbles: true}));
-    } else { clearInterval(muda);}
-    },100);}
-
-
-    
     let scan = "";
     let refaz = setInterval(() => {
 
@@ -186,15 +175,6 @@
 
     
     
-
-
-
-
-
-    
-
-
-
 </script>
 
 
