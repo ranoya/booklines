@@ -171,7 +171,7 @@
           scan = document.getElementsByTagName(t[k]);
 
           for (let i=0; i<scan.length; i++) {
-            scan[i].innerHTML = scan[i].innerHTML.replace(/\[\^.*\]/g, "<sup>$&</sup>");
+            scan[i].innerHTML.replace(/\[\^.*\]/g, "<sup>$&</sup>");
           }
         }
       } 
