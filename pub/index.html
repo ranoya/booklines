@@ -172,9 +172,8 @@
           scan = document.getElementsByTagName(t[k]);
 
           for (let i=0; i<scan.length; i++) {
-            if (scan[i].innerHTML.match(/\[\^.*\]/g)) {
-              str = scan[i].innerHTML.replace(/\[\^(.*)\]/g, `<sup>$1</sup>`);
-              // scan[i].innerHTML.replace(/\[\^.*\]/g, "<sup>$1</sup>");
+            if (scan[i].innerHTML.match(/\[\^(.{1,5})\]/g)) {
+              str = scan[i].innerHTML.replace(/\[\^(.{1,5})\]/g, `<sup>$1</sup>`);
               scan[i].innerHTML = str;
             }
           }
