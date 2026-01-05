@@ -89,7 +89,12 @@
         el: "dblobis",
       });
     </script>
-  </head>
+  <style>
+      html,body {
+        background-color: white;
+      }
+    </style>
+</head>
 
   <body>
     <div id="obs"></div>
