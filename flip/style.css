@@ -93,7 +93,6 @@ body {
 #fut_PaginaCover.initdouble {
   transform-origin: left center;
   width: calc(50vw - 30px);
-  overflow: hidden;
 }
 
 #pas_Wrap,
@@ -155,6 +154,7 @@ body {
   width: calc(50vw - 30px);
   height: calc(100dvh - 60px);
   transform-origin: left center;
+  overflow: hidden;
 }
 
 #pas_BlocoBack,
