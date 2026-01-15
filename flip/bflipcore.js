@@ -431,7 +431,7 @@ gsdata($_GET["file"], function (d) {
   docs = [];
 
   for (let i = 0; i < d.length; i++) {
-    docs[i] = d[i];
+    docs[i] = d[i].link;
   }
 
   // cria o documento e os eventos
