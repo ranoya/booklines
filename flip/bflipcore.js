@@ -492,6 +492,7 @@ let decresce = function () {
 
 let acresce = function () {
   document.getElementById("menos").classList.remove("naomostra");
+  document.getElementById("mais").classList.remove("blink");
   clearInterval(move);
 
   let pas_pdf = document.getElementById("pas_PaginaFundo_DIR");

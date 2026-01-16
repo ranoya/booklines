@@ -1,3 +1,25 @@
+@keyframes blinka {
+  0% {
+    background-color: #00000000;
+  }
+  20% {
+    background-color: #00000033;
+  }
+  40% {
+    background-color: #00000000;
+  }
+  60% {
+    background-color: #00000033;
+  }
+  80% {
+    background-color: #00000000;
+  }
+
+  100% {
+    background-color: #00000000;
+  }
+}
+
 html,
 body {
   overflow: hidden !important;
@@ -61,6 +83,14 @@ body {
   top: 100px;
   height: calc(100dvh - 220px);
   cursor: pointer;
+}
+
+#mais.blink {
+  animation-name: blinka;
+  animation-duration: 1.5s;
+  animation-delay: 4s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
 }
 
 #menos {
