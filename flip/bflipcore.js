@@ -185,12 +185,12 @@ let gerencia = function (dir) {
     // console.log("a camanda atual é " + davez[atual]);
 
     console.log(
-      "Tem CSS? " + docs[posit].css + "... e o da vez é" + davez[atual]
+      "Tem CSS? " + docs[posit + 1].css + "... e o da vez é" + davez[atual]
     );
     if (
-      typeof docs[posit].css != "undefined" &&
-      docs[posit].css != null &&
-      docs[posit].css != ""
+      typeof docs[posit + 1].css != "undefined" &&
+      docs[posit + 1].css != null &&
+      docs[posit + 1].css != ""
     ) {
       document
         .getElementById(ordena.proximo() + "Ifr_PaginaCover")
@@ -249,9 +249,9 @@ let gerencia = function (dir) {
       "Tem CSS? " + docs[posit].css + "... e o da vez é" + davez[atual]
     );
     if (
-      typeof docs[posit].css != "undefined" &&
-      docs[posit].css != null &&
-      docs[posit].css != ""
+      typeof docs[posit + 1].css != "undefined" &&
+      docs[posit + 1].css != null &&
+      docs[posit + 1].css != ""
     ) {
       document
         .getElementById(ordena.proximo() + "Ifr_PaginaCover")
