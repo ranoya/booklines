@@ -670,11 +670,11 @@ gsdata($_GET["file"], function (d) {
   escrevepresente("fut_", "fut_livro", 4);
 
   if (
-    localStorage.getItem("alunosdgen") == "" ||
-    typeof localStorage.getItem("alunosdgen") == "undefined"
+    localStorage.getItem("livroJS_SE") == "" ||
+    typeof localStorage.getItem("livroJS_SE") == "undefined"
   ) {
     localStorage.setItem(
-      "alunosdgen",
+      "livroJS_SE",
       `/*
 
 Aperte CMD/CTRL+S para rodar
@@ -713,5 +713,5 @@ function draw() {
   }
 
   document.getElementById("timeline").innerHTML = `
-    <iframe frameborder="0" style="width: 100%; height: 100%;" src='https://omnicode.vercel.app/cll/?buffer=alunosdgen&lang=p5&pborder=00000044&bordercolor=${bgc}&bgcolor=${bgc}&bordercolor=${bgc}&gutcolor=${bgc}&startandrun=true&'></iframe>`;
+    <iframe frameborder="0" style="width: 100%; height: 100%;" src='https://omnicode.vercel.app/cll/?buffer=livroJS_SE&lang=p5&pborder=00000044&bordercolor=${bgc}&bgcolor=${bgc}&bordercolor=${bgc}&gutcolor=${bgc}&startandrun=true&'></iframe>`;
 });
