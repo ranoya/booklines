@@ -245,10 +245,13 @@ let gerencia = function (dir) {
 
   if (dir && angulo5 == 180) {
     // console.log("gerencia: iniciou");
-    document.getElementById("fut_livro").style.zIndex = 100;
-    document.getElementById("pres_livro").style.zIndex = 100;
-    document.getElementById("pas_livro").style.zIndex = 100;
-    document.getElementById(ordena.proximo() + "livro").style.zIndex = 300;
+
+    if (posit < docs.length - 2) {
+      document.getElementById("fut_livro").style.zIndex = 100;
+      document.getElementById("pres_livro").style.zIndex = 100;
+      document.getElementById("pas_livro").style.zIndex = 100;
+      document.getElementById(ordena.proximo() + "livro").style.zIndex = 300;
+    }
     // console.log("gerencia: colorou o documento certo em cima: " + ordena.proximo());
 
     // console.log("angulo " + angulo5);
@@ -543,9 +546,7 @@ let acresce = function () {
         angulo5 = 180;
         atualiza();
 
-        if (posit < docs.length - 2) {
-          gerencia(true);
-        }
+        gerencia(true);
 
         if (repete) {
           // console.log("tentando denovo acresce");
