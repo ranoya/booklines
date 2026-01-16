@@ -184,7 +184,9 @@ let gerencia = function (dir) {
 
     // console.log("a camanda atual é " + davez[atual]);
 
-    console.log("Tem CSS? " + docs[posit].css);
+    console.log(
+      "Tem CSS? " + docs[posit].css + "... e o da vez é" + davez[atual]
+    );
     if (
       typeof docs[posit].css != "undefined" &&
       docs[posit].css != null &&
@@ -243,7 +245,9 @@ let gerencia = function (dir) {
 
     // console.log("a camanda atual é " + davez[atual]);
 
-    console.log("Tem CSS? " + docs[posit].css);
+    console.log(
+      "Tem CSS? " + docs[posit].css + "... e o da vez é" + davez[atual]
+    );
     if (
       typeof docs[posit].css != "undefined" &&
       docs[posit].css != null &&
