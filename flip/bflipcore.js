@@ -199,7 +199,7 @@ let gerencia = function (dir) {
         docs[1].url;
     }
 
-    console.log("posit = " + posit + " arq = " + docs[posit].url);
+    // console.log("posit = " + posit + " arq = " + docs[posit].url);
 
     if (posit == 0) {
       document.getElementById("menos").classList.add("naomostra");
@@ -614,6 +614,15 @@ $_GET = [];
     }
   }
 })();
+
+if (
+  typeof $_GET["bgcolor"] != "undefined" &&
+  $_GET["bgcolor"] != null &&
+  $_GET["bgcolor"] != ""
+) {
+  document.getElementsByTagName("html")[0].style.backgroundColor =
+    "#" + $_GET["bgcolor"];
+}
 
 gsdata($_GET["file"], function (d) {
   docs = [];
