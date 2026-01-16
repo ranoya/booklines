@@ -89,7 +89,7 @@ body {
   animation-name: blinka;
   animation-duration: 1.5s;
   animation-delay: 4s;
-  animation-iteration-count: infinite;
+  animation-iteration-count: 6;
   animation-direction: normal;
 }
 
