@@ -70,11 +70,15 @@ let escrevepresente = function (pre, onde, delta) {
       ></iframe>
        </div>
       </div>
-      <div id="${pre}BlocoCover">
-        <div style="background-color: white; overflow-x: hidden" id="${pre}PaginaCover">
+      <div id="${pre}BlocoCover" css="${docs[posit + delta + 1].css}">
+        <div style="background-color: white; overflow-x: hidden" id="${pre}PaginaCover" css="${
+      docs[posit + delta + 1].css
+    }">
           <iframe id="${pre}Ifr_PaginaCover" frameborder="0" src="${
       docs[posit + delta + 1].url
-    }" style="background-color: white;"></iframe>
+    }" style="background-color: white;" css="${
+      docs[posit + delta + 1].css
+    }"></iframe>
         </div>
       </div>
       
@@ -180,28 +184,35 @@ let gerencia = function (dir) {
     document.getElementById(ordena.proximo() + "Ifr_PaginaFundo_DIR").src =
       docs[posit - 1].url;
 
-    // console.log("colocou novos slides em " + ordena.proximo());
-
-    // console.log("a camanda atual é " + davez[atual]);
-
-    console.log(
-      "Tem CSS? " + docs[posit + 1].css + "... e o da vez é" + davez[atual]
-    );
     if (
-      typeof docs[posit + 1].css != "undefined" &&
-      docs[posit + 1].css != null &&
-      docs[posit + 1].css != ""
+      typeof docs[posit - 3].css != "undefined" &&
+      docs[posit - 3].css != null &&
+      docs[posit - 3].css != ""
     ) {
       document
         .getElementById(ordena.proximo() + "Ifr_PaginaCover")
-        .classList.add("initdouble");
+        .setAttribute("css", "sim");
+      document
+        .getElementById(ordena.proximo() + "PaginaCover")
+        .setAttribute("css", "sim");
+      document
+        .getElementById(ordena.proximo() + "BlocoCover")
+        .setAttribute("css", "sim");
+    } else {
       document
         .getElementById(ordena.proximo() + "Ifr_PaginaCover")
-        .classList.add("initdouble");
+        .setAttribute("css", "");
       document
-        .getElementById(ordena.proximo() + "Ifr_BlocoCover")
-        .classList.add("initdouble");
+        .getElementById(ordena.proximo() + "PaginaCover")
+        .setAttribute("css", "");
+      document
+        .getElementById(ordena.proximo() + "BlocoCover")
+        .setAttribute("css", "");
     }
+
+    // console.log("colocou novos slides em " + ordena.proximo());
+
+    // console.log("a camanda atual é " + davez[atual]);
 
     ordena.pratras();
 
@@ -245,23 +256,30 @@ let gerencia = function (dir) {
 
     // console.log("a camanda atual é " + davez[atual]);
 
-    console.log(
-      "Tem CSS? " + docs[posit].css + "... e o da vez é" + davez[atual]
-    );
     if (
-      typeof docs[posit + 1].css != "undefined" &&
-      docs[posit + 1].css != null &&
-      docs[posit + 1].css != ""
+      typeof docs[posit + 5].css != "undefined" &&
+      docs[posit + 5].css != null &&
+      docs[posit + 5].css != ""
     ) {
       document
         .getElementById(ordena.proximo() + "Ifr_PaginaCover")
-        .classList.add("initdouble");
+        .setAttribute("css", "sim");
+      document
+        .getElementById(ordena.proximo() + "PaginaCover")
+        .setAttribute("css", "sim");
+      document
+        .getElementById(ordena.proximo() + "BlocoCover")
+        .setAttribute("css", "sim");
+    } else {
       document
         .getElementById(ordena.proximo() + "Ifr_PaginaCover")
-        .classList.add("initdouble");
+        .setAttribute("css", "");
       document
-        .getElementById(ordena.proximo() + "Ifr_BlocoCover")
-        .classList.add("initdouble");
+        .getElementById(ordena.proximo() + "PaginaCover")
+        .setAttribute("css", "");
+      document
+        .getElementById(ordena.proximo() + "BlocoCover")
+        .setAttribute("css", "");
     }
 
     ordena.prafrente();
@@ -386,6 +404,50 @@ let decresce = function () {
           // console.log("tentando denovo decresce");
           decresce();
         }
+
+        if (
+          typeof fut_pgCover.getAttribute("css") != "undefined" &&
+          fut_pgCover.getAttribute("css") != null &&
+          fut_pgCover.getAttribute("css") != ""
+        ) {
+          document
+            .getElementById("fut_PaginaCover")
+            .classList.add("initdouble");
+          document
+            .getElementById("fut_Ifr_PaginaCover")
+            .classList.add("initdouble");
+          document.getElementById("fut_BlocoCover").classList.add("initdouble");
+        }
+
+        if (
+          typeof pas_pgCover.getAttribute("css") != "undefined" &&
+          pas_pgCover.getAttribute("css") != null &&
+          pas_pgCover.getAttribute("css") != ""
+        ) {
+          document
+            .getElementById("pas_PaginaCover")
+            .classList.add("initdouble");
+          document
+            .getElementById("pas_Ifr_PaginaCover")
+            .classList.add("initdouble");
+          document.getElementById("pas_BlocoCover").classList.add("initdouble");
+        }
+
+        if (
+          typeof pres_pgCover.getAttribute("css") != "undefined" &&
+          pres_pgCover.getAttribute("css") != null &&
+          pres_pgCover.getAttribute("css") != ""
+        ) {
+          document
+            .getElementById("pres_PaginaCover")
+            .classList.add("initdouble");
+          document
+            .getElementById("pres_Ifr_PaginaCover")
+            .classList.add("initdouble");
+          document
+            .getElementById("pres_BlocoCover")
+            .classList.add("initdouble");
+        }
       }
     }, 1);
   }
@@ -455,6 +517,50 @@ let acresce = function () {
         if (repete) {
           // console.log("tentando denovo acresce");
           acresce();
+        }
+
+        if (
+          typeof fut_pgCover.getAttribute("css") != "undefined" &&
+          fut_pgCover.getAttribute("css") != null &&
+          fut_pgCover.getAttribute("css") != ""
+        ) {
+          document
+            .getElementById("fut_PaginaCover")
+            .classList.add("initdouble");
+          document
+            .getElementById("fut_Ifr_PaginaCover")
+            .classList.add("initdouble");
+          document.getElementById("fut_BlocoCover").classList.add("initdouble");
+        }
+
+        if (
+          typeof pas_pgCover.getAttribute("css") != "undefined" &&
+          pas_pgCover.getAttribute("css") != null &&
+          pas_pgCover.getAttribute("css") != ""
+        ) {
+          document
+            .getElementById("pas_PaginaCover")
+            .classList.add("initdouble");
+          document
+            .getElementById("pas_Ifr_PaginaCover")
+            .classList.add("initdouble");
+          document.getElementById("pas_BlocoCover").classList.add("initdouble");
+        }
+
+        if (
+          typeof pres_pgCover.getAttribute("css") != "undefined" &&
+          pres_pgCover.getAttribute("css") != null &&
+          pres_pgCover.getAttribute("css") != ""
+        ) {
+          document
+            .getElementById("pres_PaginaCover")
+            .classList.add("initdouble");
+          document
+            .getElementById("pres_Ifr_PaginaCover")
+            .classList.add("initdouble");
+          document
+            .getElementById("pres_BlocoCover")
+            .classList.add("initdouble");
         }
       }
     }, 1);
