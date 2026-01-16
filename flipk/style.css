@@ -53,7 +53,7 @@ body {
   position: fixed;
   bottom: -78dvh;
   height: 72dvh;
-  width: calc(100% - 40px);
+  width: calc(100% - 50px);
   left: 20px;
   z-index: 800;
   transition: transform 0.4s ease-in;
