@@ -56,7 +56,7 @@ body {
   position: fixed;
   z-index: 500;
   width: 30px;
-  background-color: red;
+  background-color: transparent;
   right: 0;
   top: 100px;
   height: calc(100dvh - 220px);
@@ -67,7 +67,7 @@ body {
   position: fixed;
   z-index: 500;
   width: 30px;
-  background-color: red;
+  background-color: transparent;
   left: 0;
   top: 100px;
   height: calc(100dvh - 220px);
@@ -76,23 +76,49 @@ body {
 
 #pas_BlocoCover.initdouble,
 #pres_BlocoCover.initdouble,
-#fut_BlocoCover.initdouble {
+#fut_BlocoCover.initdouble,
+#pas_BlocoBack.initdouble,
+#pres_BlocoBack.initdouble,
+#fut_BlocoBack.initdouble,
+#pas_BlocoFundoD.initdouble,
+#pres_BlocoFundoD.initdouble,
+#fut_BlocoFundoD.initdouble,
+#pas_BlocoFundoE.initdouble,
+#pres_BlocoFundoE.initdouble,
+#fut_BlocoFundoE.initdouble {
   width: calc(100vw - 60px) !important;
-  transform: translateX(calc(0vw)) !important;
-}
-
-#pas_BlocoCover.initdouble,
-#pres_BlocoCover.initdouble,
-#fut_BlocoCover.initdouble {
-  width: calc(50vw - 30px) !important;
-  transform: translateX(calc(50vw - 30px)) !important;
+  transform: translateX(0) !important;
 }
 
 #pas_PaginaCover.initdouble,
 #pres_PaginaCover.initdouble,
-#fut_PaginaCover.initdouble {
+#fut_PaginaCover.initdouble,
+#pas_PaginaBack.initdouble,
+#pres_PaginaBack.initdouble,
+#fut_PaginaBack.initdouble,
+#pas_PaginaFundo_DIR.initdouble,
+#pres_PaginaFundo_DIR.initdouble,
+#fut_PaginaFundo_DIR.initdouble,
+#pas_PaginaFundo_ESQ.initdouble,
+#pres_PaginaFundo_ESQ.initdouble,
+#fut_PaginaFundo_ESQ.initdouble {
   transform-origin: left center;
-  width: calc(50vw - 30px);
+  width: calc(100vw - 60px);
+}
+
+#pas_Ifr_PaginaCover.initdouble,
+#pres_Ifr_PaginaCover.initdouble,
+#fut_Ifr_PaginaCover.initdouble,
+#pas_Ifr_PaginaBack.initdouble,
+#pres_Ifr_PaginaBack.initdouble,
+#fut_Ifr_PaginaBack.initdouble,
+#pas_Ifr_PaginaFundo_DIR.initdouble,
+#pres_Ifr_PaginaFundo_DIR.initdouble,
+#fut_Ifr_PaginaFundo_DIR.initdouble,
+#pas_Ifr_PaginaFundo_ESQ.initdouble,
+#pres_Ifr_PaginaFundo_ESQ.initdouble,
+#fut_Ifr_PaginaFundo_ESQ.initdouble {
+  width: calc(100vw - 60px);
 }
 
 #pas_Wrap,
@@ -205,32 +231,4 @@ body {
 #fut_Ifr_PaginaFundo_ESQ {
   width: calc(50vw - 30px);
   height: calc(100dvh - 60px);
-}
-
-#pas_PASS_BlocoFundoE,
-#pres_PASS_BlocoFundoE,
-#fut_PASS_BlocoFundoE {
-  position: fixed !important;
-  top: -300dvh !important;
-}
-
-#pas_PASS_BlocoCover,
-#pres_PASS_BlocoCover,
-#fut_PASS_BlocoCover {
-  position: fixed !important;
-  top: -300dvh !important;
-}
-
-#pas_NEW_BlocoFundoE,
-#pres_NEW_BlocoFundoE,
-#fut_PASS_BlocoCover {
-  position: fixed !important;
-  top: -300dvh !important;
-}
-
-#pas_NEW_BlocoCover,
-#pres_NEW_BlocoCover,
-#fut_NEW_BlocoCover {
-  position: fixed !important;
-  top: -300dvh !important;
 }
