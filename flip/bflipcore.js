@@ -184,6 +184,8 @@ let gerencia = function (dir) {
     document.getElementById(ordena.proximo() + "Ifr_PaginaFundo_DIR").src =
       docs[posit - 1].url;
 
+    console.log("posit = " + posit + " arq = " + docs[posit].url);
+
     if (
       typeof docs[posit - 3].css != "undefined" &&
       docs[posit - 3].css != null &&
