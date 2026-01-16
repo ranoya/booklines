@@ -670,5 +670,5 @@ gsdata($_GET["file"], function (d) {
   escrevepresente("fut_", "fut_livro", 4);
 
   document.getElementById("timeline").innerHTML = `
-    <iframe frameborder="0" style="width: 100%; height: 100%;" src='https://omnicode.vercel.app/clr/?lang=html&pborder=00000044&bordercolor=${bgc}&bgcolor=${bgc}&bordercolor=${bgc}&gutcolor=${bgc}'></iframe>`;
+    <iframe frameborder="0" style="width: 100%; height: 100%;" src='https://omnicode.vercel.app/clr/?buffer=alunosdgen&lang=html&pborder=00000044&bordercolor=${bgc}&bgcolor=${bgc}&bordercolor=${bgc}&gutcolor=${bgc}'></iframe>`;
 });
