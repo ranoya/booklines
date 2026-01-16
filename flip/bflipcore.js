@@ -512,8 +512,6 @@ let acresce = function () {
         atualiza();
         gerencia(true);
 
-        resolvecapa();
-
         if (repete) {
           // console.log("tentando denovo acresce");
           acresce();
@@ -564,25 +562,6 @@ let acresce = function () {
         }
       }
     }, 1);
-  }
-};
-
-let primeiroclick = true;
-let resolvecapa = function () {
-  if (primeiroclick) {
-    primeiroclick = false;
-
-    document.getElementById("pas_BlocoCover").classList.remove("initdouble");
-
-    document.getElementById("pas_PaginaCover").classList.remove("initdouble");
-
-    document.getElementById("pres_BlocoCover").classList.remove("initdouble");
-
-    document.getElementById("pres_BlocoCover").classList.remove("initdouble");
-
-    document.getElementById("fut_BlocoCover").classList.remove("initdouble");
-
-    document.getElementById("fut_BlocoCover").classList.remove("initdouble");
   }
 };
 
