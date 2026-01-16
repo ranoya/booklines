@@ -175,7 +175,7 @@ let gerencia = function (dir) {
     // console.log("angulo " + angulo5);
 
     // console.log("o próximo conjunto é: " + ordena.proximo() + "Ifr_PaginaFundo_ESQ");
-    if (posit >= 2) {
+    if (posit >= 3) {
       document.getElementById(ordena.proximo() + "Ifr_PaginaFundo_ESQ").src =
         docs[posit - 4].url;
       document.getElementById(ordena.proximo() + "Ifr_PaginaCover").src =
