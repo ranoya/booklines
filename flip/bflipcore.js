@@ -267,7 +267,7 @@ let gerencia = function (dir) {
 
     // console.log("conjunto anterior é: " + ordena.anterior() + "Ifr_PaginaFundo_ESQ");
 
-    if (posit < docs.length - 4) {
+    if (posit < docs.length - 7) {
       document.getElementById(ordena.anterior() + "Ifr_PaginaFundo_ESQ").src =
         docs[posit + 4].url;
       document.getElementById(ordena.anterior() + "Ifr_PaginaCover").src =
