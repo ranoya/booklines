@@ -184,6 +184,23 @@ let gerencia = function (dir) {
 
     // console.log("a camanda atual é " + davez[atual]);
 
+    console.log("Tem CSS? " + docs[posit].css);
+    if (
+      typeof docs[posit].css != "undefined" &&
+      docs[posit].css != null &&
+      docs[posit].css != ""
+    ) {
+      document
+        .getElementById(ordena.anterior() + "Ifr_PaginaCover")
+        .classList.add("initdouble");
+      document
+        .getElementById(ordena.anterior() + "Ifr_PaginaBack")
+        .classList.add("initdouble");
+      document
+        .getElementById(ordena.anterior() + "Ifr_PaginaFundo_DIR")
+        .classList.add("initdouble");
+    }
+
     ordena.pratras();
 
     // console.log("andou pra tras na camada... a atual agora é " + davez[atual]);
@@ -232,15 +249,14 @@ let gerencia = function (dir) {
       docs[posit].css != null &&
       docs[posit].css != ""
     ) {
-      docs[posit + 4].url;
       document
-        .getElementById(davez[atual] + "Ifr_PaginaCover")
+        .getElementById(ordena.proximo() + "Ifr_PaginaCover")
         .classList.add("initdouble");
       document
-        .getElementById(davez[atual] + "Ifr_PaginaBack")
+        .getElementById(ordena.proximo() + "Ifr_PaginaBack")
         .classList.add("initdouble");
       document
-        .getElementById(davez[atual] + "Ifr_PaginaFundo_DIR")
+        .getElementById(ordena.proximo() + "Ifr_PaginaFundo_DIR")
         .classList.add("initdouble");
     }
 
