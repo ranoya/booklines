@@ -278,13 +278,13 @@ let gerencia = function (dir) {
         docs[posit + 7].url;
     } else {
       document.getElementById(ordena.anterior() + "Ifr_PaginaFundo_ESQ").src =
-        docs[posit.length - 4].url;
+        docs[docs.length - 4].url;
       document.getElementById(ordena.anterior() + "Ifr_PaginaCover").src =
-        docs[posit.length - 3].url;
+        docs[docs.length - 3].url;
       document.getElementById(ordena.anterior() + "Ifr_PaginaBack").src =
-        docs[posit.length - 2].url;
+        docs[docs.length - 2].url;
       document.getElementById(ordena.anterior() + "Ifr_PaginaFundo_DIR").src =
-        docs[posit.length - 1].url;
+        docs[docs.length - 1].url;
     }
 
     // console.log("colocou novos slides em " + ordena.anterior());
