@@ -266,14 +266,17 @@ let gerencia = function (dir) {
     // console.log("angulo " + angulo5);
 
     // console.log("conjunto anterior é: " + ordena.anterior() + "Ifr_PaginaFundo_ESQ");
-    document.getElementById(ordena.anterior() + "Ifr_PaginaFundo_ESQ").src =
-      docs[posit + 4].url;
-    document.getElementById(ordena.anterior() + "Ifr_PaginaCover").src =
-      docs[posit + 5].url;
-    document.getElementById(ordena.anterior() + "Ifr_PaginaBack").src =
-      docs[posit + 6].url;
-    document.getElementById(ordena.anterior() + "Ifr_PaginaFundo_DIR").src =
-      docs[posit + 7].url;
+
+    if (posit < docs.length - 4) {
+      document.getElementById(ordena.anterior() + "Ifr_PaginaFundo_ESQ").src =
+        docs[posit + 4].url;
+      document.getElementById(ordena.anterior() + "Ifr_PaginaCover").src =
+        docs[posit + 5].url;
+      document.getElementById(ordena.anterior() + "Ifr_PaginaBack").src =
+        docs[posit + 6].url;
+      document.getElementById(ordena.anterior() + "Ifr_PaginaFundo_DIR").src =
+        docs[posit + 7].url;
+    }
 
     // console.log("colocou novos slides em " + ordena.anterior());
 
