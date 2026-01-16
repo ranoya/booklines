@@ -180,12 +180,14 @@ let gerencia = function (dir) {
         docs[posit - 4].url;
       document.getElementById(ordena.proximo() + "Ifr_PaginaCover").src =
         docs[posit - 3].url;
-    } else {
-      document.getElementById(ordena.proximo() + "Ifr_PaginaFundo_ESQ").src =
-        docs[posit - 2].url;
-      document.getElementById(ordena.proximo() + "Ifr_PaginaCover").src =
-        docs[posit - 1].url;
     }
+
+    /* else {
+    document.getElementById(ordena.proximo() + "Ifr_PaginaBack").src =
+        docs[posit - 2].url;
+      document.getElementById(ordena.proximo() + "Ifr_PaginaFundo_DIR").src =
+        docs[posit - 1].url;
+    } */
 
     if (posit >= 2) {
       document.getElementById(ordena.proximo() + "Ifr_PaginaBack").src =
