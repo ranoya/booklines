@@ -43,7 +43,7 @@ let escrevepresente = function (pre, onde, delta) {
         <div id="${pre}PaginaBack">
           <iframe
             frameborder="0"
-            src="${docs[posit + delta + 2]}"
+            src="${docs[posit + delta + 2].url}"
             style="background-color: white;"
             id="${pre}Ifr_PaginaBack"
           ></iframe>
@@ -54,7 +54,7 @@ let escrevepresente = function (pre, onde, delta) {
         <div id="${pre}PaginaFundo_ESQ">
       <iframe
         frameborder="0"
-        src="${docs[posit + delta]}"
+        src="${docs[posit + delta].url}"
         id="${pre}Ifr_PaginaFundo_ESQ"
         
       ></iframe>
@@ -64,7 +64,7 @@ let escrevepresente = function (pre, onde, delta) {
         <div id="${pre}PaginaFundo_DIR" style="background-color: white;">
       <iframe id="${pre}Ifr_PaginaFundo_DIR"
         frameborder="0"
-        src="${docs[posit + delta + 3]}"
+        src="${docs[posit + delta + 3].url}"
         
         
       ></iframe>
@@ -73,7 +73,7 @@ let escrevepresente = function (pre, onde, delta) {
       <div id="${pre}BlocoCover">
         <div style="background-color: white; overflow-x: hidden" id="${pre}PaginaCover">
           <iframe id="${pre}Ifr_PaginaCover" frameborder="0" src="${
-      docs[posit + delta + 1]
+      docs[posit + delta + 1].url
     }" style="background-color: white;"></iframe>
         </div>
       </div>
@@ -172,13 +172,13 @@ let gerencia = function (dir) {
 
     // console.log("o próximo conjunto é: " + ordena.proximo() + "Ifr_PaginaFundo_ESQ");
     document.getElementById(ordena.proximo() + "Ifr_PaginaFundo_ESQ").src =
-      docs[posit - 4];
+      docs[posit - 4].url;
     document.getElementById(ordena.proximo() + "Ifr_PaginaCover").src =
-      docs[posit - 3];
+      docs[posit - 3].url;
     document.getElementById(ordena.proximo() + "Ifr_PaginaBack").src =
-      docs[posit - 2];
+      docs[posit - 2].url;
     document.getElementById(ordena.proximo() + "Ifr_PaginaFundo_DIR").src =
-      docs[posit - 1];
+      docs[posit - 1].url;
 
     // console.log("colocou novos slides em " + ordena.proximo());
 
@@ -214,17 +214,35 @@ let gerencia = function (dir) {
 
     // console.log("conjunto anterior é: " + ordena.anterior() + "Ifr_PaginaFundo_ESQ");
     document.getElementById(ordena.anterior() + "Ifr_PaginaFundo_ESQ").src =
-      docs[posit + 4];
+      docs[posit + 4].url;
     document.getElementById(ordena.anterior() + "Ifr_PaginaCover").src =
-      docs[posit + 5];
+      docs[posit + 5].url;
     document.getElementById(ordena.anterior() + "Ifr_PaginaBack").src =
-      docs[posit + 6];
+      docs[posit + 6].url;
     document.getElementById(ordena.anterior() + "Ifr_PaginaFundo_DIR").src =
-      docs[posit + 7];
+      docs[posit + 7].url;
 
     // console.log("colocou novos slides em " + ordena.anterior());
 
     // console.log("a camanda atual é " + davez[atual]);
+
+    console.log("Tem CSS? " + docs[posit].css);
+    if (
+      typeof docs[posit].css != "undefined" &&
+      docs[posit].css != null &&
+      docs[posit].css != ""
+    ) {
+      docs[posit + 4].url;
+      document
+        .getElementById(davez[atual] + "Ifr_PaginaCover")
+        .classList.add("initdouble");
+      document
+        .getElementById(davez[atual] + "Ifr_PaginaBack")
+        .classList.add("initdouble");
+      document
+        .getElementById(davez[atual] + "Ifr_PaginaFundo_DIR")
+        .classList.add("initdouble");
+    }
 
     ordena.prafrente();
 
@@ -304,6 +322,21 @@ let decresce = function () {
   let fut_blBack = document.getElementById("fut_BlocoBack");
   let fut_pgBack = document.getElementById("fut_PaginaBack");
 
+  pas_pdf.classList.remove("initdouble");
+  pas_pgCover.classList.remove("initdouble");
+  pas_blBack.classList.remove("initdouble");
+  pas_pgBack.classList.remove("initdouble");
+
+  pres_pdf.classList.remove("initdouble");
+  pres_pgCover.classList.remove("initdouble");
+  pres_blBack.classList.remove("initdouble");
+  pres_pgBack.classList.remove("initdouble");
+
+  fut_pdf.classList.remove("initdouble");
+  fut_pgCover.classList.remove("initdouble");
+  fut_blBack.classList.remove("initdouble");
+  fut_pgBack.classList.remove("initdouble");
+
   if (posit >= 0) {
     move = setInterval(function () {
       if (angulo5 >= 0) {
@@ -356,6 +389,21 @@ let acresce = function () {
   let fut_pgCover = document.getElementById("fut_PaginaCover");
   let fut_blBack = document.getElementById("fut_BlocoBack");
   let fut_pgBack = document.getElementById("fut_PaginaBack");
+
+  pas_pdf.classList.remove("initdouble");
+  pas_pgCover.classList.remove("initdouble");
+  pas_blBack.classList.remove("initdouble");
+  pas_pgBack.classList.remove("initdouble");
+
+  pres_pdf.classList.remove("initdouble");
+  pres_pgCover.classList.remove("initdouble");
+  pres_blBack.classList.remove("initdouble");
+  pres_pgBack.classList.remove("initdouble");
+
+  fut_pdf.classList.remove("initdouble");
+  fut_pgCover.classList.remove("initdouble");
+  fut_blBack.classList.remove("initdouble");
+  fut_pgBack.classList.remove("initdouble");
 
   if (posit < docs.length - 2) {
     move = setInterval(function () {
@@ -431,7 +479,9 @@ gsdata($_GET["file"], function (d) {
   docs = [];
 
   for (let i = 0; i < d.length; i++) {
-    docs[i] = d[i].link;
+    docs[i] = {};
+    docs[i].url = d[i].link;
+    docs[i].css = d[i].tipo;
   }
 
   // cria o documento e os eventos
