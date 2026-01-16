@@ -246,12 +246,11 @@ let gerencia = function (dir) {
   if (dir && angulo5 == 180) {
     // console.log("gerencia: iniciou");
 
-    if (posit < docs.length - 4) {
-      document.getElementById("fut_livro").style.zIndex = 100;
-      document.getElementById("pres_livro").style.zIndex = 100;
-      document.getElementById("pas_livro").style.zIndex = 100;
-      document.getElementById(ordena.proximo() + "livro").style.zIndex = 300;
-    }
+    document.getElementById("fut_livro").style.zIndex = 100;
+    document.getElementById("pres_livro").style.zIndex = 100;
+    document.getElementById("pas_livro").style.zIndex = 100;
+    document.getElementById(ordena.proximo() + "livro").style.zIndex = 300;
+
     // console.log("gerencia: colorou o documento certo em cima: " + ordena.proximo());
 
     // console.log("angulo " + angulo5);
@@ -279,9 +278,9 @@ let gerencia = function (dir) {
         docs[posit + 7].url;
     } else {
       document.getElementById(ordena.anterior() + "Ifr_PaginaFundo_ESQ").src =
-        docs[docs.length - 4].url;
+        docs[docs.length - 2].url;
       document.getElementById(ordena.anterior() + "Ifr_PaginaCover").src =
-        docs[docs.length - 3].url;
+        docs[docs.length - 1].url;
       document.getElementById(ordena.anterior() + "Ifr_PaginaBack").src =
         docs[docs.length - 2].url;
       document.getElementById(ordena.anterior() + "Ifr_PaginaFundo_DIR").src =
