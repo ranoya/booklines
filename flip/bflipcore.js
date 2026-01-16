@@ -186,10 +186,18 @@ let gerencia = function (dir) {
       document.getElementById(ordena.proximo() + "Ifr_PaginaCover").src =
         docs[posit - 1].url;
     }
-    document.getElementById(ordena.proximo() + "Ifr_PaginaBack").src =
-      docs[posit - 2].url;
-    document.getElementById(ordena.proximo() + "Ifr_PaginaFundo_DIR").src =
-      docs[posit - 1].url;
+
+    if (posit >= 2) {
+      document.getElementById(ordena.proximo() + "Ifr_PaginaBack").src =
+        docs[posit - 2].url;
+      document.getElementById(ordena.proximo() + "Ifr_PaginaFundo_DIR").src =
+        docs[posit - 1].url;
+    } else {
+      document.getElementById(ordena.proximo() + "Ifr_PaginaBack").src =
+        docs[0].url;
+      document.getElementById(ordena.proximo() + "Ifr_PaginaFundo_DIR").src =
+        docs[1].url;
+    }
 
     console.log("posit = " + posit + " arq = " + docs[posit].url);
 
