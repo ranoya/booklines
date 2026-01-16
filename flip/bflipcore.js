@@ -256,6 +256,8 @@ let gerencia = function (dir) {
 
     // console.log("a camanda atual é " + davez[atual]);
 
+    console.log("posit = " + posit + " arq = " + docs[posit].url);
+
     if (
       typeof docs[posit + 5].css != "undefined" &&
       docs[posit + 5].css != null &&
