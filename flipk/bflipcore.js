@@ -669,6 +669,52 @@ gsdata($_GET["file"], function (d) {
   escrevepresente("pres_", "pres_livro", 2);
   escrevepresente("fut_", "fut_livro", 4);
 
+  if (
+    localStorage.getItem("alunosdgen") == "" ||
+    typeof localStorage.getItem("alunosdgen") == "undefined"
+  ) {
+    localStorage.setItem(
+      "alunosdgen",
+      `
+      
+      <h1>Hello World,</h1>
+
+<script>
+  let ano = new Date().getFullYear();
+  let conteudo = document.querySelectorAll("h1")[0].innerHTML;
+  document.querySelectorAll("h1")[0].innerHTML = conteudo + ano + "!";
+
+  console.log(
+    "Esta linha gera uma mensagem no console. Erros aparecerão nele."
+  );
+</script>
+
+<h3>
+  Bem vindo ao editor integrado da edição especial do<br />Programação
+  Javascript para Designers.
+</h3>
+
+<p>Este é um documento HTML sendo alterado por código Javascript.<br>O editor está configurado para códigos HTML + CSS + Javascript.</p>
+<br>
+<p>Para executar seu código, use CMD/CTRL+S.</p>
+
+<p>
+  Para ver o console, clique no menu (o ">" ali em baixo), ou use CMD/CTRL+.<br />e
+  comece a digitar alguma coisa para filtrar as opções disponíveis.
+</p>
+
+<p>Para alterar o interpretador para Javascript, ou para Javascript + P5, acesse<br>o menu e digite JS ou P5, e clique na opção desejada.</p>
+<br>
+<p>Aquilo que você fizer aqui, ficará guardado no seu navegador atual. Quando<br>
+acessar novamente este material, seu código continuará aqui.</p>
+
+
+
+      
+      `
+    );
+  }
+
   document.getElementById("timeline").innerHTML = `
-    <iframe frameborder="0" style="width: 100%; height: 100%;" src='https://omnicode.vercel.app/clr/?buffer=alunosdgen&lang=html&pborder=00000044&bordercolor=${bgc}&bgcolor=${bgc}&bordercolor=${bgc}&gutcolor=${bgc}&startandrun=true&file=https://booklines.vercel.app/assets/codigojs/hello_livrojs_SE.html'></iframe>`;
+    <iframe frameborder="0" style="width: 100%; height: 100%;" src='https://omnicode.vercel.app/clr/?buffer=alunosdgen&lang=html&pborder=00000044&bordercolor=${bgc}&bgcolor=${bgc}&bordercolor=${bgc}&gutcolor=${bgc}&startandrun=true&'></iframe>`;
 });
