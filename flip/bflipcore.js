@@ -193,13 +193,13 @@ let gerencia = function (dir) {
       docs[posit].css != ""
     ) {
       document
-        .getElementById(ordena.anterior() + "Ifr_PaginaCover")
+        .getElementById(ordena.proximo() + "Ifr_PaginaCover")
         .classList.add("initdouble");
       document
-        .getElementById(ordena.anterior() + "Ifr_PaginaBack")
+        .getElementById(ordena.proximo() + "Ifr_PaginaCover")
         .classList.add("initdouble");
       document
-        .getElementById(ordena.anterior() + "Ifr_PaginaFundo_DIR")
+        .getElementById(ordena.proximo() + "Ifr_BlocoCover")
         .classList.add("initdouble");
     }
 
@@ -257,10 +257,10 @@ let gerencia = function (dir) {
         .getElementById(ordena.proximo() + "Ifr_PaginaCover")
         .classList.add("initdouble");
       document
-        .getElementById(ordena.proximo() + "Ifr_PaginaBack")
+        .getElementById(ordena.proximo() + "Ifr_PaginaCover")
         .classList.add("initdouble");
       document
-        .getElementById(ordena.proximo() + "Ifr_PaginaFundo_DIR")
+        .getElementById(ordena.proximo() + "Ifr_BlocoCover")
         .classList.add("initdouble");
     }
 
