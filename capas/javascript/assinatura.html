@@ -70,7 +70,7 @@
       ) {
         document.documentElement.style.setProperty(
           "--cor-bg",
-          $_GET["bgcolor"]
+          "#" + $_GET["bgcolor"]
         );
       }
 
@@ -79,7 +79,10 @@
         $_GET["fcolor"] != null &&
         $_GET["fcolor"] != ""
       ) {
-        document.documentElement.style.setProperty("--cor-fg", $_GET["fcolor"]);
+        document.documentElement.style.setProperty(
+          "--cor-fg",
+          "#" + $_GET["fcolor"]
+        );
       }
     </script>
   </head>
