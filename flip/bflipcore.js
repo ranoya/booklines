@@ -362,15 +362,17 @@ let decresce = function () {
   let fut_blBack = document.getElementById("fut_BlocoBack");
   let fut_pgBack = document.getElementById("fut_PaginaBack");
 
-  document.getElementById("fut_PaginaCover").classList.add("initdouble");
-  document.getElementById("fut_Ifr_PaginaCover").classList.add("initdouble");
-  document.getElementById("fut_BlocoCover").classList.add("initdouble");
-  document.getElementById("pas_PaginaCover").classList.add("initdouble");
-  document.getElementById("pas_Ifr_PaginaCover").classList.add("initdouble");
-  document.getElementById("pas_BlocoCover").classList.add("initdouble");
-  document.getElementById("pres_PaginaCover").classList.add("initdouble");
-  document.getElementById("pres_Ifr_PaginaCover").classList.add("initdouble");
-  document.getElementById("pres_BlocoCover").classList.add("initdouble");
+  document.getElementById("fut_PaginaCover").classList.remove("initdouble");
+  document.getElementById("fut_Ifr_PaginaCover").classList.remove("initdouble");
+  document.getElementById("fut_BlocoCover").classList.remove("initdouble");
+  document.getElementById("pas_PaginaCover").classList.remove("initdouble");
+  document.getElementById("pas_Ifr_PaginaCover").classList.remove("initdouble");
+  document.getElementById("pas_BlocoCover").classList.remove("initdouble");
+  document.getElementById("pres_PaginaCover").classList.remove("initdouble");
+  document
+    .getElementById("pres_Ifr_PaginaCover")
+    .classList.remove("initdouble");
+  document.getElementById("pres_BlocoCover").classList.remove("initdouble");
 
   if (posit >= 0) {
     move = setInterval(function () {
@@ -472,15 +474,17 @@ let acresce = function () {
   let fut_blBack = document.getElementById("fut_BlocoBack");
   let fut_pgBack = document.getElementById("fut_PaginaBack");
 
-  document.getElementById("fut_PaginaCover").classList.add("initdouble");
-  document.getElementById("fut_Ifr_PaginaCover").classList.add("initdouble");
-  document.getElementById("fut_BlocoCover").classList.add("initdouble");
-  document.getElementById("pas_PaginaCover").classList.add("initdouble");
-  document.getElementById("pas_Ifr_PaginaCover").classList.add("initdouble");
-  document.getElementById("pas_BlocoCover").classList.add("initdouble");
-  document.getElementById("pres_PaginaCover").classList.add("initdouble");
-  document.getElementById("pres_Ifr_PaginaCover").classList.add("initdouble");
-  document.getElementById("pres_BlocoCover").classList.add("initdouble");
+  document.getElementById("fut_PaginaCover").classList.remove("initdouble");
+  document.getElementById("fut_Ifr_PaginaCover").classList.remove("initdouble");
+  document.getElementById("fut_BlocoCover").classList.remove("initdouble");
+  document.getElementById("pas_PaginaCover").classList.remove("initdouble");
+  document.getElementById("pas_Ifr_PaginaCover").classList.remove("initdouble");
+  document.getElementById("pas_BlocoCover").classList.remove("initdouble");
+  document.getElementById("pres_PaginaCover").classList.remove("initdouble");
+  document
+    .getElementById("pres_Ifr_PaginaCover")
+    .classList.remove("initdouble");
+  document.getElementById("pres_BlocoCover").classList.remove("initdouble");
 
   if (posit < docs.length - 2) {
     move = setInterval(function () {
