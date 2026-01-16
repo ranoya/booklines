@@ -246,7 +246,7 @@ let gerencia = function (dir) {
   if (dir && angulo5 == 180) {
     // console.log("gerencia: iniciou");
 
-    if (posit < docs.length - 2) {
+    if (posit < docs.length - 4) {
       document.getElementById("fut_livro").style.zIndex = 100;
       document.getElementById("pres_livro").style.zIndex = 100;
       document.getElementById("pas_livro").style.zIndex = 100;
