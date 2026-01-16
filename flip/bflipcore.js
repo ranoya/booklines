@@ -542,7 +542,10 @@ let acresce = function () {
       } else {
         angulo5 = 180;
         atualiza();
-        gerencia(true);
+
+        if (posit < docs.length - 2) {
+          gerencia(true);
+        }
 
         if (repete) {
           // console.log("tentando denovo acresce");
