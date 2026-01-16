@@ -617,11 +617,14 @@ $_GET = [];
   }
 })();
 
+let bgc = "FFFFFF";
+
 if (
   typeof $_GET["bgcolor"] != "undefined" &&
   $_GET["bgcolor"] != null &&
   $_GET["bgcolor"] != ""
 ) {
+  bgc = $_GET["bgcolor"];
   document.getElementsByTagName("html")[0].style.backgroundColor =
     "#" + $_GET["bgcolor"];
 }
@@ -659,18 +662,6 @@ gsdata($_GET["file"], function (d) {
   escrevepresente("pres_", "pres_livro", 2);
   escrevepresente("fut_", "fut_livro", 4);
 
-  document.addEventListener("mousemove", function (event) {
-    let mouseX = event.clientX; // Horizontal position relative to the viewport
-    let mouseY = event.clientY; // Vertical position relative to the viewport
-
-    let viewportHeight =
-      window.innerHeight ||
-      document.documentElement.clientHeight ||
-      document.body.clientHeight;
-
-    let viewportWidth =
-      window.innerWidth ||
-      document.documentElement.clientWidth ||
-      document.body.clientWidth;
-  });
+  document.getElementById("timeline").innerHTML = `
+    <iframe frameborder="0" style="width: 100%; height: 100%;" src='https://omnicode.vercel.app/monor/?bgcolor=${bgc}'></iframe>`;
 });

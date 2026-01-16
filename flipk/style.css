@@ -66,12 +66,12 @@ body {
 #pas_LivroFuturo.show,
 #pres_LivroFuturo.show,
 #fut_LivroFuturo.show {
-  transform: rotateX(-5deg) translateY(-80dvh);
+  transform: rotateX(-16deg) translateZ(-80px) translateY(-75dvh);
 }
 
 #timeline.show,
 #timeline.show {
-  transform: translateY(-75dvh);
+  transform: translateY(-82dvh);
 }
 
 #kode {
@@ -83,7 +83,6 @@ body {
   bottom: 0px;
   height: 30px;
   cursor: pointer;
-  background-color: red;
 }
 
 #mais {
