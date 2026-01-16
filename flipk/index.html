@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8" />
+
+<link rel="stylesheet" type="text/css" href="https://booklines.vercel.app/flipk/style.css" />
+<script src="https://datat.vercel.app/basicsmin.js"></script>
+
+</head>
+
+<body>
+
+<!-- estrutura -->
+<div id="mais" class="blink" onclick="acresce()"></div>
+<div id="menos" class="naomostra" onclick="decresce()"></div>
+<div id="kode" onmouseenter="toggleshowthings()" onclick="togglethings()""></div>
+
+
+<div id="timeline"></div>
+
+<div
+  id="pres_livro"
+  style="
+    perspective: 300px !important;
+    position: fixed;
+    top: 8px;
+    left: 8px;
+    z-index: 20;
+  "
+></div>
+
+<div
+  id="pas_livro"
+  style="
+    perspective: 300px !important;
+    position: fixed;
+    top: 8px;
+    left: 8px;
+    z-index: 30;
+  "
+></div>
+
+<div
+  id="fut_livro"
+  style="
+    perspective: 300px !important;
+    position: fixed;
+    top: 8px;
+    left: 8px;
+    z-index: 10;
+  "
+></div>
+
+<script src="https://booklines.vercel.app/flipk/bflipcore.js"></script>
+ 
+</body>
+</html>
