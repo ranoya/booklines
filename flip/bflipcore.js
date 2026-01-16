@@ -76,9 +76,7 @@ let escrevepresente = function (pre, onde, delta) {
     }">
           <iframe id="${pre}Ifr_PaginaCover" frameborder="0" src="${
       docs[posit + delta + 1].url
-    }" style="background-color: white;" css="${
-      docs[posit + delta + 1].css
-    }"></iframe>
+    }" style="background-color: white;"></iframe>
         </div>
       </div>
       
