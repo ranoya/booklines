@@ -187,9 +187,9 @@ let gerencia = function (dir) {
     console.log("posit = " + posit + " arq = " + docs[posit].url);
 
     if (
-      typeof docs[posit - 3].css != "undefined" &&
-      docs[posit - 3].css != null &&
-      docs[posit - 3].css != ""
+      typeof docs[posit + 1].css != "undefined" &&
+      docs[posit + 1].css != null &&
+      docs[posit + 1].css != ""
     ) {
       document
         .getElementById(ordena.proximo() + "Ifr_PaginaCover")
