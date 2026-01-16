@@ -192,23 +192,23 @@ let gerencia = function (dir) {
       docs[posit + 1].css != ""
     ) {
       document
-        .getElementById(ordena.proximo() + "Ifr_PaginaCover")
+        .getElementById(davez[atual] + "Ifr_PaginaCover")
         .setAttribute("css", "sim");
       document
-        .getElementById(ordena.proximo() + "PaginaCover")
+        .getElementById(davez[atual] + "PaginaCover")
         .setAttribute("css", "sim");
       document
-        .getElementById(ordena.proximo() + "BlocoCover")
+        .getElementById(davez[atual] + "BlocoCover")
         .setAttribute("css", "sim");
     } else {
       document
-        .getElementById(ordena.proximo() + "Ifr_PaginaCover")
+        .getElementById(davez[atual] + "Ifr_PaginaCover")
         .setAttribute("css", "");
       document
-        .getElementById(ordena.proximo() + "PaginaCover")
+        .getElementById(davez[atual] + "PaginaCover")
         .setAttribute("css", "");
       document
-        .getElementById(ordena.proximo() + "BlocoCover")
+        .getElementById(davez[atual] + "BlocoCover")
         .setAttribute("css", "");
     }
 
