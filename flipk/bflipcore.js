@@ -675,46 +675,43 @@ gsdata($_GET["file"], function (d) {
   ) {
     localStorage.setItem(
       "alunosdgen",
-      `
-      
-      <h1>Hello World,</h1>
+      `/*
 
-<script>
-  let ano = new Date().getFullYear();
-  let conteudo = document.querySelectorAll("h1")[0].innerHTML;
-  document.querySelectorAll("h1")[0].innerHTML = conteudo + ano + "!";
+Aperte CMD/CTRL+S para rodar
 
-  console.log(
-    "Esta linha gera uma mensagem no console. Erros aparecerão nele."
-  );
-</script>
+*/
 
-<h3>
-  Bem vindo ao editor integrado da edição especial do<br />Programação
-  Javascript para Designers.
-</h3>
+function setup() {
+    createCanvas(windowWidth, windowHeight);
+    stroke(0);
+    background("#00000000");
+    angleMode(DEGREES);
+}
 
-<p>Este é um documento HTML sendo alterado por código Javascript.<br>O editor está configurado para códigos HTML + CSS + Javascript.</p>
-<br>
-<p>Para executar seu código, use CMD/CTRL+S.</p>
+let a = 0;
+function draw() {
+    push();
+    translate(windowWidth/2,windowHeight/2);
+    rotate(a);
+    line(120,0, -50,190);
+    pop();
+    
+    a = a + 3;
+    
+    if (a >= 360) {
+        noLoop();
+    }
+}
 
-<p>
-  Para ver o console, clique no menu (o ">" ali em baixo), ou use CMD/CTRL+.<br />e
-  comece a digitar alguma coisa para filtrar as opções disponíveis.
-</p>
 
-<p>Para alterar o interpretador para Javascript, ou para Javascript + P5, acesse<br>o menu e digite JS ou P5, e clique na opção desejada.</p>
-<br>
-<p>Aquilo que você fizer aqui, ficará guardado no seu navegador atual. Quando<br>
-acessar novamente este material, seu código continuará aqui.</p>
 
 
 
       
-      `
+  `
     );
   }
 
   document.getElementById("timeline").innerHTML = `
-    <iframe frameborder="0" style="width: 100%; height: 100%;" src='https://omnicode.vercel.app/clr/?buffer=alunosdgen&lang=html&pborder=00000044&bordercolor=${bgc}&bgcolor=${bgc}&bordercolor=${bgc}&gutcolor=${bgc}&startandrun=true&'></iframe>`;
+    <iframe frameborder="0" style="width: 100%; height: 100%;" src='https://omnicode.vercel.app/cll/?buffer=alunosdgen&lang=p5&pborder=00000044&bordercolor=${bgc}&bgcolor=${bgc}&bordercolor=${bgc}&gutcolor=${bgc}&startandrun=true&'></iframe>`;
 });
