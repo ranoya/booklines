@@ -203,6 +203,10 @@ let gerencia = function (dir) {
 
     console.log("posit = " + posit + " arq = " + docs[posit].url);
 
+    if (posit == 0) {
+      document.getElementById("menos").classList.add("naomostra");
+    }
+
     if (
       typeof docs[posit + 1].css != "undefined" &&
       docs[posit + 1].css != null &&
@@ -275,7 +279,7 @@ let gerencia = function (dir) {
 
     // console.log("a camanda atual é " + davez[atual]);
 
-    console.log("posit = " + posit + " arq = " + docs[posit].url);
+    // console.log("posit = " + posit + " arq = " + docs[posit].url);
 
     if (
       typeof docs[posit + 2].css != "undefined" &&
