@@ -52,11 +52,10 @@ body {
 #timeline {
   position: fixed;
   bottom: -78dvh;
-  border: 1px solid black;
   height: 72dvh;
   width: calc(100% - 40px);
   left: 20px;
-  z-index: 1;
+  z-index: 800;
   transition: transform 0.4s ease-in;
 }
 
@@ -83,6 +82,10 @@ body {
   bottom: 0px;
   height: 30px;
   cursor: pointer;
+}
+
+#kode.show {
+  bottom: 78dvh;
 }
 
 #mais {

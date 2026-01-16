@@ -413,6 +413,7 @@ let decresce = function () {
   if (posit >= 0) {
     move = setInterval(function () {
       if (angulo5 >= 0) {
+        document.getElementById("timeline").style.zIndex = 1;
         angulo5--;
 
         pas_pdf.style.zIndex = `${5 + 5 * Math.min(parseInt(angulo5 - 74), 2)}`;
@@ -486,6 +487,7 @@ let decresce = function () {
             .getElementById("pres_BlocoCover")
             .classList.add("initdouble");
         }
+        document.getElementById("timeline").style.zIndex = 800;
       }
     }, 1);
   }
@@ -526,6 +528,7 @@ let acresce = function () {
   if (posit < docs.length - 2) {
     move = setInterval(function () {
       if (angulo5 < 180) {
+        document.getElementById("timeline").style.zIndex = 1;
         angulo5++;
         pas_pdf.style.zIndex = `${5 + 5 * Math.min(parseInt(angulo5 - 74), 2)}`;
         pas_pgCover.style.transform = `rotateY(${0 - angulo5}deg)`;
@@ -597,6 +600,8 @@ let acresce = function () {
             .getElementById("pres_BlocoCover")
             .classList.add("initdouble");
         }
+
+        document.getElementById("timeline").style.zIndex = 800;
       }
     }, 1);
   }
@@ -638,12 +643,14 @@ let toggleshowthings = function () {
     document.getElementById("pres_LivroComponente").classList.add("show");
     document.getElementById("fut_LivroComponente").classList.add("show");
     document.getElementById("timeline").classList.add("show");
+    document.getElementById("kode").classList.add("show");
   } else {
     kaberto = false;
     document.getElementById("pas_LivroComponente").classList.remove("show");
     document.getElementById("pres_LivroComponente").classList.remove("show");
     document.getElementById("fut_LivroComponente").classList.remove("show");
     document.getElementById("timeline").classList.remove("show");
+    document.getElementById("kode").classList.remove("show");
   }
 };
 
@@ -663,5 +670,5 @@ gsdata($_GET["file"], function (d) {
   escrevepresente("fut_", "fut_livro", 4);
 
   document.getElementById("timeline").innerHTML = `
-    <iframe frameborder="0" style="width: 100%; height: 100%;" src='https://omnicode.vercel.app/monor/?bgcolor=${bgc}'></iframe>`;
+    <iframe frameborder="0" style="width: 100%; height: 100%;" src='https://omnicode.vercel.app/clr/?lang=html&pborder=00000044&bordercolor=${bgc}&bgcolor=${bgc}&bordercolor=${bgc}&gutcolor=${bgc}'></iframe>`;
 });
