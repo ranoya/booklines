@@ -410,7 +410,8 @@ let decresce = function () {
         if (
           typeof fut_pgCover.getAttribute("css") != "undefined" &&
           fut_pgCover.getAttribute("css") != null &&
-          fut_pgCover.getAttribute("css") != ""
+          fut_pgCover.getAttribute("css") != "" &&
+          document.getElementById("fut_livro").style.zIndex == 300
         ) {
           document
             .getElementById("fut_PaginaCover")
@@ -424,7 +425,8 @@ let decresce = function () {
         if (
           typeof pas_pgCover.getAttribute("css") != "undefined" &&
           pas_pgCover.getAttribute("css") != null &&
-          pas_pgCover.getAttribute("css") != ""
+          pas_pgCover.getAttribute("css") != "" &&
+          document.getElementById("pas_livro").style.zIndex == 300
         ) {
           document
             .getElementById("pas_PaginaCover")
@@ -438,7 +440,8 @@ let decresce = function () {
         if (
           typeof pres_pgCover.getAttribute("css") != "undefined" &&
           pres_pgCover.getAttribute("css") != null &&
-          pres_pgCover.getAttribute("css") != ""
+          pres_pgCover.getAttribute("css") != "" &&
+          document.getElementById("pres_livro").style.zIndex == 300
         ) {
           document
             .getElementById("pres_PaginaCover")
