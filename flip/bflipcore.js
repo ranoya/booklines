@@ -439,17 +439,23 @@ let decresce = function () {
   let fut_blBack = document.getElementById("fut_BlocoBack");
   let fut_pgBack = document.getElementById("fut_PaginaBack");
 
-  document.getElementById("fut_PaginaCover").classList.remove("initdouble");
-  document.getElementById("fut_Ifr_PaginaCover").classList.remove("initdouble");
-  document.getElementById("fut_BlocoCover").classList.remove("initdouble");
-  document.getElementById("pas_PaginaCover").classList.remove("initdouble");
-  document.getElementById("pas_Ifr_PaginaCover").classList.remove("initdouble");
-  document.getElementById("pas_BlocoCover").classList.remove("initdouble");
-  document.getElementById("pres_PaginaCover").classList.remove("initdouble");
+  document.getElementById("fut_PaginaFundo_ESQ").classList.remove("initdouble");
   document
-    .getElementById("pres_Ifr_PaginaCover")
+    .getElementById("fut_Ifr_PaginaFundo_ESQ")
     .classList.remove("initdouble");
-  document.getElementById("pres_BlocoCover").classList.remove("initdouble");
+  document.getElementById("fut_BlocoFundoE").classList.remove("initdouble");
+  document.getElementById("pas_PaginaFundo_ESQ").classList.remove("initdouble");
+  document
+    .getElementById("pas_Ifr_PaginaFundo_ESQ")
+    .classList.remove("initdouble");
+  document.getElementById("pas_BlocoFundoE").classList.remove("initdouble");
+  document
+    .getElementById("pres_PaginaFundo_ESQ")
+    .classList.remove("initdouble");
+  document
+    .getElementById("pres_Ifr_PaginaFundo_ESQ")
+    .classList.remove("initdouble");
+  document.getElementById("pres_BlocoFundoE").classList.remove("initdouble");
 
   if (posit >= 0) {
     move = setInterval(function () {
@@ -489,12 +495,14 @@ let decresce = function () {
           document.getElementById("fut_livro").style.zIndex == 300
         ) {
           document
-            .getElementById("fut_PaginaCover")
+            .getElementById("fut_PaginaFundo_ESQ")
             .classList.add("initdouble");
           document
-            .getElementById("fut_Ifr_PaginaCover")
+            .getElementById("fut_Ifr_PaginaFundo_ESQ")
             .classList.add("initdouble");
-          document.getElementById("fut_BlocoCover").classList.add("initdouble");
+          document
+            .getElementById("fut_BlocoFundoE")
+            .classList.add("initdouble");
         }
 
         if (
@@ -504,12 +512,14 @@ let decresce = function () {
           document.getElementById("pas_livro").style.zIndex == 300
         ) {
           document
-            .getElementById("pas_PaginaCover")
+            .getElementById("pas_PaginaFundo_ESQ")
             .classList.add("initdouble");
           document
-            .getElementById("pas_Ifr_PaginaCover")
+            .getElementById("pas_Ifr_PaginaFundo_ESQ")
             .classList.add("initdouble");
-          document.getElementById("pas_BlocoCover").classList.add("initdouble");
+          document
+            .getElementById("pas_BlocoFundoE")
+            .classList.add("initdouble");
         }
 
         if (
@@ -519,13 +529,13 @@ let decresce = function () {
           document.getElementById("pres_livro").style.zIndex == 300
         ) {
           document
-            .getElementById("pres_PaginaCover")
+            .getElementById("pres_PaginaFundo_ESQ")
             .classList.add("initdouble");
           document
-            .getElementById("pres_Ifr_PaginaCover")
+            .getElementById("pres_Ifr_PaginaFundo_ESQ")
             .classList.add("initdouble");
           document
-            .getElementById("pres_BlocoCover")
+            .getElementById("pres_PaginaFundo_ESQ")
             .classList.add("initdouble");
         }
         document.getElementById("timeline").style.zIndex = 800;
@@ -554,17 +564,23 @@ let acresce = function () {
   let fut_blBack = document.getElementById("fut_BlocoBack");
   let fut_pgBack = document.getElementById("fut_PaginaBack");
 
-  document.getElementById("fut_PaginaCover").classList.remove("initdouble");
-  document.getElementById("fut_Ifr_PaginaCover").classList.remove("initdouble");
-  document.getElementById("fut_BlocoCover").classList.remove("initdouble");
-  document.getElementById("pas_PaginaCover").classList.remove("initdouble");
-  document.getElementById("pas_Ifr_PaginaCover").classList.remove("initdouble");
-  document.getElementById("pas_BlocoCover").classList.remove("initdouble");
-  document.getElementById("pres_PaginaCover").classList.remove("initdouble");
+  document.getElementById("fut_PaginaFundo_ESQ").classList.remove("initdouble");
   document
-    .getElementById("pres_Ifr_PaginaCover")
+    .getElementById("fut_Ifr_PaginaFundo_ESQ")
     .classList.remove("initdouble");
-  document.getElementById("pres_BlocoCover").classList.remove("initdouble");
+  document.getElementById("fut_BlocoFundoE").classList.remove("initdouble");
+  document.getElementById("pas_PaginaFundo_ESQ").classList.remove("initdouble");
+  document
+    .getElementById("pas_Ifr_PaginaFundo_ESQ")
+    .classList.remove("initdouble");
+  document.getElementById("pas_BlocoFundoE").classList.remove("initdouble");
+  document
+    .getElementById("pres_PaginaFundo_ESQ")
+    .classList.remove("initdouble");
+  document
+    .getElementById("pres_Ifr_PaginaFundo_ESQ")
+    .classList.remove("initdouble");
+  document.getElementById("pres_BlocoFundoE").classList.remove("initdouble");
 
   if (posit < docs.length - 2) {
     move = setInterval(function () {
@@ -604,10 +620,10 @@ let acresce = function () {
           fut_pgCover.getAttribute("css") != ""
         ) {
           document
-            .getElementById("fut_PaginaCover")
+            .getElementById("fut_PaginaFundo_ESQ")
             .classList.add("initdouble");
           document
-            .getElementById("fut_Ifr_PaginaCover")
+            .getElementById("fut_Ifr_PaginaFundo_ESQ")
             .classList.add("initdouble");
           document.getElementById("fut_BlocoCover").classList.add("initdouble");
         }
@@ -618,12 +634,14 @@ let acresce = function () {
           pas_pgCover.getAttribute("css") != ""
         ) {
           document
-            .getElementById("pas_PaginaCover")
+            .getElementById("pas_PaginaFundo_ESQ")
             .classList.add("initdouble");
           document
-            .getElementById("pas_Ifr_PaginaCover")
+            .getElementById("pas_Ifr_PaginaFundo_ESQ")
             .classList.add("initdouble");
-          document.getElementById("pas_BlocoCover").classList.add("initdouble");
+          document
+            .getElementById("pas_BlocoFundoE")
+            .classList.add("initdouble");
         }
 
         if (
@@ -632,13 +650,13 @@ let acresce = function () {
           pres_pgCover.getAttribute("css") != ""
         ) {
           document
-            .getElementById("pres_PaginaCover")
+            .getElementById("pres_PaginaFundo_ESQ")
             .classList.add("initdouble");
           document
-            .getElementById("pres_Ifr_PaginaCover")
+            .getElementById("pres_Ifr_PaginaFundo_ESQ")
             .classList.add("initdouble");
           document
-            .getElementById("pres_BlocoCover")
+            .getElementById("pres_BlocoFundoE")
             .classList.add("initdouble");
         }
 
