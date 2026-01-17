@@ -92,6 +92,7 @@ body {
   transform-origin: right top;
   transform: rotate(-90deg);
   margin-left: -124px;
+  cursor: pointer;
 }
 
 #indices div {
@@ -103,6 +104,7 @@ body {
   font-family: Helvetica, Arial, sans-serif;
   font-size: 11px;
   line-height: 15px;
+  cursor: pointer;
 }
 
 div.marca {
@@ -113,10 +115,12 @@ div.marca {
   width: calc(100% - 12px);
   padding: 6px;
   padding-bottom: 8px;
+  cursor: pointer;
 }
 
 #indices div div:hover {
   background-color: #00000021;
+  cursor: pointer;
 }
 
 #pas_LivroComponente.show,
