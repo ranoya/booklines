@@ -159,13 +159,13 @@
       let bg = "#151515";
 
       if (typeof $_GET['bgcolor'] != 'undefined' && $_GET['bgcolor'] != null && $_GET['bgcolor'] != '') {
-         bg = $_GET['bgcolor'];
+         bg = "#" + $_GET['bgcolor'];
       }
 
       let fg = "#ae8471";
 
       if (typeof $_GET['fcolor'] != 'undefined' && $_GET['fcolor'] != null && $_GET['fcolor'] != '') {
-         fg = $_GET['fcolor'];
+         fg = "#" + $_GET['fcolor'];
       }
       
 
