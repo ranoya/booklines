@@ -73,11 +73,11 @@ let escrevepresente = function (pre, onde, delta) {
       </div>
       <div id="${pre}BlocoCover" css="${docs[posit + delta + 1].css}">
         <div style="background-color: white; overflow-x: hidden" id="${pre}PaginaCover" css="${
-      docs[posit + delta + 1].css
-    }">
+          docs[posit + delta + 1].css
+        }">
           <iframe id="${pre}Ifr_PaginaCover" frameborder="0" src="${
-      docs[posit + delta + 1].url
-    }" style="background-color: white;"></iframe>
+            docs[posit + delta + 1].url
+          }" style="background-color: white;"></iframe>
         </div>
       </div>
       
@@ -122,6 +122,57 @@ let ordena = {
       atual--;
     }
   },
+};
+
+let poenoponto = function (op) {
+  let p = op;
+  if (angulo5 > 0) {
+    p = op - 2;
+  }
+
+  let pge = p;
+  let pgd = p + 1;
+  if (p % 2 == 1) {
+    pgd = p;
+    pge = p - 1;
+  }
+
+  if (op < 2) {
+    pgd = 3;
+    pge = 2;
+  }
+
+  document.getElementById(davez[atual] + "Ifr_PaginaBack").src = docs[pge].url;
+  document.getElementById(davez[atual] + "Ifr_PaginaFundo_DIR").src =
+    docs[pgd].url;
+
+  document.getElementById(ordena.proximo() + "Ifr_PaginaFundo_ESQ").src =
+    docs[pge].url;
+  document.getElementById(ordena.proximo() + "Ifr_PaginaCover").src =
+    docs[pgd].url;
+
+  document.getElementById(ordena.proximo() + "Ifr_PaginaBack").src =
+    docs[pgd + 2].url;
+  document.getElementById(ordena.proximo() + "Ifr_PaginaFundo_DIR").src =
+    docs[pgd + 2].url;
+
+  document.getElementById(ordena.anterior() + "Ifr_PaginaFundo_ESQ").src =
+    docs[pge - 2].url;
+  document.getElementById(ordena.anterior() + "Ifr_PaginaCover").src =
+    docs[pgd - 2].url;
+
+  posit = pge - 2;
+
+  acresce();
+
+  document.getElementById(davez[atual] + "Ifr_PaginaFundo_ESQ").src =
+    docs[posit].url;
+  document.getElementById(davez[atual] + "Ifr_PaginaCover").src =
+    docs[posit + 1].url;
+
+  if (op < 2) {
+    setTimeout(decresce, 1000);
+  }
 };
 
 let gerencia = function (dir) {
@@ -616,7 +667,7 @@ $_GET = [];
     for (arg in argumentos) {
       let argCorte = argumentos[arg].indexOf("=");
       $_GET[argumentos[arg].substring(0, argCorte)] = argumentos[arg].substring(
-        argCorte + 1
+        argCorte + 1,
       );
     }
   }
@@ -705,7 +756,7 @@ function draw() {
 
 
   
-  `
+  `,
     );
   }
 
