@@ -1,5 +1,6 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+
+<html style="margin: 0; padding: 0; overflow-y: hidden; overflow-x: hidden">
   <head>
     <meta charset="utf-8" />
     <meta name="pinterest" content="nopin" />
@@ -87,32 +88,10 @@
         */
         fill: var(--cor-texto);
       }
-
-      
-    </style>
-
-    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.3/lib/p5.js"></script>
-    <style>
-      html,
-      body {
-        background-color: white;
-      }
     </style>
   </head>
 
-  <body">
-    <div
-      id="dblobis"
-      style="
-        position: fixed;
-        z-index: -1;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-      "
-    ></div>
-
+  <body style="margin: 0; padding: 0; overflow-y: hidden; overflow-x: hidden">
     <div id="titulo"></div>
     <div id="nome">
       <svg
@@ -141,47 +120,117 @@
       </svg>
     </div>
 
-    <script type="module">
-      
-      $_GET = [];
-      (function(){
-        corte = window.location.href.toString().indexOf('?');
-        if (corte > 0) {
-          argumento = window.location.href.toString().substring(corte + 1);
-          argumentos = argumento.split('&');
-          for (arg in argumentos){
-            let argCorte = argumentos[arg].indexOf('=');
-            $_GET[argumentos[arg].substring(0,argCorte)] = argumentos[arg].substring(argCorte + 1);
-          }
-        } 
-      })();
-      
-      let bg = "#151515";
-
-      if (typeof $_GET['bgcolor'] != 'undefined' && $_GET['bgcolor'] != null && $_GET['bgcolor'] != '') {
-         bg = "#" + $_GET['bgcolor'];
-      }
-
-      let fg = "#ae8471";
-
-      if (typeof $_GET['fcolor'] != 'undefined' && $_GET['fcolor'] != null && $_GET['fcolor'] != '') {
-         fg = "#" + $_GET['fcolor'];
-      }
-      
-
-      
-
-      import dblob from "https://artndcode.vercel.app/Pecas/retriculit.js";
-
-      let playblob = dblob({
-        p5,
-        bgcolor: bg,
-        fcolor: fg,
-        el: "dblobis",
-      });
-    </script>
+    <iframe
+      id="fundo"
+      frameborder="0"
+      style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100dvh;
+        margin: 0;
+        padding: 0;
+        z-index: 1;
+      "
+    ></iframe>
+    <div
+      id="frente"
+      style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100dvh;
+        margin: 0;
+        padding: 0;
+        z-index: 2;
+        background-size: contain;
+        background-position: center center;
+        background-repeat: no-repeat;
+      "
+    ></div>
 
     <script>
+      $_GET = [];
+      (function () {
+        corte = window.location.href.toString().indexOf("?");
+        if (corte > 0) {
+          argumento = window.location.href.toString().substring(corte + 1);
+          argumentos = argumento.split("&");
+          for (arg in argumentos) {
+            let argCorte = argumentos[arg].indexOf("=");
+            $_GET[argumentos[arg].substring(0, argCorte)] = argumentos[
+              arg
+            ].substring(argCorte + 1);
+          }
+        }
+      })();
+
+      let bg = "000000";
+      let fg = "FFFFFF";
+      let art = "mitp";
+      let cover = "https://omnifolio.vercel.app/omnifiles/programacao-capa";
+      let imgtype = "s";
+      let extensao = "svg";
+
+      if (
+        typeof $_GET["bgcolor"] != "undefined" &&
+        $_GET["bgcolor"] != null &&
+        $_GET["bgcolor"] != ""
+      ) {
+        bg = $_GET["bgcolor"];
+      }
+
+      if (
+        typeof $_GET["imgtype"] != "undefined" &&
+        $_GET["imgtype"] != null &&
+        $_GET["imgtype"] != ""
+      ) {
+        imgtype = $_GET["imgtype"];
+      }
+
+      if (
+        typeof $_GET["fcolor"] != "undefined" &&
+        $_GET["fcolor"] != null &&
+        $_GET["fcolor"] != ""
+      ) {
+        fg = $_GET["fcolor"];
+      }
+
+      if (
+        typeof $_GET["art"] != "undefined" &&
+        $_GET["art"] != null &&
+        $_GET["art"] != ""
+      ) {
+        art = $_GET["art"];
+      }
+
+      if (
+        typeof $_GET["cover"] != "undefined" &&
+        $_GET["cover"] != null &&
+        $_GET["cover"] != ""
+      ) {
+        cover = $_GET["cover"];
+      }
+
+      if (imgtype == "p") {
+        extensao = "png";
+      }
+
+      if (imgtype == "j") {
+        extensao = "jpg";
+      }
+
+      document.getElementById("fundo").src =
+        `https://artndcode.vercel.app/Singles/${art}.html?fcolor=${fg}&bgcolor=${bg}`;
+
+      document.getElementById("frente").style.backgroundImage =
+        `url(${cover}.${extensao})`;
+
+      document.getElementsByTagName("html")[0].style.backgroundColor = `#${bg}`;
+      document.getElementsByTagName("body")[0].style.backgroundColor = `#${bg}`;
+
       let hsl2hex = function (h, s, l) {
         l /= 100;
         const a = (s * Math.min(l, 1 - l)) / 100;
