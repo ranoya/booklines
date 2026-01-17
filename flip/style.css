@@ -104,8 +104,11 @@ body {
   line-height: 12px;
 }
 
-#indices div div {
+div.marca {
   border-top: 1px dotted black;
+}
+
+#indices div div {
   width: 100%;
   padding-top: 10px;
   cursor: pointer;

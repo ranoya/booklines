@@ -712,7 +712,7 @@ gsdata($_GET["file"], function (d) {
       if (d[i].titulo == d[i - 1].titulo) {
         tl += `<div><div onclick='poenoponto(${i})'></div></div>`;
       } else {
-        tl += `<div><div onclick='poenoponto(${i})'>${d[i].titulo}</div></div>`;
+        tl += `<div><div class="marca" onclick='poenoponto(${i})'>${d[i].titulo}</div></div>`;
       }
     } else {
       tl += `<div><div onclick='poenoponto(${i})'>${d[i].titulo}</div></div>`;
