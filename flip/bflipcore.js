@@ -137,6 +137,11 @@ let poenoponto = function (op) {
     pge = p - 1;
   }
 
+  if (op < 2) {
+    pgd = 1;
+    pge = 2;
+  }
+
   document.getElementById(davez[atual] + "Ifr_PaginaBack").src = docs[pge].url;
   document.getElementById(davez[atual] + "Ifr_PaginaFundo_DIR").src =
     docs[pgd].url;
@@ -151,27 +156,18 @@ let poenoponto = function (op) {
   document.getElementById(ordena.proximo() + "Ifr_PaginaFundo_DIR").src =
     docs[pgd + 2].url;
 
-  console.log("-- " + pge);
-
-  if (pge >= 2) {
-    console.log("-- __  " + pge);
-
-    document.getElementById(ordena.anterior() + "Ifr_PaginaFundo_ESQ").src =
-      docs[pge - 2].url;
-    document.getElementById(ordena.anterior() + "Ifr_PaginaCover").src =
-      docs[pgd - 2].url;
-  } else {
-    console.log("Deveria cortar o menos");
-    document.getElementById(ordena.anterior() + "Ifr_PaginaFundo_ESQ").src =
-      docs[0].url;
-    document.getElementById(ordena.anterior() + "Ifr_PaginaCover").src =
-      docs[0].url;
-    document.getElementById("menos").classList.add("naomostra");
-  }
+  document.getElementById(ordena.anterior() + "Ifr_PaginaFundo_ESQ").src =
+    docs[pge - 2].url;
+  document.getElementById(ordena.anterior() + "Ifr_PaginaCover").src =
+    docs[pgd - 2].url;
 
   posit = pge - 2;
 
-  acresce();
+  if (op < 2) {
+    decresce();
+  } else {
+    acresce();
+  }
 
   document.getElementById(davez[atual] + "Ifr_PaginaFundo_ESQ").src =
     docs[posit].url;
