@@ -138,8 +138,8 @@ let poenoponto = function (op) {
   }
 
   if (op < 2) {
-    pgd = 1;
-    pge = 2;
+    pgd = 2;
+    pge = 1;
   }
 
   document.getElementById(davez[atual] + "Ifr_PaginaBack").src = docs[pge].url;
