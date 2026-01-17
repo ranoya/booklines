@@ -720,6 +720,18 @@ let toggleshowthings = function () {
   }
 };
 
+if (
+  typeof $_GET["css"] !== "undefined" &&
+  $_GET["css"] != "" &&
+  $_GET["css"] != null
+) {
+  let lnkcss = document.createElement("link");
+  lnkcss.href = $_GET["css"];
+  lnkcss.type = "text/css";
+  lnkcss.rel = "stylesheet";
+  document.head.appendChild(lnkcss);
+}
+
 gsdata($_GET["file"], function (d) {
   docs = [];
 
