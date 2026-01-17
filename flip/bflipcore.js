@@ -171,7 +171,7 @@ let poenoponto = function (op) {
     docs[posit + 1].url;
 
   if (op < 2) {
-    setTimeout(decresce, 350);
+    setTimeout(decresce, 1000);
   }
 };
 
