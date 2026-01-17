@@ -155,12 +155,17 @@ div.marca {
 #mais {
   position: fixed;
   z-index: 500;
-  width: 30px;
+  width: 20px;
+  border-right: 10px solid #00000000;
   background-color: transparent;
   right: 0;
   top: 100px;
   height: calc(100dvh - 220px);
   cursor: pointer;
+}
+
+#mais:hover {
+  border-right: 10px solid #00000066;
 }
 
 #mais.blink {
@@ -174,12 +179,17 @@ div.marca {
 #menos {
   position: fixed;
   z-index: 500;
-  width: 30px;
+  width: 20px;
+  border-left: 10px solid #00000000;
   background-color: transparent;
   left: 0;
   top: 100px;
   height: calc(100dvh - 220px);
   cursor: pointer;
+}
+
+#menos:hover {
+  border-left: 10px solid #00000066;
 }
 
 #pas_BlocoCover.initdouble,
