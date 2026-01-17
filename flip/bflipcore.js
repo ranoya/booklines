@@ -73,11 +73,11 @@ let escrevepresente = function (pre, onde, delta) {
       </div>
       <div id="${pre}BlocoCover" css="${docs[posit + delta + 1].css}">
         <div style="background-color: white; overflow-x: hidden" id="${pre}PaginaCover" css="${
-      docs[posit + delta + 1].css
-    }">
+          docs[posit + delta + 1].css
+        }">
           <iframe id="${pre}Ifr_PaginaCover" frameborder="0" src="${
-      docs[posit + delta + 1].url
-    }" style="background-color: white;"></iframe>
+            docs[posit + delta + 1].url
+          }" style="background-color: white;"></iframe>
         </div>
       </div>
       
@@ -136,6 +136,7 @@ let poenoponto = function (op) {
     pgd = p;
     pge = p - 1;
   }
+
   document.getElementById(davez[atual] + "Ifr_PaginaBack").src = docs[pge].url;
   document.getElementById(davez[atual] + "Ifr_PaginaFundo_DIR").src =
     docs[pgd].url;
@@ -150,12 +151,21 @@ let poenoponto = function (op) {
   document.getElementById(ordena.proximo() + "Ifr_PaginaFundo_DIR").src =
     docs[pgd + 2].url;
 
-  document.getElementById(ordena.anterior() + "Ifr_PaginaFundo_ESQ").src =
-    docs[pge - 2].url;
-  document.getElementById(ordena.anterior() + "Ifr_PaginaCover").src =
-    docs[pgd - 2].url;
+  if (pge >= 2) {
+    document.getElementById(ordena.anterior() + "Ifr_PaginaFundo_ESQ").src =
+      docs[pge - 2].url;
+    document.getElementById(ordena.anterior() + "Ifr_PaginaCover").src =
+      docs[pgd - 2].url;
 
-  posit = pge - 2;
+    posit = pge - 2;
+  } else {
+    document.getElementById(ordena.anterior() + "Ifr_PaginaFundo_ESQ").src =
+      docs[0].url;
+    document.getElementById(ordena.anterior() + "Ifr_PaginaCover").src =
+      docs[0].url;
+
+    posit = 0;
+  }
 
   acresce();
 
@@ -675,7 +685,7 @@ $_GET = [];
     for (arg in argumentos) {
       let argCorte = argumentos[arg].indexOf("=");
       $_GET[argumentos[arg].substring(0, argCorte)] = argumentos[arg].substring(
-        argCorte + 1
+        argCorte + 1,
       );
     }
   }

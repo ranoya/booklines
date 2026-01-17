@@ -2,16 +2,16 @@
   0% {
     background-color: #00000000;
   }
+  10% {
+    background-color: #00000033;
+  }
   20% {
+    background-color: #00000000;
+  }
+  30% {
     background-color: #00000033;
   }
   40% {
-    background-color: #00000000;
-  }
-  60% {
-    background-color: #00000033;
-  }
-  80% {
     background-color: #00000000;
   }
 
@@ -101,9 +101,9 @@ body {
 
 #mais.blink {
   animation-name: blinka;
-  animation-duration: 1.5s;
-  animation-delay: 4s;
-  animation-iteration-count: 6;
+  animation-duration: 3.3s;
+  animation-delay: 6s;
+  animation-iteration-count: intinite;
   animation-direction: normal;
 }
 
