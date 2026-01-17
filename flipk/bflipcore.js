@@ -683,6 +683,8 @@ if (
   bgc = $_GET["bgcolor"];
   document.getElementsByTagName("html")[0].style.backgroundColor =
     "#" + $_GET["bgcolor"];
+  document.getElementsByTagName("body")[0].style.backgroundColor =
+    "#" + $_GET["bgcolor"];
 }
 
 // abre e fecha o Kode
