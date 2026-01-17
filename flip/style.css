@@ -97,11 +97,12 @@ body {
 #indices div {
   width: 100%;
   text-align: right;
-  min-height: 30px;
+  min-height: 10px;
+  height: auto;
   text-transform: uppercase;
   font-family: Helvetica, Arial, sans-serif;
-  font-size: 10px;
-  line-height: 12px;
+  font-size: 11px;
+  line-height: 15px;
 }
 
 div.marca {
@@ -109,13 +110,13 @@ div.marca {
 }
 
 #indices div div {
-  width: 100%;
-  padding-top: 10px;
-  cursor: pointer;
+  width: calc(100% - 12px);
+  padding: 6px;
+  padding-bottom: 8px;
 }
 
 #indices div div:hover {
-  background-color: #00000055;
+  background-color: #00000021;
 }
 
 #pas_LivroComponente.show,
@@ -191,6 +192,7 @@ div.marca {
 #fut_BlocoFundoE.initdouble {
   width: calc(100vw - 60px) !important;
   transform: translateX(0) !important;
+  transition: width 0.4s ease-in;
 }
 
 #pas_PaginaCover.initdouble,
@@ -207,6 +209,7 @@ div.marca {
 #fut_PaginaFundo_ESQ.initdouble {
   transform-origin: left center;
   width: calc(100vw - 60px);
+  transition: width 0.4s ease-in;
 }
 
 #pas_Ifr_PaginaCover.initdouble,
@@ -222,6 +225,7 @@ div.marca {
 #pres_Ifr_PaginaFundo_ESQ.initdouble,
 #fut_Ifr_PaginaFundo_ESQ.initdouble {
   width: calc(100vw - 60px);
+  transition: width 0.4s ease-in;
 }
 
 #pas_Wrap,
@@ -249,6 +253,7 @@ div.marca {
   z-index: 2;
   transform: translateX(0px);
   box-shadow: 10px 10px 10px #00000044;
+  transition: width 0.4s ease-in;
 }
 
 #pas_PaginaFundo_DIR,
@@ -262,6 +267,7 @@ div.marca {
   position: absolute;
   transform: translateX(calc(50vw - 30px));
   box-shadow: 10px 10px 10px #00000044;
+  transition: width 0.4s ease-in;
 }
 #pas_BlocoCover,
 #pres_BlocoCover,
@@ -275,6 +281,7 @@ div.marca {
   position: absolute;
   z-index: 10;
   transform: translateX(calc(50vw - 30px));
+  transition: width 0.4s ease-in;
 }
 
 #pas_PaginaCover,
@@ -284,6 +291,7 @@ div.marca {
   height: calc(100dvh - 60px);
   transform-origin: left center;
   overflow: hidden;
+  transition: width 0.4s ease-in;
 }
 
 #pas_BlocoBack,
@@ -297,6 +305,7 @@ div.marca {
   margin: 0;
   position: absolute;
   transform: translateX(calc(50vw - 30px));
+  transition: width 0.4s ease-in;
 }
 
 #pas_PaginaBack,
@@ -305,6 +314,7 @@ div.marca {
   width: calc(50vw - 30px);
   height: calc(100dvh - 60px);
   transform-origin: left center;
+  transition: width 0.4s ease-in;
 }
 
 #pas_Ifr_PaginaCover,
@@ -312,6 +322,7 @@ div.marca {
 #fut_Ifr_PaginaCover {
   width: calc(50vw - 30px);
   height: calc(100dvh - 60px);
+  transition: width 0.4s ease-in;
 }
 
 #pas_Ifr_PaginaBack,
@@ -321,12 +332,14 @@ div.marca {
 
   width: calc(50vw - 30px);
   height: calc(100dvh - 60px);
+  transition: width 0.4s ease-in;
 }
 #pas_Ifr_PaginaFundo_DIR,
 #pres_Ifr_PaginaFundo_DIR,
 #fut_Ifr_PaginaFundo_DIR {
   width: calc(50vw - 30px);
   height: calc(100dvh - 60px);
+  transition: width 0.4s ease-in;
 }
 
 #pas_Ifr_PaginaFundo_ESQ,
@@ -334,4 +347,5 @@ div.marca {
 #fut_Ifr_PaginaFundo_ESQ {
   width: calc(50vw - 30px);
   height: calc(100dvh - 60px);
+  transition: width 0.4s ease-in;
 }
