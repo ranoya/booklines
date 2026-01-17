@@ -4,6 +4,7 @@ let atual = 0;
 let posit = 0;
 let move = "";
 let angulo5 = 0;
+let kaberto = false;
 let ultimadirecao = true;
 let docs = [
   "https://booklines.vercel.app/livros/javascript/js-comecando.html?blink=Primeiros%20passos",
@@ -640,30 +641,23 @@ gsdata($_GET["file"], function (d) {
   escrevepresente("pres_", "pres_livro", 2);
   escrevepresente("fut_", "fut_livro", 4);
 
-  document.addEventListener("mousemove", function (event) {
-    let mouseX = event.clientX; // Horizontal position relative to the viewport
-    let mouseY = event.clientY; // Vertical position relative to the viewport
+  // abre e fecha o Kode
+  let toggleshowthings = function () {
+    if (!kaberto) {
+      kaberto = true;
 
-    let viewportHeight =
-      window.innerHeight ||
-      document.documentElement.clientHeight ||
-      document.body.clientHeight;
-
-    let viewportWidth =
-      window.innerWidth ||
-      document.documentElement.clientWidth ||
-      document.body.clientWidth;
-
-    if (mouseY > viewportHeight - 200) {
       document.getElementById("pas_LivroComponente").classList.add("show");
       document.getElementById("pres_LivroComponente").classList.add("show");
       document.getElementById("fut_LivroComponente").classList.add("show");
       document.getElementById("timeline").classList.add("show");
+      document.getElementById("kode").classList.add("show");
     } else {
+      kaberto = false;
       document.getElementById("pas_LivroComponente").classList.remove("show");
       document.getElementById("pres_LivroComponente").classList.remove("show");
       document.getElementById("fut_LivroComponente").classList.remove("show");
       document.getElementById("timeline").classList.remove("show");
+      document.getElementById("kode").classList.remove("show");
     }
-  });
+  };
 });

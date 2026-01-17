@@ -52,13 +52,15 @@ body {
 #timeline {
   position: fixed;
   bottom: -145px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   height: 140px;
-  width: calc(100% - 40px);
-  left: 20px;
+  /* width: calc(100% - 40px);
+  left: 20px; */
   z-index: 1;
   transition: transform 0.4s ease-in;
   perspective: 600px;
+  width: calc(100% - 160px) !important;
+  left: 80px;
 }
 
 #timelinewrap::-webkit-scrollbar {
@@ -120,6 +122,21 @@ body {
 #timeline.show,
 #timeline.show {
   transform: translateY(-165px);
+}
+
+#kode {
+  position: fixed;
+  z-index: 500;
+  width: calc(100% - 120px);
+  background-color: red;
+  left: 60px;
+  bottom: 0px;
+  height: 30px;
+  cursor: pointer;
+}
+
+#kode.show {
+  bottom: 78dvh;
 }
 
 #mais {
