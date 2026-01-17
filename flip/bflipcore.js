@@ -413,6 +413,7 @@ let decresce = function () {
   if (posit >= 0) {
     move = setInterval(function () {
       if (angulo5 >= 0) {
+        document.getElementById("timeline").style.zIndex = 1;
         angulo5--;
 
         pas_pdf.style.zIndex = `${5 + 5 * Math.min(parseInt(angulo5 - 74), 2)}`;
@@ -486,6 +487,7 @@ let decresce = function () {
             .getElementById("pres_BlocoCover")
             .classList.add("initdouble");
         }
+        document.getElementById("timeline").style.zIndex = 800;
       }
     }, 1);
   }
@@ -526,6 +528,7 @@ let acresce = function () {
   if (posit < docs.length - 2) {
     move = setInterval(function () {
       if (angulo5 < 180) {
+        document.getElementById("timeline").style.zIndex = 1;
         angulo5++;
         pas_pdf.style.zIndex = `${5 + 5 * Math.min(parseInt(angulo5 - 74), 2)}`;
         pas_pgCover.style.transform = `rotateY(${0 - angulo5}deg)`;
@@ -597,6 +600,8 @@ let acresce = function () {
             .getElementById("pres_BlocoCover")
             .classList.add("initdouble");
         }
+
+        document.getElementById("timeline").style.zIndex = 800;
       }
     }, 1);
   }

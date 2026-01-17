@@ -128,7 +128,7 @@ body {
   position: fixed;
   z-index: 500;
   width: calc(100% - 120px);
-  background-color: red;
+  /* background-color: red; */
   left: 60px;
   bottom: 0px;
   height: 30px;
@@ -136,7 +136,7 @@ body {
 }
 
 #kode.show {
-  bottom: 78dvh;
+  bottom: 19.8dvh;
 }
 
 #mais {
