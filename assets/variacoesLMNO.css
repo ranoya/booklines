@@ -62,3 +62,11 @@ div.marca {
   animation-iteration-count: intinite;
   animation-direction: normal;
 }
+
+#mais:hover {
+  border-right: 10px solid #ab6c6c59;
+}
+
+#menos:hover {
+  border-left: 10px solid #ab6c6c59;
+}

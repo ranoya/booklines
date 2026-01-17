@@ -98,6 +98,7 @@ body {
   top: 100px;
   height: calc(100dvh - 220px);
   cursor: pointer;
+  transition: border 0.3s ease-in;
 }
 
 #mais:hover {
@@ -122,6 +123,7 @@ body {
   top: 100px;
   height: calc(100dvh - 220px);
   cursor: pointer;
+  transition: border 0.3s ease-in;
 }
 
 #menos:hover {
