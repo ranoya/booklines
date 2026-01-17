@@ -124,6 +124,47 @@ let ordena = {
   },
 };
 
+let poenoponto = function (op) {
+  let p = op;
+  if (angulo5 > 0) {
+    p = op - 2;
+  }
+
+  let pge = p;
+  let pgd = p + 1;
+  if (p % 2 == 1) {
+    pgd = p;
+    pge = p - 1;
+  }
+  document.getElementById(davez[atual] + "Ifr_PaginaBack").src = docs[pge].url;
+  document.getElementById(davez[atual] + "Ifr_PaginaFundo_DIR").src =
+    docs[pgd].url;
+
+  document.getElementById(ordena.proximo() + "Ifr_PaginaFundo_ESQ").src =
+    docs[pge].url;
+  document.getElementById(ordena.proximo() + "Ifr_PaginaCover").src =
+    docs[pgd].url;
+
+  document.getElementById(ordena.proximo() + "Ifr_PaginaBack").src =
+    docs[pgd + 2].url;
+  document.getElementById(ordena.proximo() + "Ifr_PaginaFundo_DIR").src =
+    docs[pgd + 2].url;
+
+  document.getElementById(ordena.anterior() + "Ifr_PaginaFundo_ESQ").src =
+    docs[pge - 2].url;
+  document.getElementById(ordena.anterior() + "Ifr_PaginaCover").src =
+    docs[pgd - 2].url;
+
+  posit = pge - 2;
+
+  acresce();
+
+  document.getElementById(davez[atual] + "Ifr_PaginaFundo_ESQ").src =
+    docs[posit].url;
+  document.getElementById(davez[atual] + "Ifr_PaginaCover").src =
+    docs[posit + 1].url;
+};
+
 let gerencia = function (dir) {
   /* 
 
@@ -654,11 +695,34 @@ let toggleshowthings = function () {
 gsdata($_GET["file"], function (d) {
   docs = [];
 
+  let tl = `
+  <div id="timelinewrap">
+    
+    
+    <div id="indices">
+  
+  `;
+
   for (let i = 0; i < d.length; i++) {
     docs[i] = {};
     docs[i].url = d[i].link;
     docs[i].css = d[i].tipo;
+
+    if (i > 0) {
+      if (d[i].titulo == d[i - 1].titulo) {
+        tl += `<div><div onclick='poenoponto(${i})'></div></div>`;
+      } else {
+        tl += `<div><div onclick='poenoponto(${i})'>${d[i].titulo}</div></div>`;
+      }
+    } else {
+      tl += `<div><div onclick='poenoponto(${i})'>${d[i].titulo}</div></div>`;
+    }
+
+    // geratimeline
   }
+
+  tl + "</div></div>";
+  document.getElementById("timeline").innerHTML = tl;
 
   // cria o documento e os eventos
 

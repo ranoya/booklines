@@ -108,6 +108,11 @@ body {
   border-top: 1px dotted black;
   width: 100%;
   padding-top: 10px;
+  cursor: pointer;
+}
+
+#indices div div:hover {
+  background-color: #00000055;
 }
 
 #pas_LivroComponente.show,
