@@ -151,20 +151,25 @@ let poenoponto = function (op) {
   document.getElementById(ordena.proximo() + "Ifr_PaginaFundo_DIR").src =
     docs[pgd + 2].url;
 
+  console.log("-- " + pge);
+
   if (pge >= 2) {
+    console.log("-- __  " + pge);
+
     document.getElementById(ordena.anterior() + "Ifr_PaginaFundo_ESQ").src =
       docs[pge - 2].url;
     document.getElementById(ordena.anterior() + "Ifr_PaginaCover").src =
       docs[pgd - 2].url;
-
-    posit = pge - 2;
   } else {
+    console.log("Deveria cortar o menos");
     document.getElementById(ordena.anterior() + "Ifr_PaginaFundo_ESQ").src =
       docs[0].url;
     document.getElementById(ordena.anterior() + "Ifr_PaginaCover").src =
       docs[0].url;
     document.getElementById("menos").classList.add("naomostra");
   }
+
+  posit = pge - 2;
 
   acresce();
 
