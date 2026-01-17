@@ -163,16 +163,16 @@ let poenoponto = function (op) {
 
   posit = pge - 2;
 
-  if (op < 2) {
-    decresce();
-  } else {
-    acresce();
-  }
+  acresce();
 
   document.getElementById(davez[atual] + "Ifr_PaginaFundo_ESQ").src =
     docs[posit].url;
   document.getElementById(davez[atual] + "Ifr_PaginaCover").src =
     docs[posit + 1].url;
+
+  if (op < 2) {
+    setTimeout(decresce, 35);
+  }
 };
 
 let gerencia = function (dir) {
