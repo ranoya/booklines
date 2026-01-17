@@ -167,7 +167,7 @@ div.marca {
   animation-name: blinka;
   animation-duration: 3.3s;
   animation-delay: 6s;
-  animation-iteration-count: intinite;
+  animation-iteration-count: infinite;
   animation-direction: normal;
 }
 

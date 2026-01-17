@@ -1,0 +1,64 @@
+@keyframes blinka {
+  0% {
+    background-color: #ffb5b500;
+  }
+  10% {
+    background-color: #72414175;
+  }
+  20% {
+    background-color: #ffb5b500;
+  }
+  30% {
+    background-color: #72414175;
+  }
+  40% {
+    background-color: #ffb5b500;
+  }
+
+  100% {
+    background-color: #ffb5b500;
+  }
+}
+
+#timelinewrap::-webkit-scrollbar {
+  height: 7px;
+}
+
+#timelinewrap::-webkit-scrollbar-thumb {
+  background: black;
+  background-color: black;
+}
+
+#indices div {
+  width: 100%;
+  text-align: right;
+  min-height: 10px;
+  height: auto;
+  text-transform: uppercase;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 11px;
+  line-height: 15px;
+  cursor: pointer;
+}
+
+div.marca {
+  border-top: 1px dotted black;
+  border-top: 1px dotted #333533;
+}
+
+#indices div div {
+  color: #333533;
+}
+
+#indices div div:hover {
+  background-color: #ffb5b580;
+  cursor: pointer;
+}
+
+#mais.blink {
+  animation-name: blinka;
+  animation-duration: 3.3s;
+  animation-delay: 6s;
+  animation-iteration-count: intinite;
+  animation-direction: normal;
+}
