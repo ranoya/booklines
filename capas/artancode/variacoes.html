@@ -72,28 +72,11 @@
         z-index: 10;
         width: 60vw;
         height: 60vh;
-        top: 45dvh;
+        top: calc(45dvh - 5px);
         left: 85px;
         z-index: 5000;
-        text-align: right;
-      }
-
-      #logo svg path {
-        /*
-        animation-name: cicloA;
-        animation-duration: 3s;
-        animation-iteration-count: infinite;
-        */
-        fill: var(--rebase-color);
-      }
-
-      #nome svg path {
-        /*
-        animation-name: cicloA;
-        animation-duration: 4s;
-        animation-iteration-count: infinite;
-        */
-        fill: var(--cor-texto);
+        text-align: left;
+        font-size: 55px;
       }
     </style>
   </head>
@@ -172,7 +155,7 @@
         txt = $_GET["texto"];
       }
 
-      document.getElementById("logo").innerHTML = txt;
+      document.getElementById("logo").innerHTML = decodeURI(txt);
 
       if (
         typeof $_GET["imgtype"] != "undefined" &&
