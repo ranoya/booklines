@@ -626,6 +626,26 @@ if (
     "#" + $_GET["bgcolor"];
 }
 
+// abre e fecha o Kode
+let toggleshowthings = function () {
+  if (!kaberto) {
+    kaberto = true;
+
+    document.getElementById("pas_LivroComponente").classList.add("show");
+    document.getElementById("pres_LivroComponente").classList.add("show");
+    document.getElementById("fut_LivroComponente").classList.add("show");
+    document.getElementById("timeline").classList.add("show");
+    document.getElementById("kode").classList.add("show");
+  } else {
+    kaberto = false;
+    document.getElementById("pas_LivroComponente").classList.remove("show");
+    document.getElementById("pres_LivroComponente").classList.remove("show");
+    document.getElementById("fut_LivroComponente").classList.remove("show");
+    document.getElementById("timeline").classList.remove("show");
+    document.getElementById("kode").classList.remove("show");
+  }
+};
+
 gsdata($_GET["file"], function (d) {
   docs = [];
 
@@ -640,24 +660,4 @@ gsdata($_GET["file"], function (d) {
   escrevepresente("pas_", "pas_livro", 0);
   escrevepresente("pres_", "pres_livro", 2);
   escrevepresente("fut_", "fut_livro", 4);
-
-  // abre e fecha o Kode
-  let toggleshowthings = function () {
-    if (!kaberto) {
-      kaberto = true;
-
-      document.getElementById("pas_LivroComponente").classList.add("show");
-      document.getElementById("pres_LivroComponente").classList.add("show");
-      document.getElementById("fut_LivroComponente").classList.add("show");
-      document.getElementById("timeline").classList.add("show");
-      document.getElementById("kode").classList.add("show");
-    } else {
-      kaberto = false;
-      document.getElementById("pas_LivroComponente").classList.remove("show");
-      document.getElementById("pres_LivroComponente").classList.remove("show");
-      document.getElementById("fut_LivroComponente").classList.remove("show");
-      document.getElementById("timeline").classList.remove("show");
-      document.getElementById("kode").classList.remove("show");
-    }
-  };
 });
