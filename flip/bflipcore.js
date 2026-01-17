@@ -163,8 +163,7 @@ let poenoponto = function (op) {
       docs[0].url;
     document.getElementById(ordena.anterior() + "Ifr_PaginaCover").src =
       docs[0].url;
-
-    posit = 0;
+    document.getElementById("menos").classList.add("naomostra");
   }
 
   acresce();
