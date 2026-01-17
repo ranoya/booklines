@@ -720,6 +720,36 @@ let toggleshowthings = function () {
   }
 };
 
+// da zoom na tela
+
+let toggleFullscreen = function (event) {
+  var element = document.body;
+
+  if (event instanceof HTMLElement) {
+    element = event;
+  }
+
+  var isFullscreen =
+    document.webkitIsFullScreen || document.mozFullScreen || false;
+
+  element.requestFullScreen =
+    element.requestFullScreen ||
+    element.webkitRequestFullScreen ||
+    element.mozRequestFullScreen ||
+    function () {
+      return false;
+    };
+  document.cancelFullScreen =
+    document.cancelFullScreen ||
+    document.webkitCancelFullScreen ||
+    document.mozCancelFullScreen ||
+    function () {
+      return false;
+    };
+
+  isFullscreen ? document.cancelFullScreen() : element.requestFullScreen();
+};
+
 if (
   typeof $_GET["css"] !== "undefined" &&
   $_GET["css"] != "" &&
@@ -740,6 +770,7 @@ gsdata($_GET["file"], function (d) {
     
     
     <div id="indices">
+      <div><button onclick='toggleFullscreen()'><div class='quadrado'></div></button></div>
   
   `;
 
