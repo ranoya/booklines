@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <meta charset="utf-8" />
@@ -34,6 +34,12 @@
         border: 0;
         padding: 0;
       }
+
+      html,
+      body {
+        background-color: var(--cor-bg, #ffffff);
+        color: var(--cor-fg, #000000);
+      }
     </style>
 
     <script>
@@ -59,7 +65,7 @@
       ) {
         document.documentElement.style.setProperty(
           "--cor-bg",
-          "#" + $_GET["bgcolor"]
+          "#" + $_GET["bgcolor"],
         );
       }
 
@@ -70,7 +76,7 @@
       ) {
         document.documentElement.style.setProperty(
           "--cor-fg",
-          "#" + $_GET["fcolor"]
+          "#" + $_GET["fcolor"],
         );
       }
     </script>
