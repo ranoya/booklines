@@ -1,0 +1,204 @@
+<!doctype html>
+
+<html style="margin: 0; padding: 0; overflow-y: hidden; overflow-x: hidden">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="pinterest" content="nopin" />
+    <meta name="pinterest" content="nohover" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="keywords" content="" />
+    <title>ART/ANC/ODE</title>
+    <meta property="og:title" content="ART/ANC/ODE" />
+    <meta name="generator" content="Observable" />
+    <meta
+      name="description"
+      content="Coleção de obras de arte generativa e arte computacional"
+    />
+    <meta
+      property="og:description"
+      content="Coleção de obras de arte generativa e arte computacional"
+    />
+    <meta name="author" content="Guilherme Ranoya" />
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=MuseoModerno:ital,wght@0,100..900;1,100..900&display=swap");
+
+      :root {
+        --cor-texto: #ffffff;
+        --rebase-color: #ffffff;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        border: 0;
+      }
+
+      body {
+        background-color: #151515;
+        font-family: Helvetica, Arial, sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 500;
+        font-style: normal;
+        color: var(--cor-texto);
+      }
+
+      wrap {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        width: calc(100vw - 80px);
+        height: calc(100dvh - 80px);
+        overflow: hidden;
+        padding: 40px;
+        padding-top: 0;
+        padding-bottom: 80px;
+        margin: 0;
+        min-width: 20vw;
+      }
+
+      .b {
+        width: 50vw !important;
+        align-items: flex-end !important;
+        padding-top: 0 !important;
+        padding-bottom: 80px !important;
+      }
+
+      .t {
+        width: 50vw !important;
+        align-items: flex-start !important;
+        padding-top: 80px !important;
+        padding-bottom: 0 !important;
+      }
+
+      .r {
+        width: 50vw !important;
+        padding-left: calc(50vw - 40px) !important;
+      }
+
+      #texto {
+        width: 100%;
+        font-size: 28px;
+        line-height: 32px;
+      }
+
+      .r #texto {
+        text-align: right;
+      }
+    </style>
+  </head>
+
+  <body style="margin: 0; padding: 0; overflow-y: hidden; overflow-x: hidden">
+    <div id="wrap">
+      <div id="texto"></div>
+    </div>
+
+    <iframe
+      id="fundo"
+      frameborder="0"
+      style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100dvh;
+        margin: 0;
+        padding: 0;
+        z-index: 1;
+      "
+    ></iframe>
+
+    <script>
+      $_GET = [];
+      (function () {
+        corte = window.location.href.toString().indexOf("?");
+        if (corte > 0) {
+          argumento = window.location.href.toString().substring(corte + 1);
+          argumentos = argumento.split("&");
+          for (arg in argumentos) {
+            let argCorte = argumentos[arg].indexOf("=");
+            $_GET[argumentos[arg].substring(0, argCorte)] = argumentos[
+              arg
+            ].substring(argCorte + 1);
+          }
+        }
+      })();
+
+      let bg = "000000";
+      let fg = "FFFFFF";
+      let art = "mitp";
+
+      if (
+        typeof $_GET["bgcolor"] != "undefined" &&
+        $_GET["bgcolor"] != null &&
+        $_GET["bgcolor"] != ""
+      ) {
+        bg = $_GET["bgcolor"];
+      }
+
+      txt = "";
+
+      if (
+        typeof $_GET["texto"] != "undefined" &&
+        $_GET["texto"] != null &&
+        $_GET["texto"] != ""
+      ) {
+        txt = $_GET["texto"];
+      }
+
+      document.getElementById("texto").innerHTML = decodeURI(txt);
+
+      if (
+        typeof $_GET["fcolor"] != "undefined" &&
+        $_GET["fcolor"] != null &&
+        $_GET["fcolor"] != ""
+      ) {
+        fg = $_GET["fcolor"];
+      }
+
+      if (
+        typeof $_GET["art"] != "undefined" &&
+        $_GET["art"] != null &&
+        $_GET["art"] != ""
+      ) {
+        art = $_GET["art"];
+      }
+
+      if (
+        typeof $_GET["t"] != "undefined" &&
+        $_GET["t"] != null &&
+        $_GET["t"] != ""
+      ) {
+        document.getElementById("wrap").classList.add("t");
+      }
+
+      if (
+        typeof $_GET["b"] != "undefined" &&
+        $_GET["b"] != null &&
+        $_GET["b"] != ""
+      ) {
+        document.getElementById("wrap").classList.add("b");
+      }
+
+      if (
+        typeof $_GET["r"] != "undefined" &&
+        $_GET["r"] != null &&
+        $_GET["r"] != ""
+      ) {
+        document.getElementById("wrap").classList.add("r");
+      }
+
+      document.getElementById("fundo").src =
+        `https://artndcode.vercel.app/Singles/${art}.html?fcolor=${fg}&bgcolor=${bg}`;
+
+      document.getElementsByTagName("html")[0].style.backgroundColor = `#${bg}`;
+      document.getElementsByTagName("body")[0].style.backgroundColor = `#${bg}`;
+      document.getElementById("texto").style.color = `#${fg}`;
+    </script>
+  </body>
+</html>
