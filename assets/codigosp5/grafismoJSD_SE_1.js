@@ -12,7 +12,7 @@ let w = 1;
 function draw() {
   push();
   translate(windowWidth / 2, windowHeight / 2 - 40);
-  rotate(a);
+  rotate(90 + a);
   noFill();
   strokeWeight(2);
 
