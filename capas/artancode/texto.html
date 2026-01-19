@@ -42,44 +42,39 @@
         color: var(--cor-texto);
       }
 
-      wrap {
+      #wrap {
         display: flex;
         align-content: center;
         justify-content: center;
         align-items: center;
-        width: calc(100vw - 80px);
+        width: 30vw;
         height: calc(100dvh - 80px);
         overflow: hidden;
-        padding: 40px;
-        padding-top: 0;
-        padding-bottom: 80px;
+        padding: 0;
         margin: 0;
-        min-width: 20vw;
+        left: 40px;
+        top: 40px;
+        position: fixed;
+        z-index: 2;
       }
 
       .b {
-        width: 50vw !important;
         align-items: flex-end !important;
-        padding-top: 0 !important;
-        padding-bottom: 80px !important;
       }
 
       .t {
-        width: 50vw !important;
         align-items: flex-start !important;
-        padding-top: 80px !important;
-        padding-bottom: 0 !important;
       }
 
       .r {
-        width: 50vw !important;
-        padding-left: calc(50vw - 40px) !important;
+        left: calc(100vw - 30vw - 40px);
       }
 
       #texto {
         width: 100%;
-        font-size: 28px;
-        line-height: 32px;
+        font-size: 34px;
+        line-height: 40px;
+        font-weight: 500;
       }
 
       .r #texto {
