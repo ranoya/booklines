@@ -764,6 +764,18 @@ if (
   document.head.appendChild(lnkcss);
 }
 
+window.onmessage = function (e) {
+  if (e.data == "p") {
+    decresce();
+  }
+  if (e.data == "n") {
+    acresce();
+  }
+  if (!isNaN(parseInt(e.data))) {
+    poenoponto(parseInt(e.data));
+  }
+};
+
 gsdata($_GET["file"], function (d) {
   docs = [];
 
