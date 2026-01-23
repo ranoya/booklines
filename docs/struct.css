@@ -1,0 +1,136 @@
+* {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  outline: 0;
+  grid-column: par / later;
+}
+
+::-webkit-scrollbar {
+  background: transparent;
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: color-mix(
+    in srgb,
+    var(--color-fg, #000000),
+    var(--color-bg, #ffffff) 70%
+  );
+  transition: background-color 0.3s ease-in;
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-fg, #000000);
+  transition: background-color 0.3s ease-in;
+}
+
+.ref {
+  grid-column: later;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.ref * {
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.fix {
+  grid-column: later;
+  position: sticky;
+  padding-top: 100px;
+  top: 0;
+  background-color: var(--color-bg, #ffffff);
+}
+
+.outline {
+  grid-column: init / par;
+  width: 100%;
+  text-align: right;
+}
+
+.label {
+  grid-column: init / par;
+  width: 100%;
+  text-align: right;
+}
+
+html {
+  margin: 40px;
+  margin-bottom: 80px;
+  margin-left: max(40px, calc(50% - 630px));
+  margin-right: max(40px, calc(50% - 540px));
+  background-color: var(--color-bg, #ffffff);
+  color: var(--color-fg, #000000);
+}
+
+body {
+  display: grid;
+  grid-template-columns: [init] 60px [par] 1.06fr [mid] 0.24fr [later] 0.7fr [end];
+  gap: 20px 60px;
+}
+
+h1 {
+  font-size: 54px;
+  line-height: 54px;
+  display: block;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  unicode-bidi: isolate;
+  grid-column: par / end;
+}
+
+h2 {
+  position: sticky;
+  top: 0px;
+  padding-top: 20px;
+  background-color: var(--color-bg, #ffffff);
+  margin-left: -40px;
+  padding-left: 40px;
+  padding-bottom: 26px;
+  grid-column: par / end;
+  z-index: 10;
+  font-size: 32px;
+  line-height: 38px;
+  display: block;
+  font-weight: bold;
+  unicode-bidi: isolate;
+}
+
+h2.fix {
+  top: 0px;
+  padding-top: 20px;
+  z-index: 10;
+}
+
+p,
+ul,
+ol,
+li,
+blockquote,
+span,
+div {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+.halfLeft {
+  grid-column: par / mid;
+}
+
+.halfRight {
+  grid-column: mid / end;
+}
+
+.half:nth-child(odd) {
+  grid-column: par / mid;
+}
+
+.half:nth-child(even) {
+  grid-column: mid / end;
+}
