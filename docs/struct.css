@@ -39,6 +39,11 @@
   line-height: 20px;
 }
 
+.limit {
+  display: block;
+  max-width: 650px;
+}
+
 .fix {
   grid-column: later;
   position: sticky;
