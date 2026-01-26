@@ -89,6 +89,19 @@
             els[i].style.gridRow = "span " + quanti;
             els[i].firstElementChild.classList.add("fix");
           }
+
+          if (els[i].innerHTML.match(/\-\+\- /gi)) {
+            let conteudo = els[i].innerHTML.replace(/\-\+\- /gi, "");
+            els[i].innerHTML = conteudo;
+            els[i].classList.add("fix");
+          }
+
+          if (els[i].innerHTML.match(/\@\{(.*)\}/)) {
+            let palavras = els[i].innerHTML.match(/\@\{(.*)\}/)[1];
+            let conteudo = els[i].innerHTML.replace(/\@\{(.*)\}/, "");
+            let conteudo2 = `<a name="" id="" class="indexs"></a>` + conteudo;
+            els[i].innerHTML = conteudo2;
+          }
         }
       } else {
         console.log("tem running");
