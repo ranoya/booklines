@@ -127,46 +127,33 @@
             els[i].innerHTML = conteudo2;
           }
         }
-      }
 
-      let sumarion = document.querySelectorAll("a.indexs");
-      let sumarioncode = "";
+        let insereTagTitle = document.createElement("title");
+        insereTagTitle.textContent =
+          document.getElementsByTagName("h1")[0].innerHTML;
+        document.getElementsByTagName("head")[0].appendChild(insereTagTitle);
 
-      for (let i = sumarion.length - 1; i >= 0; i--) {
-        sumarioncode += `<div onclick="goto('${sumarion[i].name}')">${sumarion[i].name}</div>`;
-      }
-
-      document.getElementById("sumarion").innerHTML = sumarioncode;
-
-      let carregacoisas = function () {
-        for (let i = 0; i < objetos.length; i++) {
+        document.body.onscroll = function (e) {
           if (
-            jafoi[i] != true &&
-            objetos[i].getBoundingClientRect().top <= window.innerHeight
+            document.getElementsByTagName("h1")[0].getBoundingClientRect()
+              .top <= window.innerHeight
           ) {
-            objetos[i].style.backgroundImage =
-              `url(${objetos[i].getAttribute("fundo")})`;
-            jafoi[i] = true;
+            document.getElementById("visualtitle").innerHTML =
+              document.getElementsByTagName("h1")[0].innerHTML;
+          } else {
+            document.getElementById("visualtitle").innerHTML = "";
           }
-        }
-      };
+        };
 
-      let insereTagTitle = document.createElement("title");
-      insereTagTitle.textContent =
-        document.getElementsByTagName("h1")[0].innerHTML;
-      document.getElementsByTagName("head")[0].appendChild(insereTagTitle);
+        let sumarion = document.querySelectorAll("a.indexs");
+        let sumarioncode = "";
 
-      document.body.onscroll = function (e) {
-        if (
-          document.getElementsByTagName("h1")[0].getBoundingClientRect().top <=
-          window.innerHeight
-        ) {
-          document.getElementById("visualtitle").innerHTML =
-            document.getElementsByTagName("h1")[0].innerHTML;
-        } else {
-          document.getElementById("visualtitle").innerHTML = "";
+        for (let i = sumarion.length - 1; i >= 0; i--) {
+          sumarioncode += `<div onclick="goto('${sumarion[i].name}')">${sumarion[i].name}</div>`;
         }
-      };
+
+        document.getElementById("sumarion").innerHTML = sumarioncode;
+      }
     }, 10);
   </script>
 </html>
