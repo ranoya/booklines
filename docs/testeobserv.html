@@ -9,19 +9,15 @@
     />
   </head>
 
-  <body id="observablehq-d604a734"></body>
+  <body></body>
 
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css"
-  />
   <script type="module">
     import {
       Runtime,
       Inspector,
     } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
     import define from "https://api.observablehq.com/@ranoya/testeparaoutliner.js?v=4";
-    new Runtime().module(define, Inspector.into("#observablehq-d604a734"));
+    new Runtime().module(define, Inspector.into("body"));
 
     let els = document.getElementsByClassName("observablehq");
 
