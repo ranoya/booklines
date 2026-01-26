@@ -11,6 +11,15 @@
 
   <body></body>
 
+  <script>
+    let goto = function (who) {
+      document.getElementById(who).scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    };
+  </script>
+
   <script type="module">
     import {
       Runtime,
@@ -111,6 +120,19 @@
           }
         }
       }
+
+      let insereSumarion = document.createElement("div");
+      insereSumarion.id = "sumarion";
+      document.body.appendChild(insereSumarion);
+
+      let sumarion = document.querySelectorAll("a.indexs");
+      let sumarioncode = "";
+
+      for (let i = sumarion.length - 1; i >= 0; i--) {
+        sumarioncode += `<div onclick="goto('${sumarion[i].name}')">${sumarion[i].name}</div>`;
+      }
+
+      document.getElementById("sumarion").innerHTML = sumarioncode;
     }, 10);
   </script>
 </html>
