@@ -25,16 +25,25 @@
 
     let els = document.getElementsByClassName("observablehq");
 
-    for (let i = 0; i < els.length; i++) {
-      if (els[i].innerHTML.match(/\@&gt; /gi)) {
-        els[i].innerHTML.replace(/\@&gt; /gi, "");
-        els[i].classList.add("ref");
-      }
+    let insiste = setInterval(function () {
+      if (document.body.innerHTML != "") {
+        console.log(document.body.innerHTML);
+        clearInterval(insiste);
 
-      if (els[i].innerHTML.match(/\@\&lt\; /gi)) {
-        els[i].innerHTML.replace(/\@\&lt\; /gi, "");
-        els[i].classList.add("outline");
+        for (let i = 0; i < els.length; i++) {
+          if (els[i].innerHTML.match(/\@&gt; /gi)) {
+            let conteudo = els[i].innerHTML.replace(/\@&gt; /gi, "");
+            els[i].innerHTML = conteudo;
+            els[i].classList.add("ref");
+          }
+
+          if (els[i].innerHTML.match(/\@\&lt\; /gi)) {
+            let conteudo = els[i].innerHTML.replace(/\@\&lt\; /gi, "");
+            els[i].innerHTML = conteudo;
+            els[i].classList.add("outline");
+          }
+        }
       }
-    }
+    }, 10);
   </script>
 </html>
