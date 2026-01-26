@@ -190,3 +190,23 @@ code {
   border-right: 4px solid #000000;
   color: #000000;
 }
+
+@media screen and (max-width: 1339px) {
+  #sumarion {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 880px) {
+  .ref {
+    display: none !important;
+  }
+
+  body {
+    grid-template-columns: [init] 60px [par] 1.06fr [mid] 0.94fr [end];
+  }
+
+  * {
+    grid-column: par / end;
+  }
+}
