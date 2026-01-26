@@ -241,6 +241,11 @@ code {
     gap: 20px 35px;
   }
 
+  h2 {
+    margin-left: -30px !important;
+    padding-left: 30px !important;
+  }
+
   * {
     grid-column: par / end;
   }
@@ -278,6 +283,8 @@ code {
 
   h2 {
     grid-column: init / end !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
   }
 
   body {
