@@ -173,17 +173,20 @@ code {
   margin-top: 1px;
   transition: all 0.4s ease-in;
   cursor: pointer;
-  padding: 4px 10px 4px 10px;
+  padding: 0px 10px 0px 10px;
+  height: 20px !important;
   margin-top: 1px;
-  border-right: 2px solid #c5c5c500;
+  border-right: 8px solid #00000000;
   font-family: Helvetica, Arial, sans-serif;
   font-optical-sizing: auto;
   font-weight: 200;
   font-style: normal;
-  font-size: 11px;
+  font-size: 12px;
+  line-height: 20px;
 }
 
 #sumarion div:hover {
-  transition: all 0.4s ease-in;
-  border-right: 6px solid #c5c5c5;
+  transition: all 0.2s ease-in;
+  border-right: 4px solid #000000;
+  color: #000000;
 }
