@@ -151,6 +151,11 @@
         }
       };
 
+      let insereTagTitle = document.createElement("title");
+      insereTagTitle.textContent =
+        document.getElementsByTagName("h1")[0].innerHTML;
+      document.getElementsByTagName("head")[0].appendChild(insereTagTitle);
+
       document.body.onscroll = function (e) {
         if (
           document.getElementsByTagName("h1")[0].getBoundingClientRect().top <=
@@ -162,11 +167,6 @@
           document.getElementById("visualtitle").innerHTML = "";
         }
       };
-
-      let insereTagTitle = document.createElement("title");
-      insereTagTitle.textContent =
-        document.getElementsByTagName("h1")[0].innerHTML;
-      document.getElementsByTagName("head")[0].appendChild(insereTagTitle);
     }, 10);
   </script>
 </html>
