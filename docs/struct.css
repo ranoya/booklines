@@ -28,6 +28,13 @@
   transition: background-color 0.3s ease-in;
 }
 
+.indexs {
+  overflow: hidden;
+  display: block;
+  height: 0;
+  color: transparent;
+}
+
 .ref {
   grid-column: later;
   font-size: 14px;
