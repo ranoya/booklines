@@ -21,5 +21,17 @@
     } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
     import define from "https://api.observablehq.com/@ranoya/testeparaoutliner.js?v=4";
     new Runtime().module(define, Inspector.into("#observablehq-d604a734"));
+
+    let els = document.getElementsByClassName("observablehq");
+
+    for (let i = 0; i < els.length; i++) {
+      if (els[i].match(/\@\>/gi)) {
+        els[i].classList.add("ref");
+      }
+
+      if (els[i].match(/\@\</gi)) {
+        els[i].classList.add("outline");
+      }
+    }
   </script>
 </html>
