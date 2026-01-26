@@ -210,7 +210,7 @@ code {
   }
 
   body {
-    grid-template-columns: [init] 60px [par] 1.05fr [mid] 0.95fr [end] 30px [respiro];
+    grid-template-columns: [init] 30px [par] 1.05fr [mid] 0.95fr [end] 5px [respiro];
     gap: 20px 35px;
   }
 
@@ -221,7 +221,7 @@ code {
 
 @media screen and (max-width: 560px) {
   html {
-    margin-left: 5px !important;
+    margin-left: 35px !important;
     margin-right: 5px !important;
   }
 
