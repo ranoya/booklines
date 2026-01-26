@@ -168,7 +168,7 @@ code {
   align-items: flex-end;
 }
 
-#sumario div {
+#sumarion div {
   color: #888888;
   margin-top: 1px;
   transition: all 0.4s ease-in;
@@ -183,7 +183,7 @@ code {
   font-size: 11px;
 }
 
-#sumario div:hover {
+#sumarion div:hover {
   transition: all 0.4s ease-in;
   border-right: 6px solid #c5c5c5;
 }
