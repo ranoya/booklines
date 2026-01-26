@@ -27,8 +27,8 @@
 
     let insiste = setInterval(function () {
       if (
-        document.body.innerHTML != "" ||
-        !document.body.innerHTML.match(/observablehq--running/)
+        document.body.innerHTML.match(/observablehq/) &&
+        !document.body.innerHTML.match(/observablehq--running/gi)
       ) {
         console.log(document.body.innerHTML);
         clearInterval(insiste);
@@ -46,6 +46,8 @@
             els[i].classList.add("outline");
           }
         }
+      } else {
+        console.log("tem running");
       }
     }, 10);
   </script>
