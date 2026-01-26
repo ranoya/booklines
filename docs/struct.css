@@ -158,12 +158,17 @@ code {
 
 #visualtitle {
   position: fixed;
-  border: 1px solid red;
+  top: 0px;
   font-family: Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 20px;
+  font-size: 14px;
+  line-height: 14px;
   height: 20px;
   color: #00000088;
+  transform-origin: top left;
+  text-align: right;
+  transform: translate(3px, calc(100dvh - 25px)) rotate(-90deg);
+  width: calc(100dvh - 45px);
+  left: 0px;
 }
 
 #sumarion {
