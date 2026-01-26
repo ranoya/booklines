@@ -19,13 +19,13 @@
     import define from "https://api.observablehq.com/@ranoya/testeparaoutliner.js?v=4";
     new Runtime().module(define, Inspector.into("body"));
 
-    let els = document.getElementsByClassName("observablehq");
-
     let insiste = setInterval(function () {
       if (
         document.body.innerHTML.match(/observablehq/) &&
         !document.body.innerHTML.match(/observablehq\-\-running/gi)
       ) {
+        let els = document.getElementsByClassName("observablehq");
+
         console.log(document.body.innerHTML);
         clearInterval(insiste);
 
