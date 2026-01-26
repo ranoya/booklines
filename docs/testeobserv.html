@@ -28,7 +28,7 @@
     let insiste = setInterval(function () {
       if (
         document.body.innerHTML.match(/observablehq/) &&
-        !document.body.innerHTML.match(/observablehq--running/gi)
+        !document.body.innerHTML.match(/observablehq\-\-running/gi)
       ) {
         console.log(document.body.innerHTML);
         clearInterval(insiste);
