@@ -32,6 +32,10 @@
     insereSumarion.id = "sumarion";
     document.body.appendChild(insereSumarion);
 
+    let insereTituloVisual = document.createElement("div");
+    insereTituloVisual.id = "visualtitle";
+    document.body.appendChild(insereTituloVisual);
+
     let insiste = setInterval(function () {
       if (
         document.body.innerHTML.match(/observablehq/) &&
@@ -133,6 +137,8 @@
       }
 
       document.getElementById("sumarion").innerHTML = sumarioncode;
+      document.getElementById("visualtitle").innerHTML =
+        document.getElementsByTagName("h1").innerHTML;
     }, 10);
   </script>
 </html>

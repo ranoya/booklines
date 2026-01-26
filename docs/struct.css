@@ -156,6 +156,16 @@ code {
   grid-column: mid / end;
 }
 
+#visualtitle {
+  position: fixed;
+  border: 1px solid red;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  height: 20px;
+  color: #00000088;
+}
+
 #sumarion {
   position: fixed;
   bottom: 30px;
