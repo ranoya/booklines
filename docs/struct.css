@@ -83,8 +83,8 @@ html {
 
 body {
   display: grid;
-  grid-template-columns: [init] 60px [par] 1.06fr [mid] 0.24fr [later] 0.7fr [end];
-  gap: 20px 60px;
+  grid-template-columns: [init] 60px [par] 1.06fr [mid] 0.24fr [later] 0.7fr [end] 30px [respiro];
+  gap: 20px 40px;
 }
 
 h1 {
@@ -203,8 +203,8 @@ code {
   }
 
   body {
-    grid-template-columns: [init] 60px [par] 1.06fr [mid] 0.94fr [end];
-    gap: 20px 30px;
+    grid-template-columns: [init] 60px [par] 1.06fr [mid] 0.94fr [end] 30px [respiro];
+    gap: 20px 35px;
   }
 
   * {
