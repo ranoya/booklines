@@ -25,11 +25,13 @@
     let els = document.getElementsByClassName("observablehq");
 
     for (let i = 0; i < els.length; i++) {
-      if (els[i].match(/\@\>/gi)) {
+      if (els[i].innerHTML.match(/\@\> /gi)) {
+        els[i].innerHTML.replace(/\@\> /gi, "");
         els[i].classList.add("ref");
       }
 
-      if (els[i].match(/\@\</gi)) {
+      if (els[i].innerHTML.match(/\@\< /gi)) {
+        els[i].innerHTML.replace(/\@\< /gi, "");
         els[i].classList.add("outline");
       }
     }
