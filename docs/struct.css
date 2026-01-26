@@ -164,4 +164,7 @@ code {
   height: calc(100dvh - 30px);
   display: flex;
   border: 1px solid red;
+  flex-direction: column-reverse;
+  flex-wrap: nowrap;
+  align-items: flex-end;
 }

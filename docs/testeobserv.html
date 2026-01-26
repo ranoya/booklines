@@ -28,6 +28,10 @@
     import define from "https://api.observablehq.com/@ranoya/testeparaoutliner.js?v=4";
     new Runtime().module(define, Inspector.into("body"));
 
+    let insereSumarion = document.createElement("div");
+    insereSumarion.id = "sumarion";
+    document.body.appendChild(insereSumarion);
+
     let insiste = setInterval(function () {
       if (
         document.body.innerHTML.match(/observablehq/) &&
@@ -120,10 +124,6 @@
           }
         }
       }
-
-      let insereSumarion = document.createElement("div");
-      insereSumarion.id = "sumarion";
-      document.body.appendChild(insereSumarion);
 
       let sumarion = document.querySelectorAll("a.indexs");
       let sumarioncode = "";
