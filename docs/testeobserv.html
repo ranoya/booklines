@@ -72,18 +72,18 @@
             els[i].classList.add("halfLeft");
           }
 
-          if (els[i].innerHTML.match(/\%\&gt\;\d{1,3} /gi)) {
+          if (els[i].innerHTML.match(/\%\!\&gt\;\d{1,3} /gi)) {
             let quanti = parseInt(els[i].innerHTML.match(/\d{1,3}/gi));
-            let conteudo = els[i].innerHTML.replace(/\%\&gt\;\d{1,3} /gi, "");
+            let conteudo = els[i].innerHTML.replace(/\%\!\&gt\;\d{1,3} /gi, "");
             els[i].innerHTML = conteudo;
             els[i].classList.add("halfRight");
             els[i].style.gridRow = "span " + quanti;
             els[i].firstElementChild.classList.add("fix");
           }
 
-          if (els[i].innerHTML.match(/\%\&lt\;\d{1,3} /gi)) {
+          if (els[i].innerHTML.match(/\%\!\&lt\;\d{1,3} /gi)) {
             let quanti = parseInt(els[i].innerHTML.match(/\d{1,3}/gi));
-            let conteudo = els[i].innerHTML.replace(/\%\&lt\;\d{1,3} /gi, "");
+            let conteudo = els[i].innerHTML.replace(/\%\!\&lt\;\d{1,3} /gi, "");
             els[i].innerHTML = conteudo;
             els[i].classList.add("halfLeft");
             els[i].style.gridRow = "span " + quanti;
