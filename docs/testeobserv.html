@@ -94,7 +94,7 @@
             let conteudo = els[i].innerHTML.replace(/\-\+\- /gi, "");
             els[i].innerHTML = conteudo;
             els[i].classList.add("fix");
-            if (els[i].innerHTML.match(/\&lth2/i)) {
+            if (els[i].innerHTML.match(/\<h2/i)) {
               els[i].style.paddingTop = "20px !important";
             }
           }
