@@ -45,11 +45,14 @@
 }
 
 .fix {
-  grid-column: later;
   position: sticky;
   padding-top: 100px;
   top: 0;
   background-color: var(--color-bg, #ffffff);
+}
+
+.ref.fix {
+  grid-column: later;
 }
 
 .outline {
