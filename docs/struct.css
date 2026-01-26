@@ -160,15 +160,16 @@ code {
   position: fixed;
   top: 0px;
   font-family: Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  line-height: 14px;
-  height: 20px;
+  font-size: 11px;
+  line-height: 11px;
+  height: 11px;
   color: #00000088;
   transform-origin: top left;
-  text-align: right;
-  transform: translate(3px, calc(100dvh - 25px)) rotate(-90deg);
+  text-align: center;
+  transform: translate(5px, calc(100dvh - 25px)) rotate(-90deg);
   width: calc(100dvh - 45px);
   left: 0px;
+  text-transform: uppercase;
 }
 
 #sumarion {
@@ -214,7 +215,7 @@ code {
 
 @media screen and (max-width: 900px) {
   html {
-    margin-left: 10px !important;
+    margin-left: 15px !important;
     margin-right: 10px !important;
   }
 }
@@ -222,6 +223,10 @@ code {
 @media screen and (max-width: 880px) {
   .ref {
     display: none !important;
+  }
+
+  #visualtitle {
+    display: none;
   }
 
   body {
