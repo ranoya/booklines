@@ -139,6 +139,11 @@
       document.getElementById("sumarion").innerHTML = sumarioncode;
       document.getElementById("visualtitle").innerHTML =
         document.getElementsByTagName("h1")[0].innerHTML;
+
+      let insereTagTitle = document.createElement("title");
+      insereTagTitle.textContent =
+        document.getElementsByTagName("h1")[0].innerHTML;
+      document.getElementsByTagName("head")[0].appendChild(insereTagTitle);
     }, 10);
   </script>
 </html>
