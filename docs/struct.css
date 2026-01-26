@@ -158,10 +158,10 @@ code {
 
 #sumarion {
   position: fixed;
-  bottom: 15px;
+  bottom: 30px;
   right: 15px;
   width: 150px;
-  height: calc(100dvh - 30px);
+  height: calc(100dvh - 45px);
   display: flex;
   flex-direction: column-reverse;
   flex-wrap: nowrap;
