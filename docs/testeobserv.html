@@ -26,7 +26,10 @@
     let els = document.getElementsByClassName("observablehq");
 
     let insiste = setInterval(function () {
-      if (document.body.innerHTML != "") {
+      if (
+        document.body.innerHTML != "" ||
+        !document.body.innerHTML.match(/observablehq--running/)
+      ) {
         console.log(document.body.innerHTML);
         clearInterval(insiste);
 
