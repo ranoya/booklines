@@ -25,8 +25,6 @@
         !document.body.innerHTML.match(/observablehq\-\-running/gi)
       ) {
         let els = document.getElementsByClassName("observablehq");
-
-        console.log(document.body.innerHTML);
         clearInterval(insiste);
 
         for (let i = 0; i < els.length; i++) {
@@ -94,21 +92,12 @@
             let conteudo = els[i].innerHTML.replace(/\-\+\- /gi, "");
             els[i].innerHTML = conteudo;
             els[i].classList.add("fix");
-            console.log(
-              "achou h2? " +
-                (els[i].innerHTML.match(/\<h2/i) ||
-                  els[i].innerHTML.match(/\&lt\;h2/i)),
-            );
+
             if (
               els[i].innerHTML.match(/\<h2/i) ||
               els[i].innerHTML.match(/\&lt\;h2/i)
             ) {
-              console.log("estilo: ");
-              console.log(els[i].style);
-              console.log("padding: ");
-              console.log(els[i].style.paddingTop);
-              els[i].style.paddingTop = "20px !important";
-              console.log(els[i].style.paddingTop);
+              els[i].classList.add("forceH2fix");
             }
           }
 
@@ -121,8 +110,6 @@
             els[i].innerHTML = conteudo2;
           }
         }
-      } else {
-        console.log("tem running");
       }
     }, 10);
   </script>
