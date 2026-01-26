@@ -137,8 +137,31 @@
       }
 
       document.getElementById("sumarion").innerHTML = sumarioncode;
-      document.getElementById("visualtitle").innerHTML =
-        document.getElementsByTagName("h1")[0].innerHTML;
+
+      let carregacoisas = function () {
+        for (let i = 0; i < objetos.length; i++) {
+          if (
+            jafoi[i] != true &&
+            objetos[i].getBoundingClientRect().top <= window.innerHeight
+          ) {
+            objetos[i].style.backgroundImage =
+              `url(${objetos[i].getAttribute("fundo")})`;
+            jafoi[i] = true;
+          }
+        }
+      };
+
+      document.getElementById("superbody").onscroll = function (e) {
+        if (
+          document.getElementsByTagName("h1")[0].getBoundingClientRect().top <=
+          window.innerHeight
+        ) {
+          document.getElementById("visualtitle").innerHTML =
+            document.getElementsByTagName("h1")[0].innerHTML;
+        } else {
+          document.getElementById("visualtitle").innerHTML = "";
+        }
+      };
 
       let insereTagTitle = document.createElement("title");
       insereTagTitle.textContent =
