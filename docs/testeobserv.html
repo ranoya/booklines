@@ -136,7 +136,7 @@
         document.body.onscroll = function (e) {
           if (
             document.getElementsByTagName("h1")[0].getBoundingClientRect()
-              .top <= window.innerHeight
+              .top <= -50
           ) {
             document.getElementById("visualtitle").innerHTML =
               document.getElementsByTagName("h1")[0].innerHTML;
