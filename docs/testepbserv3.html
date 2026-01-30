@@ -62,124 +62,134 @@
           document.body.innerHTML.match(/observablehq/) &&
           !document.body.innerHTML.match(/observablehq\-\-running/gi)
         ) {
-          let els = document.getElementsByClassName("observablehq");
-          clearInterval(insiste);
+          setTimeout(function () {
+            let els = document.getElementsByClassName("observablehq");
+            clearInterval(insiste);
 
-          for (let i = 0; i < els.length; i++) {
-            if (els[i].innerHTML.match(/\@&gt; /gi)) {
-              let conteudo = els[i].innerHTML.replace(/\@&gt; /gi, "");
-              els[i].innerHTML = conteudo;
-              els[i].classList.add("ref");
-            }
+            for (let i = 0; i < els.length; i++) {
+              if (els[i].innerHTML.match(/\@&gt; /gi)) {
+                let conteudo = els[i].innerHTML.replace(/\@&gt; /gi, "");
+                els[i].innerHTML = conteudo;
+                els[i].classList.add("ref");
+              }
 
-            if (els[i].innerHTML.match(/\@\&lt\; /gi)) {
-              let conteudo = els[i].innerHTML.replace(/\@\&lt\; /gi, "");
-              els[i].innerHTML = conteudo;
-              els[i].classList.add("outline");
-            }
+              if (els[i].innerHTML.match(/\@\&lt\; /gi)) {
+                let conteudo = els[i].innerHTML.replace(/\@\&lt\; /gi, "");
+                els[i].innerHTML = conteudo;
+                els[i].classList.add("outline");
+              }
 
-            if (els[i].innerHTML.match(/\!\&gt\;\d{1,3} /gi)) {
-              let quanti = parseInt(els[i].innerHTML.match(/\d{1,3}/gi));
-              let conteudo = els[i].innerHTML.replace(/\!\&gt\;\d{1,3} /gi, "");
-              els[i].innerHTML = conteudo;
-              els[i].classList.add("ref");
-              els[i].style.gridRow = "span " + quanti;
-              els[i].firstElementChild.classList.add("fix");
-            }
+              if (els[i].innerHTML.match(/\!\&gt\;\d{1,3} /gi)) {
+                let quanti = parseInt(els[i].innerHTML.match(/\d{1,3}/gi));
+                let conteudo = els[i].innerHTML.replace(
+                  /\!\&gt\;\d{1,3} /gi,
+                  "",
+                );
+                els[i].innerHTML = conteudo;
+                els[i].classList.add("ref");
+                els[i].style.gridRow = "span " + quanti;
+                els[i].firstElementChild.classList.add("fix");
+              }
 
-            if (els[i].innerHTML.match(/\!\&lt\;\d{1,3} /gi)) {
-              let quanti = parseInt(els[i].innerHTML.match(/\d{1,3}/gi));
-              let conteudo = els[i].innerHTML.replace(/\!\&lt\;\d{1,3} /gi, "");
-              els[i].innerHTML = conteudo;
-              els[i].classList.add("outline");
-              els[i].style.gridRow = "span " + quanti;
-              els[i].firstElementChild.classList.add("fix");
-            }
+              if (els[i].innerHTML.match(/\!\&lt\;\d{1,3} /gi)) {
+                let quanti = parseInt(els[i].innerHTML.match(/\d{1,3}/gi));
+                let conteudo = els[i].innerHTML.replace(
+                  /\!\&lt\;\d{1,3} /gi,
+                  "",
+                );
+                els[i].innerHTML = conteudo;
+                els[i].classList.add("outline");
+                els[i].style.gridRow = "span " + quanti;
+                els[i].firstElementChild.classList.add("fix");
+              }
 
-            if (els[i].innerHTML.match(/\%&gt; /gi)) {
-              let conteudo = els[i].innerHTML.replace(/\%&gt; /gi, "");
-              els[i].innerHTML = conteudo;
-              els[i].classList.add("halfRight");
-            }
+              if (els[i].innerHTML.match(/\%&gt; /gi)) {
+                let conteudo = els[i].innerHTML.replace(/\%&gt; /gi, "");
+                els[i].innerHTML = conteudo;
+                els[i].classList.add("halfRight");
+              }
 
-            if (els[i].innerHTML.match(/\%\&lt\; /gi)) {
-              let conteudo = els[i].innerHTML.replace(/\%\&lt\; /gi, "");
-              els[i].innerHTML = conteudo;
-              els[i].classList.add("halfLeft");
-            }
+              if (els[i].innerHTML.match(/\%\&lt\; /gi)) {
+                let conteudo = els[i].innerHTML.replace(/\%\&lt\; /gi, "");
+                els[i].innerHTML = conteudo;
+                els[i].classList.add("halfLeft");
+              }
 
-            if (els[i].innerHTML.match(/\!\%\&gt\;\d{1,3} /gi)) {
-              let quanti = parseInt(els[i].innerHTML.match(/\d{1,3}/gi));
-              let conteudo = els[i].innerHTML.replace(
-                /\!\%\&gt\;\d{1,3} /gi,
-                "",
-              );
-              els[i].innerHTML = conteudo;
-              els[i].classList.add("halfRight");
-              els[i].style.gridRow = "span " + quanti;
-              els[i].firstElementChild.classList.add("fix");
-            }
+              if (els[i].innerHTML.match(/\!\%\&gt\;\d{1,3} /gi)) {
+                let quanti = parseInt(els[i].innerHTML.match(/\d{1,3}/gi));
+                let conteudo = els[i].innerHTML.replace(
+                  /\!\%\&gt\;\d{1,3} /gi,
+                  "",
+                );
+                els[i].innerHTML = conteudo;
+                els[i].classList.add("halfRight");
+                els[i].style.gridRow = "span " + quanti;
+                els[i].firstElementChild.classList.add("fix");
+              }
 
-            if (els[i].innerHTML.match(/\!\%\&lt\;\d{1,3} /gi)) {
-              let quanti = parseInt(els[i].innerHTML.match(/\d{1,3}/gi));
-              let conteudo = els[i].innerHTML.replace(
-                /\!\%\&lt\;\d{1,3} /gi,
-                "",
-              );
-              els[i].innerHTML = conteudo;
-              els[i].classList.add("halfLeft");
-              els[i].style.gridRow = "span " + quanti;
-              els[i].firstElementChild.classList.add("fix");
-            }
+              if (els[i].innerHTML.match(/\!\%\&lt\;\d{1,3} /gi)) {
+                let quanti = parseInt(els[i].innerHTML.match(/\d{1,3}/gi));
+                let conteudo = els[i].innerHTML.replace(
+                  /\!\%\&lt\;\d{1,3} /gi,
+                  "",
+                );
+                els[i].innerHTML = conteudo;
+                els[i].classList.add("halfLeft");
+                els[i].style.gridRow = "span " + quanti;
+                els[i].firstElementChild.classList.add("fix");
+              }
 
-            if (els[i].innerHTML.match(/\-\+\- /gi)) {
-              let conteudo = els[i].innerHTML.replace(/\-\+\- /gi, "");
-              els[i].innerHTML = conteudo;
-              els[i].classList.add("fix");
+              if (els[i].innerHTML.match(/\-\+\- /gi)) {
+                let conteudo = els[i].innerHTML.replace(/\-\+\- /gi, "");
+                els[i].innerHTML = conteudo;
+                els[i].classList.add("fix");
 
-              if (
-                els[i].innerHTML.match(/\<h2/i) ||
-                els[i].innerHTML.match(/\&lt\;h2/i)
-              ) {
-                els[i].classList.add("forceH2fix");
+                if (
+                  els[i].innerHTML.match(/\<h2/i) ||
+                  els[i].innerHTML.match(/\&lt\;h2/i)
+                ) {
+                  els[i].classList.add("forceH2fix");
+                }
+              }
+
+              if (els[i].innerHTML.match(/\@\{(.*)\}/)) {
+                let palavras = els[i].innerHTML.match(/\@\{(.*)\}/)[1];
+                let conteudo = els[i].innerHTML.replace(/\@\{(.*)\}/, "");
+                let conteudo2 =
+                  `<a name="${palavras}" id="${palavras}" class="indexs">${palavras}</a>` +
+                  conteudo;
+                els[i].innerHTML = conteudo2;
               }
             }
 
-            if (els[i].innerHTML.match(/\@\{(.*)\}/)) {
-              let palavras = els[i].innerHTML.match(/\@\{(.*)\}/)[1];
-              let conteudo = els[i].innerHTML.replace(/\@\{(.*)\}/, "");
-              let conteudo2 =
-                `<a name="${palavras}" id="${palavras}" class="indexs">${palavras}</a>` +
-                conteudo;
-              els[i].innerHTML = conteudo2;
+            let insereTagTitle = document.createElement("title");
+            insereTagTitle.textContent =
+              document.getElementsByTagName("h1")[0].innerHTML;
+            document
+              .getElementsByTagName("head")[0]
+              .appendChild(insereTagTitle);
+
+            document.body.onscroll = function (e) {
+              if (
+                document.getElementsByTagName("h1")[0].getBoundingClientRect()
+                  .top <= -50
+              ) {
+                document.getElementById("visualtitle").innerHTML =
+                  document.getElementsByTagName("h1")[0].innerHTML;
+              } else {
+                document.getElementById("visualtitle").innerHTML = "";
+              }
+            };
+
+            let sumarion = document.querySelectorAll("a.indexs");
+            let sumarioncode = "";
+
+            for (let i = sumarion.length - 1; i >= 0; i--) {
+              sumarioncode += `<div onclick="goto('${sumarion[i].name}')">${sumarion[i].name}</div>`;
             }
-          }
 
-          let insereTagTitle = document.createElement("title");
-          insereTagTitle.textContent =
-            document.getElementsByTagName("h1")[0].innerHTML;
-          document.getElementsByTagName("head")[0].appendChild(insereTagTitle);
-
-          document.body.onscroll = function (e) {
-            if (
-              document.getElementsByTagName("h1")[0].getBoundingClientRect()
-                .top <= -50
-            ) {
-              document.getElementById("visualtitle").innerHTML =
-                document.getElementsByTagName("h1")[0].innerHTML;
-            } else {
-              document.getElementById("visualtitle").innerHTML = "";
-            }
-          };
-
-          let sumarion = document.querySelectorAll("a.indexs");
-          let sumarioncode = "";
-
-          for (let i = sumarion.length - 1; i >= 0; i--) {
-            sumarioncode += `<div onclick="goto('${sumarion[i].name}')">${sumarion[i].name}</div>`;
-          }
-
-          document.getElementById("sumarion").innerHTML = sumarioncode;
+            document.getElementById("sumarion").innerHTML = sumarioncode;
+          }, 1500);
         }
       }, 10);
     }
