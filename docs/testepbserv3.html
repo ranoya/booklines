@@ -62,9 +62,9 @@
           document.body.innerHTML.match(/observablehq/) &&
           !document.body.innerHTML.match(/observablehq\-\-running/gi)
         ) {
+          clearInterval(insiste);
           setTimeout(function () {
             let els = document.getElementsByClassName("observablehq");
-            clearInterval(insiste);
 
             for (let i = 0; i < els.length; i++) {
               if (els[i].innerHTML.match(/\@&gt; /gi)) {
