@@ -186,6 +186,8 @@
           })
           .then((dados) => {
             let mdconverter = new showdown.Converter();
+            mdconverter.setOption("tables", "true");
+            mdconverter.setOption("simpleLineBreaks", "true");
             let dadosmd = mdconverter.makeHtml(dados);
 
             document.body.innerHTML = dadosmd;
