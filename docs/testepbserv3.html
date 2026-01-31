@@ -186,11 +186,13 @@
                 let sumarion = document.querySelectorAll("a.indexs");
                 let sumarioncode = "";
 
-                for (let i = sumarion.length - 1; i >= 0; i--) {
-                  sumarioncode += `<div onclick="goto('${sumarion[i].name}')">${sumarion[i].name}</div>`;
-                }
+                if (sumarion.length > 0) {
+                  for (let i = sumarion.length - 1; i >= 0; i--) {
+                    sumarioncode += `<div onclick="goto('${sumarion[i].name}')">${sumarion[i].name}</div>`;
+                  }
 
-                document.getElementById("sumarion").innerHTML = sumarioncode;
+                  document.getElementById("sumarion").innerHTML = sumarioncode;
+                }
               }
             }, 10);
           });
@@ -351,11 +353,13 @@
             let sumarion = document.querySelectorAll("a.indexs");
             let sumarioncode = "";
 
-            for (let i = sumarion.length - 1; i >= 0; i--) {
-              sumarioncode += `<div onclick="goto('${sumarion[i].name}')">${sumarion[i].name}</div>`;
-            }
+            if (sumarion.length > 0) {
+              for (let i = sumarion.length - 1; i >= 0; i--) {
+                sumarioncode += `<div onclick="goto('${sumarion[i].name}')">${sumarion[i].name}</div>`;
+              }
 
-            document.getElementById("sumarion").innerHTML = sumarioncode;
+              document.getElementById("sumarion").innerHTML = sumarioncode;
+            }
           }, 1500);
         }
       }, 10);
