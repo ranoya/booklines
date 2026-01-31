@@ -3,6 +3,8 @@
 <h2>!<6 I</h2>
 <h2>@{O que é?} -+- O que é o Scriba</h2>
 
+<p>!< 1.1</p>
+
 <p>
   Scriba é um sistema de auto-layout, isto é, uma ferramenta que coloca
   automaticamente um documento em um tipo de layout específico. Ele é feito para
@@ -74,20 +76,44 @@
 <h2>!<5 II</h2>
 <h2>@{Elementos} -+- Elementos</h2>
 
-<p>
-  %< O layout com texto central e referências é composto por uma coluna à
-  esquerda dedicada aos tópicos/<i>outlines</i>, uma coluna menor dedicada às
-  referências, e uma coluna na lateral direita para os índices de navegação.
-</p>
+<p>!< 2.1</p>
+<p>%< Os layouts são configurados para que respeitem:</p>
 
 <div>
   !%>5 &nbsp;
 
   <img
+    class="fix"
     style="width: 100%"
     src="https://booklines.vercel.app/docs/scriba_layout_2.svg"
   />
 </div>
+
+<div>
+  %< &nbsp;
+  <ol>
+    <li>
+      O tamanho da tela, retirando os elementos complementares quando o
+      dispositivo não oferece espaço suficiente;
+    </li>
+
+    <li>
+      Espaçamento para os elementos gráficos de listas ordenadas (como esta), ou
+      listas não-ordenadas;
+    </li>
+
+    <li>
+      Uma navegação eficiente sobre tópicos e uma hierarquia forte estabelecida
+      no documento.
+    </li>
+  </ol>
+</div>
+
+<p>
+  %< O layout com texto central e referências é composto por uma coluna à
+  esquerda dedicada aos tópicos/<i>outlines</i>, uma coluna menor dedicada às
+  referências, e uma coluna na lateral direita para os índices de navegação.
+</p>
 
 <p>
   %< O layout com duas colunas (este que está sendo utilizado agora) também
@@ -97,31 +123,36 @@
   distribuição, não há espaço para as referências.
 </p>
 
-<p>%< Os layouts são configurados para que respeitem:</p>
-
-<div>%< &nbps;
-<ol>
-  <li>
-    O tamanho da tela, retirando os elementos complementares quando o
-    dispositivo não oferece espaço suficiente;
-  </li>
-
-  <li>
-    Os elementos gráficos de listas ordenadas (como esta), ou listas
-    não-ordenadas;
-  </li>
-
-  <li>
-    Uma navegação eficiente sobre tópicos e uma hierarquia forte estabelecida no
-    documento.
-  </li>
-</ol>
-</div>
-
-<p>%< 
-  A possibilidade de fixar elementos na tela enquanto o scroll se desenvolve é
-  um recurso importante para que informações que exijam, por exemplo, uma
+<p>
+  %< A possibilidade de fixar elementos na tela enquanto o scroll se desenvolve
+  é um recurso importante para que informações que exijam, por exemplo, uma
   referência gráfica ou um diagrama em paralelo, possam ser lidas com o próprio
-  elemento presente. Esta é uma necessidade e uma ergonomia importante quando
-  hierarquias e relações estão presentes no documento.
+  elemento presente. Esta é uma necessidade ergonômica importante quando
+  relações estão sendo apresentadas no documento.
 </p>
+
+<p>
+  Cada tipo de elemento recebe uma marcação específica para que possa operar
+  dentro do layout.
+</p>
+
+<h2>!<5 III</h2>
+<h2>@{Marcações} -+- Marcações</h2>
+
+<p>!< 3.1</p>
+<p>
+  %< As marcações utilizadas para indicar elementos do layout são as seguintes:
+</p>
+
+<p>!< 3.2</p>
+<p><b>Outlines</b><br /></p>
+<pre>@< [conteúdo]</pre>
+<p>Exemplo:</p>
+<div>%< &nbsp;</div>
+<pre>@< 1.1</pre>
+
+<p>!< 3.3</p>
+<p><b>Referências</b><br /></p>
+<pre>@> [conteúdo]</pre>
+<p>Exemplo:</p>
+<pre>@< Esta é uma referência</pre>
