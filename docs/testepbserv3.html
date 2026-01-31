@@ -60,13 +60,14 @@
             let insiste = setInterval(function () {
               if (document.body.innerHTML != "") {
                 console.log(document.body.innerHTML);
-                console.log(document.body.childNodes);
+                console.log(document.body.children);
 
                 clearInterval(insiste);
 
                 let els = document.body.children;
 
                 for (let i = 0; i < els.length; i++) {
+                  console.log(i + "/" + els.length + " ... " + els[i]);
                   if (els[i].innerHTML.match(/\@&gt; /gi)) {
                     let conteudo = els[i].innerHTML.replace(/\@&gt; /gi, "");
                     els[i].innerHTML = conteudo;
