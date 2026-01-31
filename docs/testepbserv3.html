@@ -180,31 +180,33 @@
           "https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js";
         document.getElementsByTagName("head")[0].appendChild(inseremd);
 
-        fetch($_GET["url"])
-          .then((response) => {
-            return response.text();
-          })
-          .then((dados) => {
-            let mdconverter = new showdown.Converter();
-            mdconverter.setOption("tables", "true");
-            mdconverter.setOption("simpleLineBreaks", "true");
-            let dadosmd = mdconverter.makeHtml(dados);
+        setTimeout(function () {
+          fetch($_GET["url"])
+            .then((response) => {
+              return response.text();
+            })
+            .then((dados) => {
+              let mdconverter = new showdown.Converter();
+              mdconverter.setOption("tables", "true");
+              mdconverter.setOption("simpleLineBreaks", "true");
+              let dadosmd = mdconverter.makeHtml(dados);
 
-            document.body.innerHTML = dadosmd;
+              document.body.innerHTML = dadosmd;
 
-            let insiste = setInterval(function () {
-              if (document.body.innerHTML != "") {
-                console.log(document.body.innerHTML);
-                console.log(document.body.children);
+              let insiste = setInterval(function () {
+                if (document.body.innerHTML != "") {
+                  console.log(document.body.innerHTML);
+                  console.log(document.body.children);
 
-                clearInterval(insiste);
+                  clearInterval(insiste);
 
-                let els = document.body.children;
+                  let els = document.body.children;
 
-                trocatudo(els);
-              }
-            }, 10);
-          });
+                  trocatudo(els);
+                }
+              }, 10);
+            });
+        }, 1500);
       }
       //
       if ($_GET["url"].match(/\.html$/)) {
