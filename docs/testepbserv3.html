@@ -21,6 +21,42 @@
   </script>
 
   <script>
+    /*
+
+                    // Call the function, typically after the DOM is fully loaded
+                    document.addEventListener('DOMContentLoaded', (event) => {
+                        wrapBodyElementsInDivs();
+                        console.log("All top-level body elements have been wrapped in divs.");
+                    });
+
+    */
+
+    function wrapBodyElementsInDivs() {
+      let body = document.body;
+      // Get all direct child nodes of the body.
+      // Using childNodes captures element nodes, text nodes, and comments.
+      // If you only want element nodes (like <p>, <h1>, etc.), use body.children.
+      let children = Array.from(body.childNodes);
+
+      children.forEach((node) => {
+        // Only process nodes that are not the script itself (if the script is in the body)
+        if (
+          node.nodeType === Node.ELEMENT_NODE &&
+          (node.tagName !== "SCRIPT" || node.tagName !== "STYLE")
+        ) {
+          const wrapper = document.createElement("div");
+
+          // Insert the new wrapper immediately before the current node
+          body.insertBefore(wrapper, node);
+
+          // Move the current node inside the new wrapper
+          wrapper.appendChild(node);
+        }
+        // This example ignores raw text nodes and comments.
+        // If you need to wrap those too, the logic needs slight modification.
+      });
+    }
+
     let trocatudo = function (els) {
       for (let i = 0; i < els.length; i++) {
         console.log(i + "/" + els.length + " ... " + els[i]);
@@ -348,6 +384,8 @@
                 clearInterval(insiste);
 
                 let els = document.body.children;
+
+                wrapBodyElementsInDivs();
 
                 trocatudo(els);
               }
