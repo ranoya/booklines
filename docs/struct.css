@@ -135,6 +135,10 @@ h2.fix {
   z-index: 11;
 }
 
+.outline.fix.forceH2fix {
+  grid-column: init / par !important;
+}
+
 p,
 ul,
 ol,
