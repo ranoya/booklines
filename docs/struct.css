@@ -197,14 +197,19 @@ code {
 }
 
 #sumarion div {
-  color: #888888;
+  color: color-mix(
+    in srgb,
+    var(--color-bg, #ffffff) 50%,
+    var(--color-fg, #000000) 50%
+  );
   margin-top: 1px;
   transition: all 0.4s ease-in;
   cursor: pointer;
   padding: 0px 10px 0px 10px;
   height: 20px !important;
   margin-top: 1px;
-  border-right: 8px solid #00000000;
+  border-right: 8px solid
+    color-mix(in srgb, #00000000 100%, var(--color-fg, #000000) 0%);
   font-family: Helvetica, Arial, sans-serif;
   font-optical-sizing: auto;
   font-weight: 200;
@@ -215,8 +220,8 @@ code {
 
 #sumarion div:hover {
   transition: all 0.2s ease-in;
-  border-right: 4px solid #000000;
-  color: #000000;
+  border-right: 4px solid var(--color-fg, #000000);
+  color: var(--color-fg, #000000);
 }
 
 @media screen and (max-width: 1339px) {
