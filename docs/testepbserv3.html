@@ -435,5 +435,27 @@
         }
       }, 10);
     }
+
+    if (
+      typeof $_GET["fcolor"] != "undefined" &&
+      $_GET["fcolor"] != null &&
+      $_GET["fcolor"] != ""
+    ) {
+      document.documentElement.style.setProperty(
+        "--color-fg",
+        "#" + $_GET["fcolor"],
+      );
+    }
+
+    if (
+      typeof $_GET["bgcolor"] != "undefined" &&
+      $_GET["bgcolor"] != null &&
+      $_GET["bgcolor"] != ""
+    ) {
+      document.documentElement.style.setProperty(
+        "--color-bg",
+        "#" + $_GET["bgcolor"],
+      );
+    }
   </script>
 </html>
