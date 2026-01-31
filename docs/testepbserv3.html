@@ -21,6 +21,16 @@
   </script>
 
   <script>
+    let insereSumarion = document.createElement("div");
+    insereSumarion.id = "sumarion";
+    document.body.appendChild(insereSumarion);
+
+    let insereTituloVisual = document.createElement("div");
+    insereTituloVisual.id = "visualtitle";
+    document.body.appendChild(insereTituloVisual);
+  </script>
+
+  <script>
     let trocatudo = function (els) {
       for (let i = 0; i < els.length; i++) {
         console.log(i + "/" + els.length + " ... " + els[i]);
@@ -162,7 +172,39 @@
       $_GET["url"] != null &&
       $_GET["url"] != ""
     ) {
-      // https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js
+      if ($_GET["url"].match(/\.md$/)) {
+        console.log("achou um md");
+
+        let inseremd = document.createElement("script");
+        inseremd.src =
+          "https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js";
+        document.getElementsByTagName("head")[0].appendChild(inseremd);
+
+        fetch($_GET["url"])
+          .then((response) => {
+            return response.text();
+          })
+          .then((dados) => {
+            let mdconverter = new showdown.Converter();
+            let dadosmd = mdconverter.makeHtml(dados);
+
+            document.body.innerHTML = dadosmd;
+
+            let insiste = setInterval(function () {
+              if (document.body.innerHTML != "") {
+                console.log(document.body.innerHTML);
+                console.log(document.body.children);
+
+                clearInterval(insiste);
+
+                let els = document.body.children;
+
+                trocatudo(els);
+              }
+            }, 10);
+          });
+      }
+      //
       if ($_GET["url"].match(/\.html$/)) {
         console.log("achou um html");
 
@@ -230,15 +272,5 @@
         }
       }, 10);
     }
-  </script>
-
-  <script>
-    let insereSumarion = document.createElement("div");
-    insereSumarion.id = "sumarion";
-    document.body.appendChild(insereSumarion);
-
-    let insereTituloVisual = document.createElement("div");
-    insereTituloVisual.id = "visualtitle";
-    document.body.appendChild(insereTituloVisual);
   </script>
 </html>
