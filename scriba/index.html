@@ -148,11 +148,17 @@
       document.body.appendChild(insereSumarion);
 
       if (
-        typeof $_GET["mid"] != "undefined" &&
-        $_GET["mid"] != null &&
-        $_GET["mid"] != ""
+        typeof $_GET["nav"] != "undefined" &&
+        $_GET["nav"] != null &&
+        $_GET["nav"] != ""
       ) {
-        document.getElementById("sumarion").style.justifyContent = "center";
+        if ($_GET["nav"] == "meio") {
+          document.getElementById("sumarion").style.justifyContent = "center";
+        }
+
+        if ($_GET["nav"] == "topo") {
+          document.getElementById("sumarion").style.justifyContent = "flex-end";
+        }
       }
 
       let insereTituloVisual = document.createElement("div");
