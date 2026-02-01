@@ -175,14 +175,14 @@ h2.fix {
 a {
   color: color-mix(
     in srgb,
-    var(--color-bg, #000000) 30%,
+    var(--color-bg, #ffffff) 30%,
     var(--color-fg, #000000) 70%
   );
   text-decoration: none;
   border-bottom: 1px dotted
     color-mix(
       in srgb,
-      var(--color-bg, #000000) 80%,
+      var(--color-bg, #ffffff) 80%,
       var(--color-fg, #000000) 20%
     );
 }
@@ -190,13 +190,13 @@ a {
 a:hover {
   color: color-mix(
     in srgb,
-    var(--color-bg, #000000) 0%,
+    var(--color-bg, #ffffff) 0%,
     var(--color-fg, #000000) 100%
   );
   border-bottom: 1px solid
     color-mix(
       in srgb,
-      var(--color-bg, #000000) 70%,
+      var(--color-bg, #ffffff) 70%,
       var(--color-fg, #000000) 30%
     );
 }
