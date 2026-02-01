@@ -12,6 +12,18 @@ code {
   font-family: "Share Tech Mono", monospace;
 }
 
+.fullline {
+  grid-column: init / end;
+}
+
+.almostfullline {
+  grid-column: par / end;
+}
+
+hr {
+  border-bottom: 1px solid var(--color-fg, #000000);
+}
+
 ::-webkit-scrollbar {
   background: transparent;
   width: 10px;

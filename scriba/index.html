@@ -133,6 +133,18 @@
           }
         }
 
+        if (els[i].innerHTML.match(/\-\=\- /gi)) {
+          let conteudo = els[i].innerHTML.replace(/\-\=\- /gi, "");
+          els[i].innerHTML = conteudo;
+          els[i].classList.add("fullline");
+        }
+
+        if (els[i].innerHTML.match(/\-\.\- /gi)) {
+          let conteudo = els[i].innerHTML.replace(/\-\.\- /gi, "");
+          els[i].innerHTML = conteudo;
+          els[i].classList.add("almostfullline");
+        }
+
         if (els[i].innerHTML.match(/\@\{(.*)\}/)) {
           let palavras = els[i].innerHTML.match(/\@\{(.*)\}/)[1];
           let conteudo = els[i].innerHTML.replace(/\@\{(.*)\}/, "");
