@@ -64,7 +64,6 @@ hr {
   grid-column: later;
   font-size: 14px;
   line-height: 20px;
-  overflow-x: hidden;
 }
 
 .ref * {
