@@ -234,6 +234,7 @@ code {
   flex-direction: column-reverse;
   flex-wrap: nowrap;
   align-items: flex-end;
+  justify-content: center;
 }
 
 #sumarion div {
