@@ -228,6 +228,15 @@
       }
     })();
 
+    if (
+      (typeof $_GET["url"] == "undefined" ||
+        ($_GET["url"] == null && $_GET["url"] == "")) &&
+      (typeof $_GET["notebook"] == "undefined" ||
+        ($_GET["notebook"] == null && $_GET["notebook"] == ""))
+    ) {
+      $_GET["url"] = "https://booklines.vercel.app/scriba/default.html";
+    }
+
     /* 
 
      HTML & MD
