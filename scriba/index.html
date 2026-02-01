@@ -57,140 +57,9 @@
       });
     }
 
-    let trocatudo = function (els) {
-      for (let i = 0; i < els.length; i++) {
-        console.log(i + "/" + els.length + " ... " + els[i]);
-        if (els[i].innerHTML.match(/\@&gt; /gi)) {
-          let conteudo = els[i].innerHTML.replace(/\@&gt; /gi, "");
-          els[i].innerHTML = conteudo;
-          els[i].classList.add("ref");
-        }
-
-        if (els[i].innerHTML.match(/\@\&lt\; /gi)) {
-          let conteudo = els[i].innerHTML.replace(/\@\&lt\; /gi, "");
-          els[i].innerHTML = conteudo;
-          els[i].classList.add("outline");
-        }
-
-        if (els[i].innerHTML.match(/\!\&gt\;\d{1,3} /gi)) {
-          let quanti = parseInt(els[i].innerHTML.match(/\d{1,3}/gi));
-          let conteudo = els[i].innerHTML.replace(/\!\&gt\;\d{1,3} /gi, "");
-          els[i].innerHTML = conteudo;
-          els[i].classList.add("ref");
-          els[i].style.gridRow = "span " + quanti;
-          els[i].classList.add("fix");
-        }
-
-        if (els[i].innerHTML.match(/\!\&lt\;\d{1,3} /gi)) {
-          let quanti = parseInt(els[i].innerHTML.match(/\d{1,3}/gi));
-          let conteudo = els[i].innerHTML.replace(/\!\&lt\;\d{1,3} /gi, "");
-          els[i].innerHTML = conteudo;
-          els[i].classList.add("outline");
-          els[i].style.gridRow = "span " + quanti;
-          els[i].classList.add("fix");
-        }
-
-        if (els[i].innerHTML.match(/\%&gt; /gi)) {
-          let conteudo = els[i].innerHTML.replace(/\%&gt; /gi, "");
-          els[i].innerHTML = conteudo;
-          els[i].classList.add("halfRight");
-        }
-
-        if (els[i].innerHTML.match(/\%\&lt\; /gi)) {
-          let conteudo = els[i].innerHTML.replace(/\%\&lt\; /gi, "");
-          els[i].innerHTML = conteudo;
-          els[i].classList.add("halfLeft");
-        }
-
-        if (els[i].innerHTML.match(/\!\%\&gt\;\d{1,3} /gi)) {
-          let quanti = parseInt(els[i].innerHTML.match(/\d{1,3}/gi));
-          let conteudo = els[i].innerHTML.replace(/\!\%\&gt\;\d{1,3} /gi, "");
-          els[i].innerHTML = conteudo;
-          els[i].classList.add("halfRight");
-          els[i].style.gridRow = "span " + quanti;
-          els[i].classList.add("fix");
-        }
-
-        if (els[i].innerHTML.match(/\!\%\&lt\;\d{1,3} /gi)) {
-          let quanti = parseInt(els[i].innerHTML.match(/\d{1,3}/gi));
-          let conteudo = els[i].innerHTML.replace(/\!\%\&lt\;\d{1,3} /gi, "");
-          els[i].innerHTML = conteudo;
-          els[i].classList.add("halfLeft");
-          els[i].style.gridRow = "span " + quanti;
-          els[i].classList.add("fix");
-        }
-
-        if (els[i].innerHTML.match(/\-\+\- /gi)) {
-          let conteudo = els[i].innerHTML.replace(/\-\+\- /gi, "");
-          els[i].innerHTML = conteudo;
-          els[i].classList.add("fix");
-
-          if (
-            els[i].innerHTML.match(/\<h2/i) ||
-            els[i].innerHTML.match(/\&lt\;h2/i)
-          ) {
-            els[i].classList.add("forceH2fix");
-          }
-        }
-
-        if (els[i].innerHTML.match(/\@\{(.*)\}/)) {
-          let palavras = els[i].innerHTML.match(/\@\{(.*)\}/)[1];
-          let conteudo = els[i].innerHTML.replace(/\@\{(.*)\}/, "");
-          let conteudo2 =
-            `<a name="${palavras}" id="${palavras}" class="indexs">${palavras}</a>` +
-            conteudo;
-          els[i].innerHTML = conteudo2;
-        }
-      }
-
-      let insereSumarion = document.createElement("div");
-      insereSumarion.id = "sumarion";
-      document.body.appendChild(insereSumarion);
-
-      if (
-        typeof $_GET["mid"] != "undefined" &&
-        $_GET["mid"] != null &&
-        $_GET["mid"] != ""
-      ) {
-        document.getElementById("sumarion").style.justifyContent = "center";
-      }
-
-      let insereTituloVisual = document.createElement("div");
-      insereTituloVisual.id = "visualtitle";
-      document.body.appendChild(insereTituloVisual);
-
-      let insereTagTitle = document.createElement("title");
-      insereTagTitle.textContent =
-        document.getElementsByTagName("h1")[0].innerHTML;
-      document.getElementsByTagName("head")[0].appendChild(insereTagTitle);
-
-      document.body.onscroll = function (e) {
-        if (
-          document.getElementsByTagName("h1")[0].getBoundingClientRect().top <=
-          -50
-        ) {
-          document.getElementById("visualtitle").innerHTML =
-            document.getElementsByTagName("h1")[0].innerHTML;
-        } else {
-          document.getElementById("visualtitle").innerHTML = "";
-        }
-      };
-
-      let sumarion = document.querySelectorAll("a.indexs");
-      let sumarioncode = "";
-
-      if (sumarion.length > 0) {
-        for (let i = sumarion.length - 1; i >= 0; i--) {
-          sumarioncode += `<div onclick="goto('${sumarion[i].name}')">${sumarion[i].name}</div>`;
-        }
-
-        document.getElementById("sumarion").innerHTML = sumarioncode;
-      }
-    };
-
     let trocatudoobs = function (els) {
       for (let i = 0; i < els.length; i++) {
-        console.log(i + "/" + els.length + " ... " + els[i]);
+        // console.log(i + "/" + els.length + " ... " + els[i]);
         if (els[i].innerHTML.match(/\@&gt; /gi)) {
           let conteudo = els[i].innerHTML.replace(/\@&gt; /gi, "");
           els[i].innerHTML = conteudo;
@@ -346,7 +215,7 @@
       $_GET["url"] != ""
     ) {
       if ($_GET["url"].match(/\.md$/)) {
-        console.log("achou um md");
+        // console.log("achou um md");
 
         let inseremd = document.createElement("script");
         inseremd.src =
@@ -368,12 +237,14 @@
 
               let insiste = setInterval(function () {
                 if (document.body.innerHTML != "") {
-                  console.log(document.body.innerHTML);
-                  console.log(document.body.children);
+                  // console.log(document.body.innerHTML);
+                  // console.log(document.body.children);
 
                   clearInterval(insiste);
 
                   let els = document.body.children;
+
+                  wrapBodyElementsInDivs();
 
                   trocatudoobs(els);
                 }
@@ -383,7 +254,7 @@
       }
       //
       if ($_GET["url"].match(/\.html$/)) {
-        console.log("achou um html");
+        // console.log("achou um html");
 
         fetch($_GET["url"])
           .then((response) => {
@@ -394,8 +265,8 @@
 
             let insiste = setInterval(function () {
               if (document.body.innerHTML != "") {
-                console.log(document.body.innerHTML);
-                console.log(document.body.children);
+                // console.log(document.body.innerHTML);
+                // console.log(document.body.children);
 
                 clearInterval(insiste);
 
