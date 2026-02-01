@@ -150,8 +150,8 @@ a {
   border-bottom: 1px dotted
     color-mix(
       in srgb,
-      var(--color-bg, #000000) 50%,
-      var(--color-fg, #000000) 50%
+      var(--color-bg, #000000) 80%,
+      var(--color-fg, #000000) 20%
     );
 }
 
@@ -161,11 +161,11 @@ a:hover {
     var(--color-bg, #000000) 0%,
     var(--color-fg, #000000) 100%
   );
-  border-bottom: 1px dotted
+  border-bottom: 1px solid
     color-mix(
       in srgb,
-      var(--color-bg, #000000) 30%,
-      var(--color-fg, #000000) 70%
+      var(--color-bg, #000000) 70%,
+      var(--color-fg, #000000) 30%
     );
 }
 
