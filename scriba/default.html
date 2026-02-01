@@ -1,0 +1,186 @@
+<h1>Slidelines Scriba</h1>
+
+<h2>@< -+- I</h2>
+<h2>@{O que é?} -+- O que é o Scriba</h2>
+
+<p>!<7 1.1</p>
+
+<p>
+  Scriba é um sistema de auto-layout, isto é, uma ferramenta que coloca
+  automaticamente um documento em um tipo de layout específico. Ele é feito para
+  formatar textos densos e estruturados, que são aqueles documentos
+  predominantemente textuais que fazem uso intenso de <i>outlines</i>, como é
+  teses, disserações e relatórios, onde encontramos tudo organizado através de
+  tópicos (como 1.1, 1.2, 1.2.1, etc.).
+</p>
+
+<p>
+  Este sistema foi criado para respeitar esta rígida estruturação textual,
+  criando espaços (e respiro) para que os tópicos (<i>outlines</i>) fiquem
+  claramente visíveis, que listas ordenadas e não-ordenadas se encaixem
+  perfeitamente no layout, que referências e textos paralelos possam ser
+  apresentados, e que índices navegáveis possam orientar a navegação no
+  documento.
+</p>
+
+<p>
+  Todos os elementos são inseridos utilizando pequenas notações/marcações no
+  próximo texto, que orientam a ferramenta em como tratar cada uma das partes
+  redigidas.
+</p>
+
+<p>
+  Estes elementos podem ser apenas distribuídos em regiões específicas do
+  layout, ou podem ficar fixos na tela enquanto o scroll se desenvolve, e isto é
+  definido pelas próprias marcações feitas.
+</p>
+
+<p>
+  Dois layouts são possíveis de serem utilizados: um onde há uma coluna de texto
+  com espaço para referências à direita, e outro contendo duas colunas
+  paralelas, que é importante quando há elementos como imagens, diagramas,
+  tabelas, ou outras informações que precisam ser apresentadas em paralelo,
+  fixadas ou não na tela enquanto o scroll se desenvolve.
+</p>
+
+<div>
+  %< &nbsp;
+  <img
+    style="width: 100%"
+    src="https://booklines.vercel.app/scriba/scriba_layout_1.svg"
+  />
+</div>
+
+<div>
+  %> &nbsp;
+  <img
+    style="width: 100%"
+    src="https://booklines.vercel.app/scriba/scriba_layout_2.svg"
+  />
+</div>
+
+<p>
+  Os textos podem ser lidos de arquivos online dos tipos markdown ou html, ou
+  também podem ser construídos na plataforma de programação literária
+  <a target="_blank" href="https://www.observablehq.com">Observable</a>. A
+  utilização do
+  <a target="_blank" href="https://www.observablehq.com">Observable</a> é
+  recomendada para documentos parametrizados por programação, pois não se faz
+  necessária nenhum tipo de tecnologia server-side para construção da interação.
+  Mas para aqueles que preferirem utilizar arquivos markdown ou html, qualquer
+  webserver que utilize PHP, Node, ASP, C#, e possa gerar documentos dinâmicos,
+  pode ser utilizado para criar elementos programados ou cujos conteúdos sejam
+  parametrizados.
+</p>
+
+<h2>@< -+- II</h2>
+<h2>@{Elementos} -+- Elementos</h2>
+
+<p>!<6 2.1</p>
+
+<p>%< Os layouts são configurados para que respeitem:</p>
+
+<div>
+  !%>6 &nbsp;
+
+  <img
+    style="width: 100%"
+    src="https://booklines.vercel.app/scriba/scriba_layout_2.svg"
+  />
+</div>
+
+<div>
+  %< &nbsp;
+  <ol>
+    <li>
+      O tamanho da tela, retirando os elementos complementares quando o
+      dispositivo não oferece espaço suficiente;
+    </li>
+
+    <li>
+      Espaçamento para os elementos gráficos de listas ordenadas (como esta), ou
+      listas não-ordenadas;
+    </li>
+
+    <li>
+      Uma navegação eficiente sobre tópicos e uma hierarquia forte estabelecida
+      no documento.
+    </li>
+  </ol>
+</div>
+
+<p>
+  %< O layout com texto central e referências é composto por uma coluna à
+  esquerda dedicada aos tópicos/<i>outlines</i>, uma coluna menor dedicada às
+  referências, e uma coluna na lateral direita para os índices de navegação.
+</p>
+
+<p>
+  %< O layout com duas colunas (este que está sendo utilizado agora) também
+  possui uma coluna à esquerda dedicada aos tópicos/<i>outlines</i>, duas
+  colunas (menores que a coluna do layout único) para textos e elementos
+  paralelos, e uma coluna na lateral direita para os índices de navegação. Nesta
+  distribuição, não há espaço para as referências.
+</p>
+
+<p>
+  %< A possibilidade de fixar elementos na tela enquanto o scroll se desenvolve
+  é um recurso importante para que informações que exijam, por exemplo, uma
+  referência gráfica ou um diagrama em paralelo, possam ser lidas com o próprio
+  elemento presente. Esta é uma necessidade ergonômica importante quando
+  relações estão sendo apresentadas no documento.
+</p>
+
+<p>
+  %< Cada tipo de elemento recebe uma marcação específica para que possa operar
+  dentro do layout.
+</p>
+
+<h2>@< -+- III</h2>
+<h2>@{Marcações} -+- Marcações</h2>
+
+<p>@< 3.1</p>
+
+<p>
+  As marcações utilizadas para indicar elementos do layout são as seguintes:
+</p>
+
+<div>@< 3.2</div>
+
+<p><b>Outlines</b></p>
+<p>IMAGEM DA MARCAÇÃO</p>
+
+<p>Exemplo:</p>
+<div>%< &nbsp; IMAGEM EM HTML</div>
+
+<div>%> &nbsp; IMAGEM EM MD</div>
+
+<div>@< 3.3</div>
+
+<p><b>Outlines Fixos</b></p>
+<p>IMAGEM DA MARCAÇÃO</p>
+
+<p>Exemplo:</p>
+<div>%< &nbsp; IMAGEM EM HTML</div>
+
+<div>%> &nbsp; IMAGEM EM MD</div>
+
+<div>@< 3.4</div>
+
+<p><b>Referências</b></p>
+<p>IMAGEM DA MARCAÇÃO</p>
+
+<p>Exemplo:</p>
+<div>%< &nbsp; IMAGEM EM HTML</div>
+
+<div>%> &nbsp; IMAGEM EM MD</div>
+
+<div>@< 3.5</div>
+
+<p><b>Referências Fixas</b></p>
+<p>IMAGEM DA MARCAÇÃO</p>
+
+<p>Exemplo:</p>
+<div>%< &nbsp; IMAGEM EM HTML</div>
+
+<div>%> &nbsp; IMAGEM EM MD</div>
