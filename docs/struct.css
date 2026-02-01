@@ -140,6 +140,35 @@ h2.fix {
   grid-column: init / par !important;
 }
 
+a {
+  color: color-mix(
+    in srgb,
+    var(--color-bg, #000000) 30%,
+    var(--color-fg, #000000) 70%
+  );
+  text-decoration: none;
+  border-bottom: 1px dotted
+    color-mix(
+      in srgb,
+      var(--color-bg, #000000) 50%,
+      var(--color-fg, #000000) 50%
+    );
+}
+
+a:hover {
+  color: color-mix(
+    in srgb,
+    var(--color-bg, #000000) 0%,
+    var(--color-fg, #000000) 100%
+  );
+  border-bottom: 1px dotted
+    color-mix(
+      in srgb,
+      var(--color-bg, #000000) 30%,
+      var(--color-fg, #000000) 70%
+    );
+}
+
 p,
 ul,
 ol,
