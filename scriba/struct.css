@@ -127,7 +127,7 @@ h2 {
   padding-top: 0 !important;
   z-index: 11;
   grid-column: par / end;
-}
+  margin-top: 40px;
 
 h2.fix {
   position: sticky;
@@ -322,7 +322,6 @@ code {
 
   .forceH2fix {
     grid-column: init / end !important;
-    margin-top: 40px;
   }
 
   h1 {
