@@ -208,7 +208,11 @@ code {
   font-size: 11px;
   line-height: 11px;
   height: 11px;
-  color: #00000088;
+  color: color-mix(
+    in srgb,
+    var(--color-bg, #ffffff) 50%,
+    var(--color-fg, #000000) 50%
+  );
   transform-origin: top left;
   text-align: center;
   transform: translate(5px, calc(100dvh - 25px)) rotate(-90deg);
@@ -318,6 +322,7 @@ code {
 
   .forceH2fix {
     grid-column: init / end !important;
+    margin-top: 40px;
   }
 
   h1 {
