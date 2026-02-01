@@ -105,6 +105,8 @@ h1 {
   font-weight: bold;
   unicode-bidi: isolate;
   grid-column: par / end;
+  margin-top: 40dvh;
+  margin-bottom: 40dvh;
 }
 
 h2 {
