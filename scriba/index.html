@@ -458,12 +458,14 @@
       );
     }
 
-    if (
-      typeof $_GET["mid"] != "undefined" &&
-      $_GET["mid"] != null &&
-      $_GET["mid"] != ""
-    ) {
-      document.getElementById("sumarion").style.justifyContent = "center";
-    }
+    document.addEventListener("DOMContentLoaded", (event) => {
+      if (
+        typeof $_GET["mid"] != "undefined" &&
+        $_GET["mid"] != null &&
+        $_GET["mid"] != ""
+      ) {
+        document.getElementById("sumarion").style.justifyContent = "center";
+      }
+    });
   </script>
 </html>
