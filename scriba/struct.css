@@ -90,7 +90,7 @@ html {
 
 body {
   display: grid;
-  grid-template-columns: [init] 60px [par] 1.05fr [mid] 0.25fr [later] 0.7fr [end] 30px [respiro];
+  grid-template-columns: [init] 60px [par] 1fr [mid] 0.21fr [later] 0.7fr [end] 30px [respiro];
   gap: 20px 40px;
 }
 
