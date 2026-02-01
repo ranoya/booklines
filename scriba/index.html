@@ -147,6 +147,14 @@
       insereSumarion.id = "sumarion";
       document.body.appendChild(insereSumarion);
 
+      if (
+        typeof $_GET["mid"] != "undefined" &&
+        $_GET["mid"] != null &&
+        $_GET["mid"] != ""
+      ) {
+        document.getElementById("sumarion").style.justifyContent = "center";
+      }
+
       let insereTituloVisual = document.createElement("div");
       insereTituloVisual.id = "visualtitle";
       document.body.appendChild(insereTituloVisual);
@@ -269,6 +277,14 @@
       let insereSumarion = document.createElement("div");
       insereSumarion.id = "sumarion";
       document.body.appendChild(insereSumarion);
+
+      if (
+        typeof $_GET["mid"] != "undefined" &&
+        $_GET["mid"] != null &&
+        $_GET["mid"] != ""
+      ) {
+        document.getElementById("sumarion").style.justifyContent = "center";
+      }
 
       let insereTituloVisual = document.createElement("div");
       insereTituloVisual.id = "visualtitle";
@@ -458,6 +474,7 @@
       );
     }
 
+    /*
     document.addEventListener("DOMContentLoaded", (event) => {
       if (
         typeof $_GET["mid"] != "undefined" &&
@@ -467,5 +484,6 @@
         document.getElementById("sumarion").style.justifyContent = "center";
       }
     });
+    */
   </script>
 </html>
