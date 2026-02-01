@@ -10,7 +10,7 @@
 
 code {
   font-family: "Share Tech Mono", monospace;
-  color-mix(
+  color: color-mix(
     in srgb,
     var(--color-fg, #000000) 80%,
     var(--color-bg, #ffffff) 20%
