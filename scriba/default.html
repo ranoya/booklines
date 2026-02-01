@@ -343,7 +343,7 @@ Sendo [parágrafos] o número de parágrafos que o elemento deve permanecer fixo
 <h2>@< -+- IV</h2>
 <h2>@{Uso} -+- Como Utilizar?</h2>
 
-<div>!<9 4.1</div>
+<div>!<5 4.1</div>
 <p>
   Para utilizar o Scriba você deve escrever seu texto no formato html ou
   markdown e disponibilizá-lo online através de uma URL em que o arquivo esteja
@@ -389,5 +389,32 @@ Sendo [parágrafos] o número de parágrafos que o elemento deve permanecer fixo
     target="_blank"
     href="https://booklines.vercel.app/scriba/?notebook=@ranoya/teste-scriba"
     >https://booklines.vercel.app/scriba/?notebook=@ranoya/teste-scriba</a
+  >
+</div>
+
+
+<div>!<3 4.2</div>
+
+<p>Outras opções de exibição:</p>
+
+<p>Para mudar a posição dos elementos de navegação, utilize a variável de url <code>nav</code>, que pode conter as opções <code>topo</code> para colocar a navegação no topo da tela, à direita, ou <code>fim</code>, para colocar a navegação no fim da tela, à direita. Cada variável de url precisa ser separada no link com o caractere <code>&</code>.</p>
+
+<div>
+  @> Exemplo: <br />
+  <a
+    target="_blank"
+    href="https://booklines.vercel.app/scriba/?nav=topo&url=https://booklines.vercel.app/scriba/default.html"
+    >https://booklines.vercel.app/scriba/?nav=topo&url=https://booklines.vercel.app/scriba/default.html</a
+  >
+</div>
+
+<p>Para mudar a cor do texto e a cor de fundo do documento, utilize as variáveis de url <code>fcolor</code> e <code>bgcolor</code> com o valor RGB hexadecimal das cores desejadas (sem o caractere <code>#</code> que é normalmente utilizado neste tipo de notação). Para colocar o documento com a cor de fundo preta, e a cor do texto branca, utilize <code>bgcolor=000000&fcolor=FFFFFF&</code>, sempre separando cada variável de url com o caractere <code>&</code>.</p>
+
+<div>
+  @> Exemplo: <br />
+  <a
+    target="_blank"
+    href="https://booklines.vercel.app/scriba/?bgcolor=666666&fcolor=FFFFFF&url=https://booklines.vercel.app/scriba/default.html"
+    >https://booklines.vercel.app/scriba/?bgcolor=666666&fcolor=FFFFFF&&url=https://booklines.vercel.app/scriba/default.html</a
   >
 </div>
