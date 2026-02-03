@@ -98,18 +98,17 @@ export default ({
 
           // desenha linhas diagonais
 
-          /*
           for (let tx = this.startx; tx <= this.endx; tx = tx + 4) {
             if (this.cor == this.corLOriginal + 1) {
-              p.blendMode(p.BLEND);
+              //p.blendMode(p.BLEND);
               p.colorMode(p.HSB);
               p.stroke(this.corH, this.corS, this.corLOriginal);
             } else if (this.cor >= 106) {
               p.colorMode(p.RGB);
               p.stroke(p.cordefundo);
-              p.blendMode(p.BLEND);
+              //p.blendMode(p.BLEND);
             } else {
-              p.blendMode(p.LIGHTEST);
+              //p.blendMode(p.LIGHTEST);
               p.colorMode(p.RGB);
               p.stroke(p.cordefundo + "15");
             }
@@ -119,17 +118,18 @@ export default ({
               tx,
               this.starty,
               this.startx,
-              this.starty + (tx - this.startx)
+              this.starty + (tx - this.startx),
             );
 
             p.line(tx, this.endy, this.endx, this.starty + (tx - this.startx));
           }
-          */
 
+          /*
           // pinta o ro todo
           p.fill(this.cor);
           p.rectMode(p.CORNERS);
           p.rect(this.startx, this.starty, this.endx, this.endy);
+          */
 
           if (this.cor > 110) {
             this.cor = this.corLOriginal;
