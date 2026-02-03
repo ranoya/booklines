@@ -123,17 +123,13 @@ export default ({
             );
 
             p.line(tx, this.endy, this.endx, this.starty + (tx - this.startx));
-            */
-          
-            
-            // pinta o ro todo
-              p.fill(this.cor);
-              p.rectMode(p.CORNERS);
-              p.rect(this.startx,this.starty,this.endx, this.endy);
-            
           }
+          */
 
-          
+          // pinta o ro todo
+          p.fill(this.cor);
+          p.rectMode(p.CORNERS);
+          p.rect(this.startx, this.starty, this.endx, this.endy);
 
           if (this.cor > 110) {
             this.cor = this.corLOriginal;
@@ -146,7 +142,7 @@ export default ({
       p.background(p.cordefundo);
       p.createCanvas(
         document.getElementById(el).clientWidth,
-        document.getElementById(el).clientHeight
+        document.getElementById(el).clientHeight,
       );
 
       p.noStroke();
@@ -255,7 +251,7 @@ export default ({
     p.windowResized = function () {
       p.resizeCanvas(
         document.getElementById(el).clientWidth,
-        document.getElementById(el).clientHeight
+        document.getElementById(el).clientHeight,
       );
       p.modulor = document.getElementById(el).clientWidth / p.pc;
     };
