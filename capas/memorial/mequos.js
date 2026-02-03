@@ -139,7 +139,7 @@ export default ({
     };
 
     p.setup = function () {
-      p.background(p.cordefundo, 0.7);
+      p.background(p.cordefundo + "44");
       p.createCanvas(
         document.getElementById(el).clientWidth,
         document.getElementById(el).clientHeight,
