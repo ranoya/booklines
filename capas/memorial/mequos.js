@@ -6,8 +6,8 @@ export default ({
   precision = 50,
 }) => {
   let sketch = function (p) {
-    p.r = 0; // valores aleatÃ³rios para criar o grid
-    p.pc = precision; // subdivisÃµes
+    p.r = 0; // valores aleatrios para criar o grid
+    p.pc = precision; // subdiviss
     p.matriz = []; // estrutura do grid
     p.saida = ""; // log dos dados
     p.modulor = 0; // tamanho do bloco base
@@ -48,7 +48,7 @@ export default ({
           this.y = 0;
         }
 
-        // para interaÃ§Ã£o com mouse, apenas remova os comentÃ¡rios abaixo:
+        // para interouse, apenas remova os come abaixo:
         this.x = p.mouseX;
         this.y = p.mouseY;
       },
@@ -97,6 +97,8 @@ export default ({
           // comportamento do bloco
 
           // desenha linhas diagonais
+
+          /*
           for (let tx = this.startx; tx <= this.endx; tx = tx + 4) {
             if (this.cor == this.corLOriginal + 1) {
               p.blendMode(p.BLEND);
@@ -121,14 +123,17 @@ export default ({
             );
 
             p.line(tx, this.endy, this.endx, this.starty + (tx - this.startx));
+            */
+          
+            
+            // pinta o ro todo
+              p.fill(this.cor);
+              p.rectMode(p.CORNERS);
+              p.rect(this.startx,this.starty,this.endx, this.endy);
+            
           }
 
-          /*
-			// pinta o retÃ¢ngulo todo
-				fill(this.cor);
-				rectMode(CORNERS);
-				rect(this.startx,this.starty,this.endx, this.endy);
-			*/
+          
 
           if (this.cor > 110) {
             this.cor = this.corLOriginal;
