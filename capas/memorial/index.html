@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <meta charset="utf-8" />
@@ -100,7 +100,7 @@
     </style>
   </head>
 
-  <body onclick="javascript:parent.postMessage('n','*')">
+  <body onclick="javascript: parent.postMessage('n', '*');">
     <div
       id="dblobis"
       style="
@@ -118,12 +118,14 @@
     <div id="init"></div>
 
     <script type="module">
+      // fcolor: "#e3c7c6",
+
       import dblob from "https://booklines.vercel.app/capas/memorial/mequos.js";
 
       let playblob = dblob({
         p5,
-        bgcolor: "#666666",
-        fcolor: "#e3c7c6",
+        bgcolor: "#444444",
+        fcolor: "#FF0000",
         el: "dblobis",
       });
     </script>
