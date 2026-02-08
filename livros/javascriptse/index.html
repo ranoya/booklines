@@ -1,0 +1,119 @@
+<!doctype html>
+
+<html>
+  <head>
+    <title>Programação Javascript para Designers</title>
+    <meta charset="utf-8" />
+    <meta name="pinterest" content="nopin" />
+    <meta name="pinterest" content="nohover" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta
+      name="description"
+      content="Livro Interativo: Programação Javascript para Designers - Edição Especial"
+    />
+    <meta
+      property="og:description"
+      content="Livro Interativo: Programação Javascript para Designers - Edição Especial"
+    />
+    <link rel="icon" type="image/png" href="/assets/jsfav16.png" />
+    <link rel="manifest" href="/livros/javascriptse/manifest.json" />
+
+    <style>
+      * {
+        margin: 0;
+        border: 0;
+        padding: 0;
+      }
+
+      body,
+      html {
+        overflow: hidden;
+        width: 100vw;
+        height: 100dvh;
+      }
+
+      iframe {
+        width: 100vw;
+        height: 100dvh;
+      }
+
+      #fullscbutton {
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        background-color: #15151544;
+        z-index: 1000;
+      }
+
+      #fullscbutton:hover {
+        background-color: #151515aa;
+      }
+    </style>
+
+    <script>
+      let toggleFullscreen = function (event) {
+        var element = document.body;
+
+        if (event instanceof HTMLElement) {
+          element = event;
+        }
+
+        var isFullscreen =
+          document.webkitIsFullScreen || document.mozFullScreen || false;
+
+        element.requestFullScreen =
+          element.requestFullScreen ||
+          element.webkitRequestFullScreen ||
+          element.mozRequestFullScreen ||
+          function () {
+            return false;
+          };
+        document.cancelFullScreen =
+          document.cancelFullScreen ||
+          document.webkitCancelFullScreen ||
+          document.mozCancelFullScreen ||
+          function () {
+            return false;
+          };
+
+        isFullscreen
+          ? document.cancelFullScreen()
+          : element.requestFullScreen();
+      };
+
+      $_GET = [];
+      (function () {
+        corte = window.location.href.toString().indexOf("?");
+        if (corte > 0) {
+          argumento = window.location.href.toString().substring(corte + 1);
+          argumentos = argumento.split("&");
+          for (arg in argumentos) {
+            let argCorte = argumentos[arg].indexOf("=");
+            $_GET[argumentos[arg].substring(0, argCorte)] = argumentos[
+              arg
+            ].substring(argCorte + 1);
+          }
+        }
+      })();
+
+      let u =
+        "https://booklines.vercel.app/flipk/?file=https://docs.google.com/spreadsheets/d/1SxGT3E57CSn6r19a8BeVDWpT9dce0gi7jkAYltREeu4/edit?gid=1118689304#gid=1118689304";
+    </script>
+  </head>
+
+  <body>
+    <div onclick="toggleFullscreen()" id="fullscbutton"></div>
+    <iframe id="conteudo"></iframe>
+  </body>
+
+  <script>
+    document.getElementById("conteudo").src = u;
+  </script>
+</html>
