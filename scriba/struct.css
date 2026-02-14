@@ -235,11 +235,11 @@ code {
 
 /* verificar se isso se mantém em todas as situações */
 .halfRight .fix {
-  top: 78px !important;
+  top: 100px !important;
 }
 
 .halfLeft .fix {
-  top: 78px !important;
+  top: 100px !important;
 }
 /* verificar se isso se mantém em todas as situações */
 
