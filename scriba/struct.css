@@ -233,6 +233,16 @@ code {
   grid-column: mid / end;
 }
 
+/* verificar se isso se mantém em todas as situações */
+.halfRight .fix {
+  top: 78px !important;
+}
+
+.halfLeft .fix {
+  top: 78px !important;
+}
+/* verificar se isso se mantém em todas as situações */
+
 #visualtitle {
   position: fixed;
   top: 0px;
