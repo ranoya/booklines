@@ -19,7 +19,7 @@ function draw() {
 
   if (a % 45 == 0) {
     fill(0);
-    ellipse(240, 0, 5, 5);
+    point(240, 0);
   }
 
   if (a % 2 == 1) {
